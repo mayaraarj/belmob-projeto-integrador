@@ -71,7 +71,7 @@ VALUES ('Rua Flor', '900', 'Pedra da Ostra', 'Mercadão', 'Colinas', 'Presidente 
 
 INSERT INTO	ATENDIMENTO(LOGRADOURO, NUMERO, COMPLEMENTO, REFERENCIA, BAIRRO, CIDADE, ESTADO)
 VALUES
-
+();
 
 /* Selecionando as tabelas do Banco de Dados */
 SELECT * FROM CLIENTE;
