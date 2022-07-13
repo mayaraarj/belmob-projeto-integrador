@@ -69,7 +69,7 @@ VALUES ('Rua Flor', '900', 'Pedra da Ostra', 'Mercadão', 'Colinas', 'Presidente 
 ('Rua Farol', '40', 'Leme ', 'Pedra da Luz', 'Escola Lima', 'Belo Horizonte', 'BH'),
 ('Mauro de Próspero', '930', 'Colégio AAA', 'Mercadão', 'Colinas', 'Presidente Prudente', 'SP');
 
-INSERT INTO	ATENDIMENTO(LOGRADOURO, NUMERO, COMPLEMENTO, REFERENCIA, BAIRRO, CIDADE, ESTADO)
+INSERT INTO	ATENDIMENTO(ID_ATENDIMENTO, DATA_, HORARIO, ID_CLIENTE, ID_PROFISSIONAL, ID_ENDERECO )
 VALUES
 ();
 
