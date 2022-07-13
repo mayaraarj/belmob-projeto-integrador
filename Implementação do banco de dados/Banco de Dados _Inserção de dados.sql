@@ -64,7 +64,9 @@ VALUES ('kefera@gmail.com','Kefera Silva', 'F', '99111111', '111111111', '211111
 ('gilbertogil@gmail.com','Gilberto Gil', 'M', '7771111', '711111111', '711111111', '1980-11-09', 'Itaú', 'Corrente', '333','55111' );
 
 INSERT INTO	ENDERECO(LOGRADOURO, NUMERO, COMPLEMENTO, REFERENCIA, BAIRRO, CIDADE, ESTADO)
-VALUES ('Rua Flor', '900', 'Pedra da Ostra', 'Mercadão', 'Colinas', 'Presidente Prudente', 'SP');
+VALUES ('Rua Flor', '900', 'Pedra da Ostra', 'Mercadão', 'Colinas', 'Presidente Prudente', 'SP'),
+('Rua Jaci', '900', 'Brás', 'Clube de Campo', 'Vila Maria', 'São Paulo', 'SP'),
+('Rua Farol', '40', 'Leme ', 'Pedra da Luz', 'Escola Lima', 'Belo Horizonte', 'BH');
 
 
 /* Selecionando as tabelas do Banco de Dados */
