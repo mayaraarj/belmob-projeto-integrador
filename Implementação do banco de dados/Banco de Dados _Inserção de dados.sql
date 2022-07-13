@@ -63,7 +63,11 @@ VALUES ('kefera@gmail.com','Kefera Silva', 'F', '99111111', '111111111', '211111
 ('mariabethania@gmail.com','Maria Bethânia Oliveira', 'F', '888111111', '811111111', '811111111', '2002-03-02', 'Bradesco', '333', '88555','881111' ),
 ('gilbertogil@gmail.com','Gilberto Gil', 'M', '7771111', '711111111', '711111111', '1980-11-09', 'Itaú', 'Corrente', '333','55111' );
 
-//* Selecionando as tabelas do Banco de Dados */
+INSERT INTO	PROFISSIONAL(LOGRADOURO, NUMERO, COMPLEMENTO, REFERENCIA, BAIRRO, CIDADE, ESTADO)
+VALUES ();
+
+
+/* Selecionando as tabelas do Banco de Dados */
 SELECT * FROM CLIENTE;
 SELECT * FROM PROFISSIONAL;
 
