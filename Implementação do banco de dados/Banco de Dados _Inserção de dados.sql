@@ -72,13 +72,14 @@ VALUES ('Rua Flor', '900', 'Pedra da Ostra', 'Mercadão', 'Colinas', 'Presidente 
 INSERT INTO	ATENDIMENTO(DATA_, HORARIO, ID_CLIENTE, ID_PROFISSIONAL, ID_ENDERECO )
 VALUES
 ('2020-12-17','08:55:00', 1, 1, 1),
-;
+('2020-12-17','08:55:00', 2, 3, 1),
+('2020-12-17','08:55:00', 4, 2, 1);
 
 /* Selecionando as tabelas do Banco de Dados */
 SELECT * FROM CLIENTE;
 SELECT * FROM PROFISSIONAL;
 SELECT * FROM ENDERECO;
-
+SELECT * FROM ATENDIMENTO;
 
 
 
