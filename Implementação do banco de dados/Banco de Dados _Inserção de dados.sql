@@ -73,6 +73,9 @@ VALUES ('Rua Flor', '900', 'Pedra da Ostra', 'Mercadão', 'Colinas', 'Presidente 
 /* Selecionando as tabelas do Banco de Dados */
 SELECT * FROM CLIENTE;
 SELECT * FROM PROFISSIONAL;
+SELECT * FROM ENDERECO;
+
+
 
 
 
