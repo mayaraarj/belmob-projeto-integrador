@@ -6,8 +6,8 @@ namespace Belmob.Models
     {
         public DbSet<Atendimento>? Atendimentos { get; set; }
         public DbSet<Cliente>? Clientes { get; set; }
-        public DbSet<Endereco>? enderecos { get; set; }
-        public DbSet<Profissional>? profissionals { get; set; }
+        public DbSet<Endereco>? Enderecos { get; set; }
+        public DbSet<Profissional>? Profissionais { get; set; }
 
         protected override void OnModelCreating(ModelBuilder Modelagem)
         {

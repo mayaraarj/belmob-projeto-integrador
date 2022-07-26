@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mayaraa\\Desktop\\Belmob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {}
+    "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mayaraa\\Desktop\\Belmob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {
+    "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mayaraa\\Desktop\\Belmob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
+        "projectUniqueName": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
         "projectName": "Belmob",
-        "projectPath": "C:\\Users\\mayaraa\\Desktop\\Belmob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
-        "packagesPath": "C:\\Users\\mayaraa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mayaraa\\Desktop\\Belmob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\obj\\",
+        "projectPath": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
+        "packagesPath": "C:\\Users\\gabrielles\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mayaraa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabrielles\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
