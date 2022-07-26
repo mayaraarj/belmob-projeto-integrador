@@ -15,7 +15,7 @@ namespace Belmob.Controllers
         {
             if (endereco == null)
                 return BadRequest();
-           
+
             DbSistema.Enderecos.Add(endereco);
             DbSistema.SaveChanges();
             return Ok(endereco);
@@ -38,37 +38,45 @@ namespace Belmob.Controllers
             return Ok(resultado);
         }
 
+        [HttpDelete("{Id}")]
+        public ActionResult<Endereco> DeletarEnderecoPelaId(int Id)
+        {
+            var resultado = DbSistema.Enderecos.Find(Id);
 
-        //    // GET: api/<EnderecoController>
-        //    [HttpGet]
-        //    public IEnumerable<string> Get()
-        //    {
-        //        return new string[] { "value1", "value2" };
-        //    }
+            if (resultado == null)
+                return NotFound();
 
-        //    // GET api/<EnderecoController>/5
-        //    [HttpGet("{id}")]
-        //    public string Get(int id)
-        //    {
-        //        return "value";
-        //    }
+            DbSistema.Enderecos.Remove(resultado);
+            DbSistema.SaveChanges();
+            return Ok(resultado);
+        }
 
-        //    // POST api/<EnderecoController>
-        //    [HttpPost]
-        //    public void Post([FromBody] string value)
-        //    {
-        //    }
+        [HttpPut("{Id}")]
+        public ActionResult<Endereco> SubstituirUmPelaId(int Id, Endereco endereco)
+        {
+            if (endereco == null)
+                return BadRequest();
 
-        //    // PUT api/<EnderecoController>/5
-        //    [HttpPut("{id}")]
-        //    public void Put(int id, [FromBody] string value)
-        //    {
-        //    }
+            if (endereco.Id != Id)
+                return BadRequest();
 
-        //    // DELETE api/<EnderecoController>/5
-        //    [HttpDelete("{id}")]
-        //    public void Delete(int id)
-        //    {
-        //    }
+            var resultado = DbSistema.Enderecos.Find(Id);
+
+            if (resultado == null)
+                return NotFound();
+
+            if (DbSistema.Enderecos.Any(u => u.Id != Id))
+                return Conflict();
+
+            resultado.Logradouro = endereco.Logradouro;
+            resultado.Numero = endereco.Numero;
+            resultado.Complemento = endereco.Complemento;
+            resultado.Referencia = endereco.Referencia;
+            resultado.Bairro = endereco.Bairro;
+            resultado.Cidade = endereco.Cidade;
+            resultado.Estado = endereco.Estado;
+            DbSistema.SaveChanges();
+            return Ok(endereco);
+        }
     }
 }

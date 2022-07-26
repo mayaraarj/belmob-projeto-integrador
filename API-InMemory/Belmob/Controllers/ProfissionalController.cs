@@ -44,36 +44,51 @@ namespace Belmob.Controllers
             return Ok(resultado);
         }
 
-        //// GET: api/<ProfissionalController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        [HttpDelete("{Id}")]
+        public ActionResult<Profissional> DeletarProfissionalPelaId(int Id)
+        {
+            var resultado = DbSistema.Profissionais.Find(Id);
 
-        //// GET api/<ProfissionalController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+            if (resultado == null)
+                return NotFound();
 
-        //// POST api/<ProfissionalController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
+            DbSistema.Profissionais.Remove(resultado);
+            DbSistema.SaveChanges();
+            return Ok(resultado);
+        }
 
-        //// PUT api/<ProfissionalController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
 
-        //// DELETE api/<ProfissionalController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        [HttpPut("{Id}")]
+        public ActionResult<Profissional> SubstituirUmPelaId(int Id, Profissional profissional)
+        {
+            if (profissional == null)
+                return BadRequest();
+
+            if (profissional.Id != Id)
+                return BadRequest();
+
+            var resultado = DbSistema.Profissionais.Find(Id);
+
+            if (resultado == null)
+                return NotFound();
+
+            if (DbSistema.Profissionais.Any(u => u.Id != Id && u.CPF == profissional.CPF))
+                return Conflict();
+
+            resultado.Nome = profissional.Nome;
+            resultado.Email = profissional.Email;
+            resultado.Sexo = profissional.Sexo;
+            resultado.Telefone = profissional.Telefone;
+            resultado.Celular = profissional.Celular;
+            resultado.CPF = profissional.CPF;
+            resultado.DataNascimento = profissional.DataNascimento;
+            resultado.Banco = profissional.Banco;
+            resultado.TipoDeConta = profissional.TipoDeConta;
+            resultado.Agencia = profissional.Agencia;
+            resultado.ContaComDigito = profissional.ContaComDigito;
+            DbSistema.SaveChanges();
+            return Ok(profissional);
+
+        }
     }
 }
