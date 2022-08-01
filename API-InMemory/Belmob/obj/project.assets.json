@@ -2088,24 +2088,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gabrielles\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\renatak\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
+      "projectUniqueName": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
       "projectName": "Belmob",
-      "projectPath": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
-      "packagesPath": "C:\\Users\\gabrielles\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\Belmob\\obj\\",
+      "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
+      "packagesPath": "C:\\Users\\renatak\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\Belmob\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gabrielles\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\renatak\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2172,7 +2167,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

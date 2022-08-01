@@ -2,6 +2,6 @@
 {
     public class Cliente : Pessoa
     {
-
+        public List<Atendimento>? Atendimentos { get; set; }
     }
 }
