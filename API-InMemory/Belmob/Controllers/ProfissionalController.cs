@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Belmob.Models;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,6 +14,7 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult<Profissional> PublicarUm(Profissional profissional)
         {
             if (profissional == null)
@@ -26,14 +28,18 @@ namespace Belmob.Controllers
             return Ok(profissional);
         }
 
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet]
+        [Authorize]
         public ActionResult<ProfissionalController> RequererTodosAtendimentos()
         {
             return Ok(DbSistema.Profissionais.ToList());
             //return NoContent();
         }
 
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet("{Id}")]
+        [Authorize]
         public ActionResult<ProfissionalController> RequererProfissionalPelaId(int Id)
         {
             var resultado = DbSistema.Profissionais.Find(Id);
@@ -44,7 +50,9 @@ namespace Belmob.Controllers
             return Ok(resultado);
         }
 
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpDelete("{Id}")]
+        [Authorize]
         public ActionResult<Profissional> DeletarProfissionalPelaId(int Id)
         {
             var resultado = DbSistema.Profissionais.Find(Id);
@@ -57,8 +65,9 @@ namespace Belmob.Controllers
             return Ok(resultado);
         }
 
-
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpPut("{Id}")]
+        [Authorize]
         public ActionResult<Profissional> SubstituirUmPelaId(int Id, Profissional profissional)
         {
             if (profissional == null)

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Belmob.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Belmob.Controllers
 {
@@ -10,7 +11,10 @@ namespace Belmob.Controllers
     {
         private SistemaContext DbSistema = new SistemaContext();
 
+        // Acredito que esse método deva ser um pedido de atendimento e não um cadastro de atendimento em si. Pra ser de fato um cadastro de atendimento,
+        // a lógica deve abarcar o "match" da profissional
         [HttpPost]
+        [Authorize(Roles = "Usuario")]
         public ActionResult<Atendimento> CadastrarAtendimento(Atendimento atendimento)
         {
             if (atendimento == null)
@@ -30,12 +34,14 @@ namespace Belmob.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult<List<Atendimento>> ListarAtendimentos()
         {
             return Ok(DbSistema.Atendimentos.ToList());
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public ActionResult<List<Atendimento>> BuscarAtendimentoPeloId(int id)
         {
             var atendimento = DbSistema.Atendimentos.FirstOrDefault(a => a.Id == id);
@@ -50,6 +56,7 @@ namespace Belmob.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize]
         public ActionResult<Atendimento> DeletarAtendimentoPelaId(int id)
         {
             var atendimento = DbSistema.Atendimentos.Find(id);
@@ -67,6 +74,7 @@ namespace Belmob.Controllers
         }
 
         [HttpPut]
+        [Authorize]
         public ActionResult<Atendimento> SubstituirAtendimentoPelaId(int id, Atendimento atendimento)
         {
             var resultado = DbSistema.Atendimentos.Find(id);

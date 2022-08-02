@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Belmob.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Belmob.Controllers
 {
@@ -12,6 +13,7 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult<Cliente> PublicarUm(Cliente cliente)
         {
             if (cliente == null)
@@ -25,13 +27,18 @@ namespace Belmob.Controllers
             return Ok(cliente);
         }
 
+
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet]
+        [Authorize]
         public ActionResult<Cliente> RequererTodosClientes()
         {
             return Ok(DbSistema.Clientes.ToList());
         }
 
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet("{Id}")]
+        [Authorize]
         public ActionResult<Cliente> RequererClientePelaId(int Id)
         {
             var resultado = DbSistema.Clientes.FirstOrDefault(u => u.Id == Id);
@@ -41,7 +48,10 @@ namespace Belmob.Controllers
 
             return Ok(resultado);
         }
+
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados  
         [HttpDelete("{Id}")]
+        [Authorize]
         public ActionResult<Cliente> DeletarClientePelaId(int Id)
         {
             var resultado = DbSistema.Clientes.Find(Id);
@@ -54,8 +64,10 @@ namespace Belmob.Controllers
             return Ok(resultado);
         }
 
+        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpPut("{Id}")]
-        public ActionResult<Cliente> SubstituirUmPelaId(int Id, Cliente cliente)
+        [Authorize]
+        public ActionResult<Cliente> SubstituirUmClientePelaId(int Id, Cliente cliente)
         {
             if (cliente == null)
                 return BadRequest();

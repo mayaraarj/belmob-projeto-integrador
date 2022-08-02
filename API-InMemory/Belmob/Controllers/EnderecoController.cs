@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Belmob.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Belmob.Controllers
 {
@@ -11,6 +12,7 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
+        [Authorize]
         public ActionResult<Endereco> PublicarUm(Endereco endereco)
         {
             if (endereco == null)
@@ -22,12 +24,14 @@ namespace Belmob.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult<Endereco> RequererTodosEnderecos()
         {
             return Ok(DbSistema.Enderecos.ToList());
         }
 
         [HttpGet("{Id}")]
+        [Authorize]
         public ActionResult<Endereco> RequererEnderecosPelaId(int Id)
         {
             var resultado = DbSistema.Enderecos.FirstOrDefault(u => u.Id == Id);
@@ -39,6 +43,7 @@ namespace Belmob.Controllers
         }
 
         [HttpDelete("{Id}")]
+        [Authorize]
         public ActionResult<Endereco> DeletarEnderecoPelaId(int Id)
         {
             var resultado = DbSistema.Enderecos.Find(Id);
@@ -52,6 +57,7 @@ namespace Belmob.Controllers
         }
 
         [HttpPut("{Id}")]
+        [Authorize]
         public ActionResult<Endereco> SubstituirUmPelaId(int Id, Endereco endereco)
         {
             if (endereco == null)
