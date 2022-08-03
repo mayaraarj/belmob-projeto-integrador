@@ -11,7 +11,7 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
-        public ActionResult<Contato> PublicarUm(Contato contato)
+        public ActionResult<Contato> PublicarNovoContato(Contato contato)
         {
             if (contato == null)
                 return BadRequest();

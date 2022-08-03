@@ -11,7 +11,7 @@ namespace Belmob.Controllers.PaginaDoCliente
     {
         private SistemaContext DbSistema = new SistemaContext();
         [HttpPost]
-        public ActionResult<List<Atendimento>> PublicarUm(Atendimento atendimento, int IdCliente, int IdProfissional, int IdEndereco)
+        public ActionResult<List<Atendimento>> Agendar(Atendimento atendimento, int IdCliente, int IdProfissional, int IdEndereco)
         {
             var cliente = DbSistema.Clientes.Find(IdCliente);
             var profissional = DbSistema.Profissionais.Find(IdProfissional);
@@ -28,13 +28,13 @@ namespace Belmob.Controllers.PaginaDoCliente
         }
 
         [HttpGet]
-        public ActionResult<Atendimento> RequererTodosClientes()
+        public ActionResult<Atendimento> RequererTodosAgendamentos()
         {
             return Ok(DbSistema.Atendimentos.Include(c => c.Endereco).Include(c => c.Cliente).Include(c => c.Profissional).ToList());
         }
 
         [HttpGet("{Id}")]
-        public ActionResult<Atendimento> RequererClientePelaId(int Id)
+        public ActionResult<Atendimento> RequererAgendamentoPelaId(int Id)
         {
             var resultado = DbSistema.Atendimentos.FirstOrDefault(u => u.Id == Id);
 
@@ -44,7 +44,7 @@ namespace Belmob.Controllers.PaginaDoCliente
             return Ok(resultado);
         }
         [HttpDelete("{Id}")]
-        public ActionResult<Atendimento> DeletarClientePelaId(int Id)
+        public ActionResult<Atendimento> DeletarAgendamentoPelaId(int Id)
         {
             var resultado = DbSistema.Atendimentos.Find(Id);
 
@@ -57,7 +57,7 @@ namespace Belmob.Controllers.PaginaDoCliente
         }
 
         [HttpPut("{Id}")]
-        public ActionResult<Atendimento> SubstituirUmPelaId(int Id, Atendimento atendimento)
+        public ActionResult<Atendimento> SubstituirDadosDoAgendamentoPelaId(int Id, Atendimento atendimento)
         {
             if (atendimento == null)
                 return BadRequest();

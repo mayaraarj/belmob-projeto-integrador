@@ -12,7 +12,7 @@ namespace Belmob.Controllers.Cliente
     {
         private SistemaContext DbSistema = new SistemaContext();
         [HttpPost]
-        public ActionResult<List<Atendimento>> PublicarUm(Atendimento atendimento, int IdCliente, int IdEndereco)
+        public ActionResult<List<Atendimento>> Agendar(Atendimento atendimento, int IdCliente, int IdEndereco)
         {
             var cliente = DbSistema.Clientes.Find(IdCliente);
             var endereco = DbSistema.Enderecos.Find(IdEndereco);
@@ -27,14 +27,14 @@ namespace Belmob.Controllers.Cliente
         }
 
         [HttpGet]
-        public ActionResult<Atendimento> RequererTodosClientes()
+        public ActionResult<Atendimento> RequererTodosAgendamentos()
         {
             // return OK(DbSistema.Atendimentos.Include(c => c.Enderecos).Include(c => c.Clientes).Include(c => c.Profissionais).AsNoTracking().ToList());
             return Ok(DbSistema.Atendimentos.Include(c => c.Endereco).Include(c => c.Cliente).ToList());
         }
 
         [HttpGet("{Id}")]
-        public ActionResult<Atendimento> RequererClientePelaId(int Id)
+        public ActionResult<Atendimento> RequererAgendamentoPelaId(int Id)
         {
             var resultado = DbSistema.Atendimentos.FirstOrDefault(u => u.Id == Id);
 
@@ -44,7 +44,7 @@ namespace Belmob.Controllers.Cliente
             return Ok(resultado);
         }
         [HttpDelete("{Id}")]
-        public ActionResult<Atendimento> DeletarClientePelaId(int Id)
+        public ActionResult<Atendimento> DeletarAgendamentoPelaId(int Id)
         {
             var resultado = DbSistema.Atendimentos.Find(Id);
 
@@ -57,7 +57,7 @@ namespace Belmob.Controllers.Cliente
         }
 
         [HttpPut("{Id}")]
-        public ActionResult<Atendimento> SubstituirUmPelaId(int Id, Atendimento atendimento)
+        public ActionResult<Atendimento> SubstituirDadosDeUmAgendamentoPelaId(int Id, Atendimento atendimento)
         {
             if (atendimento == null)
                 return BadRequest();

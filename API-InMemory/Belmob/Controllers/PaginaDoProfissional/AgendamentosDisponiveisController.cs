@@ -21,7 +21,7 @@ namespace Belmob.Controllers.PaginaDoProfissional
         }
 
         [HttpPut("{Id}")]
-        public ActionResult<Atendimento> SubstituirUmPelaId(int Id, Atendimento atendimento)
+        public ActionResult<Atendimento> AceitarAgendamento(int Id, Atendimento atendimento)
         {
             if (atendimento == null)
                 return BadRequest();

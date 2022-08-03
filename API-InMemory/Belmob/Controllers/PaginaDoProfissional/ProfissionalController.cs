@@ -15,7 +15,7 @@ namespace Belmob.Controllers
 
         [HttpPost]
         //[AllowAnonymous]
-        public ActionResult<Profissional> PublicarUm(Profissional profissional)
+        public ActionResult<Profissional> CadastrarProfissional(Profissional profissional)
         {
             if (profissional == null)
                 return BadRequest();
@@ -31,7 +31,7 @@ namespace Belmob.Controllers
         //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet]
         //[Authorize]
-        public ActionResult<ProfissionalController> RequererTodosAtendimentos()
+        public ActionResult<ProfissionalController> RequererTodosProfissionais()
         {
             return Ok(DbSistema.Profissionais.ToList());
             //return NoContent();
@@ -68,7 +68,7 @@ namespace Belmob.Controllers
         //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpPut("{Id}")]
         //[Authorize]
-        public ActionResult<Profissional> SubstituirUmPelaId(int Id, Profissional profissional)
+        public ActionResult<Profissional> SubstituirDadosDoProfissionalPelaId(int Id, Profissional profissional)
         {
             if (profissional == null)
                 return BadRequest();

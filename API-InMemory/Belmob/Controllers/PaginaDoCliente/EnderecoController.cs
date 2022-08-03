@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Belmob.Controllers.PaginaDoCliente
+namespace Belmob.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -11,7 +11,7 @@ namespace Belmob.Controllers.PaginaDoCliente
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
-        public ActionResult<Endereco> PublicarUm(Endereco endereco)
+        public ActionResult<Endereco> CadastrarEndereco(Endereco endereco)
         {
             if (endereco == null)
                 return BadRequest();
@@ -22,13 +22,13 @@ namespace Belmob.Controllers.PaginaDoCliente
         }
 
         [HttpGet]
-        public ActionResult<Endereco> RequererTodosClientes()
+        public ActionResult<Endereco> RequererTodosEnderecos()
         {
             return Ok(DbSistema.Enderecos.ToList());
         }
 
         [HttpGet("{Id}")]
-        public ActionResult<Endereco> RequererClientePelaId(int Id)
+        public ActionResult<Endereco> RequererEnderecoPelaId(int Id)
         {
             var resultado = DbSistema.Enderecos.FirstOrDefault(u => u.Id == Id);
 
@@ -38,7 +38,7 @@ namespace Belmob.Controllers.PaginaDoCliente
             return Ok(resultado);
         }
         [HttpDelete("{Id}")]
-        public ActionResult<Endereco> DeletarClientePelaId(int Id)
+        public ActionResult<Endereco> DeletarEnderecoPelaId(int Id)
         {
             var resultado = DbSistema.Enderecos.Find(Id);
 
@@ -51,7 +51,7 @@ namespace Belmob.Controllers.PaginaDoCliente
         }
 
         [HttpPut("{Id}")]
-        public ActionResult<Endereco> SubstituirUmPelaId(int Id, Endereco endereco)
+        public ActionResult<Endereco> SubstituirDadosDoEnderecoPelaId(int Id, Endereco endereco)
         {
             if (endereco == null)
                 return BadRequest();

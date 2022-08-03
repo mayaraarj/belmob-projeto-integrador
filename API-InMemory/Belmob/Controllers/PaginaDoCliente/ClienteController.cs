@@ -13,7 +13,7 @@ namespace Belmob.Controllers.PaginaDoCliente
 
         [HttpPost]
         //[AllowAnonymous]
-        public ActionResult<Models.Cliente> PublicarUm(Models.Cliente cliente)
+        public ActionResult<Models.Cliente> CadastrarCliente(Models.Cliente cliente)
         {
             if (cliente == null)
                 return BadRequest();
@@ -66,7 +66,7 @@ namespace Belmob.Controllers.PaginaDoCliente
         //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpPut("{Id}")]
         //[Authorize]
-        public ActionResult<Models.Cliente> SubstituirUmClientePelaId(int Id, Models.Cliente cliente)
+        public ActionResult<Models.Cliente> SubstituirDadosDeUmClientePelaId(int Id, Models.Cliente cliente)
         {
             if (cliente == null)
                 return BadRequest();
