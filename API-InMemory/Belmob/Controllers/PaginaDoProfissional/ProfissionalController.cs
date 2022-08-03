@@ -14,7 +14,7 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult<Profissional> PublicarUm(Profissional profissional)
         {
             if (profissional == null)
@@ -30,7 +30,7 @@ namespace Belmob.Controllers
 
         //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public ActionResult<ProfissionalController> RequererTodosAtendimentos()
         {
             return Ok(DbSistema.Profissionais.ToList());
@@ -39,7 +39,7 @@ namespace Belmob.Controllers
 
         //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet("{Id}")]
-        [Authorize]
+        //[Authorize]
         public ActionResult<ProfissionalController> RequererProfissionalPelaId(int Id)
         {
             var resultado = DbSistema.Profissionais.Find(Id);
@@ -52,7 +52,7 @@ namespace Belmob.Controllers
 
         //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpDelete("{Id}")]
-        [Authorize]
+        //[Authorize]
         public ActionResult<Profissional> DeletarProfissionalPelaId(int Id)
         {
             var resultado = DbSistema.Profissionais.Find(Id);
@@ -67,7 +67,7 @@ namespace Belmob.Controllers
 
         //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpPut("{Id}")]
-        [Authorize]
+        //[Authorize]
         public ActionResult<Profissional> SubstituirUmPelaId(int Id, Profissional profissional)
         {
             if (profissional == null)

@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Belmob.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Belmob.Models;
-using Microsoft.AspNetCore.Authorization;
 
-namespace Belmob.Controllers
+namespace Belmob.Controllers.PaginaDoCliente
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -12,7 +11,6 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
-        [Authorize]
         public ActionResult<Endereco> PublicarUm(Endereco endereco)
         {
             if (endereco == null)
@@ -24,15 +22,13 @@ namespace Belmob.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        public ActionResult<Endereco> RequererTodosEnderecos()
+        public ActionResult<Endereco> RequererTodosClientes()
         {
             return Ok(DbSistema.Enderecos.ToList());
         }
 
         [HttpGet("{Id}")]
-        [Authorize]
-        public ActionResult<Endereco> RequererEnderecosPelaId(int Id)
+        public ActionResult<Endereco> RequererClientePelaId(int Id)
         {
             var resultado = DbSistema.Enderecos.FirstOrDefault(u => u.Id == Id);
 
@@ -41,10 +37,8 @@ namespace Belmob.Controllers
 
             return Ok(resultado);
         }
-
         [HttpDelete("{Id}")]
-        [Authorize]
-        public ActionResult<Endereco> DeletarEnderecoPelaId(int Id)
+        public ActionResult<Endereco> DeletarClientePelaId(int Id)
         {
             var resultado = DbSistema.Enderecos.Find(Id);
 
@@ -57,7 +51,6 @@ namespace Belmob.Controllers
         }
 
         [HttpPut("{Id}")]
-        [Authorize]
         public ActionResult<Endereco> SubstituirUmPelaId(int Id, Endereco endereco)
         {
             if (endereco == null)
@@ -71,16 +64,15 @@ namespace Belmob.Controllers
             if (resultado == null)
                 return NotFound();
 
-            if (DbSistema.Enderecos.Any(u => u.Id != Id))
-                return Conflict();
-
             resultado.Logradouro = endereco.Logradouro;
+            resultado.TipoDeEndereco = endereco.TipoDeEndereco;
             resultado.Numero = endereco.Numero;
             resultado.Complemento = endereco.Complemento;
             resultado.Referencia = endereco.Referencia;
             resultado.Bairro = endereco.Bairro;
             resultado.Cidade = endereco.Cidade;
             resultado.Estado = endereco.Estado;
+
             DbSistema.SaveChanges();
             return Ok(endereco);
         }

@@ -8,6 +8,7 @@ namespace Belmob.Models
         public DbSet<Cliente>? Clientes { get; set; }
         public DbSet<Endereco>? Enderecos { get; set; }
         public DbSet<Profissional>? Profissionais { get; set; }
+        public DbSet<Contato>? Contatos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder Modelagem)
         {
@@ -24,6 +25,10 @@ namespace Belmob.Models
                 Tabela.HasKey(Propriedade => Propriedade.Id);
             });
             Modelagem.Entity<Profissional>(Tabela =>
+            {
+                Tabela.HasKey(Propriedade => Propriedade.Id);
+            });
+            Modelagem.Entity<Contato>(Tabela =>
             {
                 Tabela.HasKey(Propriedade => Propriedade.Id);
             });

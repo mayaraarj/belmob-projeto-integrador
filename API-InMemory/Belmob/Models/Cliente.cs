@@ -2,7 +2,6 @@
 {
     public class Cliente : Pessoa
     {
-        public List<Atendimento>? Atendimentos { get; set; }
-        public string Role = "Cliente";
+        //public string Role = "Cliente";
     }
 }

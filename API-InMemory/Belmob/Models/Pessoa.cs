@@ -10,7 +10,6 @@
         public string Celular { get; set; }
         public string CPF { get; set; }
         public DateTime DataNascimento { get; set; }
-        public List<Atendimento>? Atendimentos { get; set; }
 
     }
 }
