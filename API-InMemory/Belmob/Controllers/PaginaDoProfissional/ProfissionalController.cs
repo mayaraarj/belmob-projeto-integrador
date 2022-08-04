@@ -14,7 +14,7 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult<Profissional> CadastrarProfissional(Profissional profissional)
         {
             if (profissional == null)
@@ -28,18 +28,16 @@ namespace Belmob.Controllers
             return Ok(profissional);
         }
 
-        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet]
-        //[Authorize]
+        [Authorize(Roles = "Administrador")]
         public ActionResult<ProfissionalController> RequererTodosProfissionais()
         {
             return Ok(DbSistema.Profissionais.ToList());
             //return NoContent();
         }
 
-        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet("{Id}")]
-        //[Authorize]
+        [Authorize(Roles = "Administrador, Profissional")]
         public ActionResult<ProfissionalController> RequererProfissionalPelaId(int Id)
         {
             var resultado = DbSistema.Profissionais.Find(Id);
@@ -50,9 +48,8 @@ namespace Belmob.Controllers
             return Ok(resultado);
         }
 
-        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpDelete("{Id}")]
-        //[Authorize]
+        [Authorize(Roles = "Administrador, Profissional")]
         public ActionResult<Profissional> DeletarProfissionalPelaId(int Id)
         {
             var resultado = DbSistema.Profissionais.Find(Id);
@@ -65,9 +62,8 @@ namespace Belmob.Controllers
             return Ok(resultado);
         }
 
-        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpPut("{Id}")]
-        //[Authorize]
+        [Authorize(Roles = "Administrador, Profissional")]
         public ActionResult<Profissional> SubstituirDadosDoProfissionalPelaId(int Id, Profissional profissional)
         {
             if (profissional == null)

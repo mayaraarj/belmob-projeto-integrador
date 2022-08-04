@@ -11,7 +11,9 @@ namespace Belmob.Controllers.Cliente
     public class NovoAgendamentoController : ControllerBase
     {
         private SistemaContext DbSistema = new SistemaContext();
+       
         [HttpPost]
+        [Authorize(Roles = "Cliente")]
         public ActionResult<List<Atendimento>> Agendar(Atendimento atendimento, int IdCliente, int IdEndereco)
         {
             var cliente = DbSistema.Clientes.Find(IdCliente);
@@ -27,6 +29,7 @@ namespace Belmob.Controllers.Cliente
         }
 
         [HttpGet]
+        [Authorize(Roles = "Administrador, Cliente")]
         public ActionResult<Atendimento> RequererTodosAgendamentos()
         {
             // return OK(DbSistema.Atendimentos.Include(c => c.Enderecos).Include(c => c.Clientes).Include(c => c.Profissionais).AsNoTracking().ToList());
@@ -34,6 +37,7 @@ namespace Belmob.Controllers.Cliente
         }
 
         [HttpGet("{Id}")]
+        [Authorize(Roles = "Administrador,Cliente")]
         public ActionResult<Atendimento> RequererAgendamentoPelaId(int Id)
         {
             var resultado = DbSistema.Atendimentos.FirstOrDefault(u => u.Id == Id);
@@ -43,7 +47,9 @@ namespace Belmob.Controllers.Cliente
 
             return Ok(resultado);
         }
+
         [HttpDelete("{Id}")]
+        [Authorize(Roles = "Administrador, Cliente")]
         public ActionResult<Atendimento> DeletarAgendamentoPelaId(int Id)
         {
             var resultado = DbSistema.Atendimentos.Find(Id);
@@ -57,6 +63,7 @@ namespace Belmob.Controllers.Cliente
         }
 
         [HttpPut("{Id}")]
+        [Authorize(Roles = "Administrador, Cliente")]
         public ActionResult<Atendimento> SubstituirDadosDeUmAgendamentoPelaId(int Id, Atendimento atendimento)
         {
             if (atendimento == null)

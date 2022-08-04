@@ -7,6 +7,6 @@
         public string Agencia { get; set; }
         public string ContaComDigito { get; set; }
 
-        //public string Role = "Profissional";
+        public string Role = "Profissional";
     }
 }

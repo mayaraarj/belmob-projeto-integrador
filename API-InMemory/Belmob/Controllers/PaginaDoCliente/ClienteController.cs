@@ -1,4 +1,5 @@
 ﻿using Belmob.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +13,7 @@ namespace Belmob.Controllers.PaginaDoCliente
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult<Models.Cliente> CadastrarCliente(Models.Cliente cliente)
         {
             if (cliente == null)
@@ -27,17 +28,16 @@ namespace Belmob.Controllers.PaginaDoCliente
         }
 
 
-        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpGet]
-        //[Authorize]
+        [Authorize(Roles = "Administrador")]
         public ActionResult<Models.Cliente> RequererTodosClientes()
         {
             return Ok(DbSistema.Clientes.ToList());
         }
 
-        //Sugestão: implementar um modelo de admininistrador e cliente que possa ter acesso a esses dados
+  
         [HttpGet("{Id}")]
-        //[Authorize]
+        [Authorize(Roles = "Administrador,Cliente")]
         public ActionResult<Models.Cliente> RequererClientePelaId(int Id)
         {
             var resultado = DbSistema.Clientes.FirstOrDefault(u => u.Id == Id);
@@ -48,9 +48,8 @@ namespace Belmob.Controllers.PaginaDoCliente
             return Ok(resultado);
         }
 
-        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados  
         [HttpDelete("{Id}")]
-        //[Authorize]
+        [Authorize(Roles = "Administrador, Cliente")]
         public ActionResult<Models.Cliente> DeletarClientePelaId(int Id)
         {
             var resultado = DbSistema.Clientes.Find(Id);
@@ -63,9 +62,8 @@ namespace Belmob.Controllers.PaginaDoCliente
             return Ok(resultado);
         }
 
-        //Sugestão: implementar um modelo de admininistrador que possa ter acesso a esses dados
         [HttpPut("{Id}")]
-        //[Authorize]
+        [Authorize(Roles = "Administrador")]
         public ActionResult<Models.Cliente> SubstituirDadosDeUmClientePelaId(int Id, Models.Cliente cliente)
         {
             if (cliente == null)

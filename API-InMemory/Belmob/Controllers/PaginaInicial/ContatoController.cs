@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Belmob.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Belmob.Controllers
 {
@@ -11,6 +12,7 @@ namespace Belmob.Controllers
         private SistemaContext DbSistema = new SistemaContext();
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult<Contato> PublicarNovoContato(Contato contato)
         {
             if (contato == null)
@@ -21,7 +23,7 @@ namespace Belmob.Controllers
             return Ok(contato);
         }
         [HttpGet]
-        //[Authorize]
+        [Authorize(Roles = "Administrador, Profissional")]
         public ActionResult<Contato> ListarTodosContatos()
         {
             return Ok(DbSistema.Contatos.ToList());

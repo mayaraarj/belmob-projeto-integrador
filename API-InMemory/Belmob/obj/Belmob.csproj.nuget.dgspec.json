@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iasmimv\\Documents\\PROJETOS\\Projeto integrador\\BelMob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {}
+    "D:\\repos\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iasmimv\\Documents\\PROJETOS\\Projeto integrador\\BelMob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {
+    "D:\\repos\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iasmimv\\Documents\\PROJETOS\\Projeto integrador\\BelMob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
+        "projectUniqueName": "D:\\repos\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
         "projectName": "Belmob",
-        "projectPath": "C:\\Users\\iasmimv\\Documents\\PROJETOS\\Projeto integrador\\BelMob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
-        "packagesPath": "C:\\Users\\iasmimv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iasmimv\\Documents\\PROJETOS\\Projeto integrador\\BelMob\\belmob-projeto-integrador\\API-InMemory\\Belmob\\obj\\",
+        "projectPath": "D:\\repos\\belmob-projeto-integrador\\API-InMemory\\Belmob\\Belmob.csproj",
+        "packagesPath": "C:\\Users\\Cliente\\.nuget\\packages\\",
+        "outputPath": "D:\\repos\\belmob-projeto-integrador\\API-InMemory\\Belmob\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\iasmimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.7, )"
@@ -85,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

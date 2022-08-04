@@ -1,4 +1,5 @@
 ﻿using Belmob.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ namespace Belmob.Controllers.PaginaDoProfissional
     {
         private SistemaContext DbSistema = new SistemaContext();
         [HttpGet]
+        [Authorize(Roles = "Administrador, Profissional")]
         public ActionResult<Atendimento> RequererTodosAtendimentosDisponiveis()
         {
             if (DbSistema.Atendimentos.Any(u => u.Profissional == null))
@@ -21,6 +23,7 @@ namespace Belmob.Controllers.PaginaDoProfissional
         }
 
         [HttpPut("{Id}")]
+        [Authorize(Roles = "Profissional")]
         public ActionResult<Atendimento> AceitarAgendamento(int Id, Atendimento atendimento)
         {
             if (atendimento == null)
