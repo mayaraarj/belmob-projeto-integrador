@@ -246,3 +246,4 @@ C:\Users\iasmimv\Documents\PROJETOS\Projeto integrador\BelMob\belmob-projeto-int
 C:\Users\iasmimv\Documents\PROJETOS\Projeto integrador\BelMob\belmob-projeto-integrador\API-InMemory\Belmob\obj\Debug\net6.0\Belmob.pdb
 C:\Users\iasmimv\Documents\PROJETOS\Projeto integrador\BelMob\belmob-projeto-integrador\API-InMemory\Belmob\obj\Debug\net6.0\Belmob.genruntimeconfig.cache
 C:\Users\iasmimv\Documents\PROJETOS\Projeto integrador\BelMob\belmob-projeto-integrador\API-InMemory\Belmob\obj\Debug\net6.0\ref\Belmob.dll
+C:\Users\renatak\Documents\Digital House\ProjetoIntegrador\belmob-projeto-integrador\API-InMemory\Belmob\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

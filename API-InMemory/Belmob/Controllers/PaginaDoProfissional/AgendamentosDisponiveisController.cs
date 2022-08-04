@@ -17,9 +17,12 @@ namespace Belmob.Controllers.PaginaDoProfissional
         {
             if (DbSistema.Atendimentos.Any(u => u.Profissional == null))
             {
-                return Ok(DbSistema.Atendimentos.Include(c => c.Endereco).Include(c => c.Cliente).Include(c => c.Profissional).ToList());
+                return Ok(DbSistema.Atendimentos.Include(c => c.Endereco).Include(c => c.Cliente).Include(c => c.Profissional).Where(u => u.Profissional == null).ToList());
             }
-            return NoContent();
+            else
+            {
+                return NoContent();
+            }
         }
 
         [HttpPut("{Id}")]
