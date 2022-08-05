@@ -3,7 +3,6 @@
     public class Administrador
     {
         public string Email { get; set; }
-        public string Senha { get; set; }
-        public Login? Login { get; set; }
+        public string Senha { get; set; }      
     }
 }

@@ -17,7 +17,7 @@ namespace Belmob.Services
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, pessoa.Email.ToString()),
-                    new Claim(ClaimTypes.Role, pessoa.Nome.ToString())
+                    new Claim(ClaimTypes.Role, "Administrador")
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(
