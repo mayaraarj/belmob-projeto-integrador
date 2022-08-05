@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Belmob.Models
 {
-    [Route("api/[controller]")]
+    [Route("api/[models]")]
     [ApiController]
     public class Login : ControllerBase
     {
@@ -17,17 +17,17 @@ namespace Belmob.Models
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult<Login> CadastrarProfissional(Login login)
+        public ActionResult<Login> RealizarLogin(Login login)
         {
             if (login == null)
                 return BadRequest();
 
-            if (DbSistema.Profissionais.Any(c => c.Email == login.Email))
-                return Conflict();
+            //if (DbSistema.Login.Any(c => c.Email == login.Email))
+            //    return Conflict();
 
-            DbSistema.Login.Add(login);
-            DbSistema.SaveChanges();
-            return Ok(login);
+            //DbSistema.Login.Add(login);
+           DbSistema.SaveChanges();
+           return Ok(login);
         }
     }
 }
