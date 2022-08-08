@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cLb2GvxT4EwdhwOlKeQizWHznMui5hpzxpatXBSnL2jk5Yx3hafl/RZjExckIcoLcfjggzz1YL4P+VHSFkngEA==",
+  "dgSpecHash": "sTfkGed3lyCFmH5m6/0N2oUpuOIXUfcTyYk0wIZ/dsvwBfgBsReDgS1MQzlJkKAAFUNkn8kDd1N0wpayO11h5g==",
   "success": true,
-  "projectFilePath": "D:\\repos\\exemplo-api-mob\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
+  "projectFilePath": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

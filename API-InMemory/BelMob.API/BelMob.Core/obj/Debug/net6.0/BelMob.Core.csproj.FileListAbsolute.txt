@@ -22,3 +22,15 @@ D:\repos\exemplo-api-mob\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.dll
 D:\repos\exemplo-api-mob\BelMob.API\BelMob.Core\obj\Debug\net6.0\refint\BelMob.Core.dll
 D:\repos\exemplo-api-mob\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.pdb
 D:\repos\exemplo-api-mob\BelMob.API\BelMob.Core\obj\Debug\net6.0\ref\BelMob.Core.dll
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\bin\Debug\net6.0\BelMob.Core.deps.json
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\bin\Debug\net6.0\BelMob.Core.dll
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\bin\Debug\net6.0\BelMob.Core.pdb
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.csproj.AssemblyReference.cache
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.AssemblyInfoInputs.cache
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.AssemblyInfo.cs
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.csproj.CoreCompileInputs.cache
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.dll
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\refint\BelMob.Core.dll
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\BelMob.Core.pdb
+C:\Users\gabrielles\Desktop\belmob-projeto-integrador\API-InMemory\BelMob.API\BelMob.Core\obj\Debug\net6.0\ref\BelMob.Core.dll

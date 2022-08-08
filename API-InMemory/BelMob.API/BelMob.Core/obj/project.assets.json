@@ -8,19 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Cliente\\.nuget\\packages\\": {}
+    "C:\\Users\\gabrielles\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\exemplo-api-mob\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
+      "projectUniqueName": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
       "projectName": "BelMob.Core",
-      "projectPath": "D:\\repos\\exemplo-api-mob\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
-      "packagesPath": "C:\\Users\\Cliente\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\exemplo-api-mob\\BelMob.API\\BelMob.Core\\obj\\",
+      "projectPath": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
+      "packagesPath": "C:\\Users\\gabrielles\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gabrielles\\Desktop\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Cliente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gabrielles\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

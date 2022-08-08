@@ -11,8 +11,21 @@ namespace BelMob.Core.Mapper
 {
     public static class ClienteMapper
     {
+        public static Cliente Converter(CadastroClienteRequest request)
+        {
+            var dto = new Cliente();
+            dto.Nome = request.Nome;
+            dto.Email = request.Email;
+            dto.Senha = request.Senha;
+            
+            var endereco = new Endereco(request.Rua, request.Cep,request.Numero,request.Complemento, Enums.TipoEndereco.Residencial);
 
-        public static ClienteResponse Map(this Cliente cliente)
+            dto.AdicionarEndereco(endereco);
+
+            return dto;
+
+        }
+        public static ClienteResponse Converter(Cliente cliente)
         {
             var dto = new ClienteResponse();
             dto.Id = cliente.Id;
@@ -21,18 +34,6 @@ namespace BelMob.Core.Mapper
 
 
             return dto;
-
-        }
-
-
-        public static Cliente Map(this CadastroClienteRequest clienteRequest)
-        {
-            var cliente = new Cliente(clienteRequest.Nome, clienteRequest.Email, clienteRequest.Senha);
-            var endereco = new Endereco(clienteRequest.Rua, clienteRequest.Cep, clienteRequest.Numero, clienteRequest.Complemento, Enums.TipoEndereco.Residencial);
-
-            cliente.AdicionarEndereco(endereco);
-
-            return cliente;
 
         }
     }

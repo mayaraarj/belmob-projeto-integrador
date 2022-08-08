@@ -33,9 +33,9 @@ namespace BelMob.Core.Servicos
 
         bool IClienteService.Cadastrar(CadastroClienteRequest clienteRequest)
         {
-            var cliente = clienteRequest.Map();
+            var user = ClienteMapper.Converter(clienteRequest);
 
-            return _clienteRepository.Criar(cliente);
+            return _clienteRepository.Criar(user);
         }
 
         Cliente IClienteService.Deletar(int id)
@@ -47,7 +47,7 @@ namespace BelMob.Core.Servicos
         {
             var list = _clienteRepository.Listar();
 
-            return list.Select(c => c.Map()).ToList();
+            return list.Select(c => ClienteMapper.Converter(c)).ToList();
         }
     }
 }

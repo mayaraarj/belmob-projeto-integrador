@@ -14,6 +14,7 @@ namespace BelMob.Core.Mapper
         {
             var dto = new EnderecoResponse();
             dto.Id = endereco.Id;
+            dto.Rua = endereco.Rua;
             dto.Cep = endereco.Cep;
             dto.Numero = endereco.Numero;
             dto.Tipo = endereco.Tipo;

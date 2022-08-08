@@ -14,14 +14,6 @@ namespace BelMob.Core.Entidades
         {
         }
 
-        public Cliente(string nome, string email, string senha)
-        {
-            Nome = nome;
-            Email = email;
-            Senha = senha;
-            Enderecos = new List<Endereco>();
-
-        }
 
         [Key]
         public int Id { get; set; }
