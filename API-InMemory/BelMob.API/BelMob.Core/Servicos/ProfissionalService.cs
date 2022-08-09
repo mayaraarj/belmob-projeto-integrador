@@ -27,7 +27,7 @@ namespace BelMob.Core.Servicos
 
             _profissionalRepository.Criar(user);
         }
-        public Profissional BuscarPorId(int Id)
+        public Usuario BuscarPorId(int Id)
         {
             return _profissionalRepository.BuscarPorId(Id);
 
@@ -38,20 +38,24 @@ namespace BelMob.Core.Servicos
 
             return list.Select(c => ProfissionalMapper.Converter(c)).ToList();
         }
-        public Profissional AlterarDados(int Id, CadastroProfissionalRequest profissionalRequest)
+        public Usuario AlterarDados(int Id, CadastroProfissionalRequest profissionalRequest)
         {
             var result = _profissionalRepository.AlterarDados(Id); 
             result.Nome = profissionalRequest.Nome;
-            result.Email = profissionalRequest.Email;
+            result.Sobrenome = profissionalRequest.Sobrenome;
+            result.Email = profissionalRequest.Email;            
             result.Senha = profissionalRequest.Senha;
+            result.Sexo = profissionalRequest.Sexo;
+            result.Telefone = profissionalRequest.Telefone;
+            result.Celular = profissionalRequest.Celular;
             result.Banco = profissionalRequest.Banco;
             result.Conta = profissionalRequest.Conta;
-            result.TipoDeConta = profissionalRequest.TipoDeConta;
+            result.TipoConta = profissionalRequest.TipoConta;
             result.Agencia = profissionalRequest.Agencia;
             return _profissionalRepository.AlterarDados(Id);
         }
 
-        public Profissional Deletar(int id)
+        public Usuario Deletar(int id)
         {
             return _profissionalRepository.Deletar(id);
         }

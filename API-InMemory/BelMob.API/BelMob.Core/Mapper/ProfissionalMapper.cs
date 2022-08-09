@@ -11,21 +11,14 @@ namespace BelMob.Core.Mapper
 {
     public static class ProfissionalMapper
     {
-        public static Profissional Converter(this CadastroProfissionalRequest request)
+        public static Usuario Converter(this CadastroProfissionalRequest request)
         {
-            var dto = new Profissional();
-            dto.Nome = request.Nome;
-            dto.Email = request.Email;
-            dto.Senha = request.Senha;
-            dto.Banco = request.Banco;
-            dto.TipoDeConta = request.TipoDeConta;
-            dto.Conta = request.Conta;
-            dto.Agencia = request.Agencia;
+            var dto = new Usuario(request.TipoUsuario, request.Nome, request.Email, request.Senha, request.Sobrenome, request.Sexo, request.CPF, request.Telefone, request.Celular, request.Nascimento, request.Banco, request.Agencia, request.Conta, request.TipoConta);
 
             return dto;
         }
 
-        public static ProfissionalResponse Converter(Profissional profissional)
+        public static ProfissionalResponse Converter(Usuario profissional)
         {
             var response = new ProfissionalResponse();
             response.Id = profissional.Id;

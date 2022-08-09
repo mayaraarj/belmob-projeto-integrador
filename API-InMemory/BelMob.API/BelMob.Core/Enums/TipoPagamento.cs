@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BelMob.Core.Enums
 {
-    public enum TipoDeConta
+    public enum TipoPagamento
     {
-        Corrente,
-        Poupanca
+        Cartao = 0,
+        Pix = 1
     }
 }

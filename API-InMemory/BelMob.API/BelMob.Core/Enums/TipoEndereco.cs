@@ -8,7 +8,8 @@ namespace BelMob.Core.Enums
 {
     public enum TipoEndereco
     {
-        Residencial,
-        Trabalho
+        Residencial = 0,
+        Trabalho = 1,
+        Outros = 2
     }
 }

@@ -11,10 +11,10 @@ namespace BelMob.Core.Interfaces.Servicos
 {
     public interface IClienteService
     {
-        Cliente Cadastrar(CadastroClienteRequest cliente);
-        Cliente BuscarPorId(int Id);
-        Cliente AlterarDados(int Id, int IdEndereco, CadastroClienteRequest cliente);
+        Usuario Cadastrar(CadastroClienteRequest cliente);
+        Usuario BuscarPorId(int Id);
+        Usuario AlterarDados(int Id, int IdEndereco, CadastroClienteRequest cliente);
         List<ClienteResponse> Listar();
-        Cliente Deletar(int id);
+        Usuario Deletar(int id);
     }
 }

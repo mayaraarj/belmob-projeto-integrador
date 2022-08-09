@@ -12,27 +12,27 @@ namespace BelMob.Core.Entidades
     {
         public Endereco() { }
 
-        public Endereco(string rua, string cep, string numero, string complemento, TipoEndereco tipo)
+        public Endereco(string cep, string logradouro, string numero, string? complemento, string? referencia, string bairro, string cidade, TipoEndereco tipoEndereco)
         {
-            Rua = rua;
-            Cep = cep;
+            CEP = cep;
+            Logradouro = logradouro;
             Numero = numero;
             Complemento = complemento;
-            Tipo = tipo;
+            Referencia = referencia;
+            Bairro = bairro;
+            Cidade = cidade;
+            TipoEndereco = tipoEndereco;
         }
 
         [Key]
         public int Id { get; set; }
-
-        public string Rua { get;  set; }
-
-        public string Cep { get;  set; }
-
-        public string Numero { get;  set; }
-
-        public string Complemento { get;  set; }
-
-        public TipoEndereco Tipo { get;  set; }
-
+        public string CEP { get; set; }
+        public string Logradouro { get; set; }
+        public string Numero { get; set; }
+        public string? Complemento { get; set; }
+        public string? Referencia { get; set; }
+        public string Bairro { get; set; }
+        public string Cidade { get; set; }
+        public TipoEndereco TipoEndereco { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace BelMob.Core.Mapper
 {
     public static class ClienteMapper
     {
-        public static ClienteResponse Converter(this Cliente cliente)
+        public static ClienteResponse Converter(this Usuario cliente)
         {
             var dto = new ClienteResponse();
             dto.Id = cliente.Id;
@@ -19,30 +19,15 @@ namespace BelMob.Core.Mapper
             dto.Enderecos = cliente.Enderecos.Select(c => EnderecoMapper.Converter(c)).ToList();
             return dto;
         }
-        public static Cliente Converter(this CadastroClienteRequest request)
+        public static Usuario Converter(this CadastroClienteRequest request)
         {
-            var cliente = new Cliente(request.Nome, request.Email, request.Senha);
-            var endereco = new Endereco(request.Rua, request.Cep, request.Numero, request.Complemento, Enums.TipoEndereco.Residencial);
+            var dto = new Usuario(request.TipoUsuario, request.Nome, request.Email, request.Senha, request.Sobrenome, request.Sexo, request.CPF, request.Telefone, request.Celular, request.Nascimento);
 
-            cliente.AdicionarEndereco(endereco);
-            return cliente;
-        } 
-        //public static Cliente Converter(this CadastroClienteRequest request)
-        //{
-        //    var dto = new Cliente();
-        //    dto.Nome = request.Nome;
-        //    dto.Email = request.Email;
-        //    dto.Senha = request.Senha;
+            dto.Enderecos = new List<Endereco>();
+            dto.Enderecos.Add(new Endereco(request.Logradouro, request.CEP, request.Numero, request.Complemento, request.Referencia, request.Bairro, request.Cidade, Enums.TipoEndereco.Residencial));
+            dto.DataCadastro = DateTime.Now;
 
-        //    var endereco = new Endereco();
-        //    endereco.Rua = request.Rua;
-        //    endereco.Cep = request.Cep;
-        //    endereco.Numero = request.Numero;
-        //    endereco.Complemento = request.Complemento;
-        //    endereco.Tipo = request.Tipo;
-
-        //    dto.AdicionarEndereco(endereco);
-        //    return dto;
-        //}
+            return dto;
+        }
     }
 }

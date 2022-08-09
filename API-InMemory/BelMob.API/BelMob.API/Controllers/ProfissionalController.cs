@@ -21,7 +21,7 @@ namespace BelMob.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Profissional> CadastrarProfissional (CadastroProfissionalRequest profissional)
+        public ActionResult<Usuario> CadastrarProfissional (CadastroProfissionalRequest profissional)
         {
             _profissionalService.Cadastrar(profissional);
             return Ok(profissional);
@@ -46,13 +46,13 @@ namespace BelMob.API.Controllers
         //}
 
         [HttpPut("{Id}")]
-        public ActionResult<Profissional> Alterar(int Id, CadastroProfissionalRequest profissional)
+        public ActionResult<Usuario> Alterar(int Id, CadastroProfissionalRequest profissional)
         {
             return Ok(_profissionalService.AlterarDados(Id, profissional));
         }
 
         [HttpDelete("{Id}")]
-        public ActionResult<Profissional> Deletar(int Id)
+        public ActionResult<Usuario> Deletar(int Id)
         {
 
             return Ok(_profissionalService.Deletar(Id));

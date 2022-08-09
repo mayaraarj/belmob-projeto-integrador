@@ -1,4 +1,5 @@
-﻿using BelMob.Core.DTOs.Response;
+﻿using BelMob.Core.DTOs.Request;
+using BelMob.Core.DTOs.Response;
 using BelMob.Core.Entidades;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,14 @@ namespace BelMob.Core.Mapper
         {
             var dto = new EnderecoResponse();
             dto.Id = endereco.Id;
-            dto.Rua = endereco.Rua;
-            dto.Cep = endereco.Cep;
+            dto.Logradouro = endereco.Logradouro;
+            dto.CEP = endereco.CEP;
             dto.Numero = endereco.Numero;
-            dto.Tipo = endereco.Tipo;
+            dto.TipoEndereco = endereco.TipoEndereco;
             dto.Complemento = endereco.Complemento;
+            dto.Referencia = endereco.Referencia;
+            dto.Bairro = endereco.Bairro;
+            dto.Cidade = endereco.Cidade;
 
             return dto;
         }

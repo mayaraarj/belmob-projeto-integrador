@@ -20,31 +20,31 @@ namespace BelMob.Infrastructure.Repositories
             _context = ctx;
         }
 
-        public Profissional Criar(Profissional profissional)
+        public void Criar(Usuario usuario)
         {
-            _context.Add(profissional);
+            _context.Add(usuario);
             _context.SaveChanges();
-            return profissional;
+            //return profissional;
         }
 
-        public Profissional BuscarPorId(int id)
+        public Usuario BuscarPorId(int id)
         {
             return _context.Profissionais.FirstOrDefault(p => p.Id == id);
         }
 
-        public List<Profissional> Listar()
+        public List<Usuario> Listar()
         {
             return _context.Profissionais.ToList();
         }
-        public Profissional AlterarDados(int id)
+        public Usuario AlterarDados(int id)
         {
             var result = _context.Profissionais.Find(id);
             _context.SaveChanges();
             return result;
         }
-        public Profissional Deletar(int id)
+        public Usuario Deletar(int id)
         {
-            var profissional = _context.Profissionais.FirstOrDefault(p => p.Id == id); 
+            var profissional = _context.Profissionais.FirstOrDefault(p => p.Id == id);
             _context.Remove(profissional);
             _context.SaveChanges();
             return profissional;

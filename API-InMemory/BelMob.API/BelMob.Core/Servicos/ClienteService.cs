@@ -22,7 +22,7 @@ namespace BelMob.Core.Servicos
             _clienteRepository = clienteRepository;
         }
 
-        public Cliente Cadastrar(CadastroClienteRequest clienteRequest)
+        public Usuario Cadastrar(CadastroClienteRequest clienteRequest)
         {
             var cliente = clienteRequest.Converter();
 
@@ -30,7 +30,7 @@ namespace BelMob.Core.Servicos
             return cliente;
         }
 
-        public Cliente BuscarPorId(int Id)
+        public Usuario BuscarPorId(int Id)
         {
             return _clienteRepository.BuscarPorId(Id);
 
@@ -43,23 +43,30 @@ namespace BelMob.Core.Servicos
             return list.Select(c => c.Converter()).ToList();
         }
 
-        public Cliente AlterarDados(int Id, int IdEndereco, CadastroClienteRequest clienteRequest)
+        public Usuario AlterarDados(int Id, int IdEndereco, CadastroClienteRequest clienteRequest)
         {
             var result = _clienteRepository.BuscarPorId(Id);
-            result.Nome = clienteRequest.Nome;
+            result.Sobrenome = clienteRequest.Sobrenome;
+            result.Senha = clienteRequest.Senha;
             result.Email = clienteRequest.Email;
             result.Senha = clienteRequest.Senha;
+            result.Sexo = clienteRequest.Sexo;
+            result.Telefone = clienteRequest.Telefone;
+            result.Celular = clienteRequest.Celular;
 
             var endereco = _clienteRepository.BuscarEndereco(IdEndereco);
-            endereco.Rua = clienteRequest.Rua;
-            endereco.Cep = clienteRequest.Cep;
+            endereco.Logradouro = clienteRequest.Logradouro;
+            endereco.CEP = clienteRequest.CEP;
             endereco.Numero = clienteRequest.Numero;
             endereco.Complemento = clienteRequest.Complemento;
-            endereco.Tipo = clienteRequest.Tipo;
+            endereco.Referencia = clienteRequest.Referencia;
+            endereco.Bairro = clienteRequest.Bairro;
+            endereco.Cidade = clienteRequest.Cidade;
+            endereco.TipoEndereco = clienteRequest.TipoEndereco;
             return _clienteRepository.AlterarDados(Id);
-        }
+    }
 
-        public Cliente Deletar(int id)
+        public Usuario Deletar(int id)
         {
             return _clienteRepository.Deletar(id);
         }
