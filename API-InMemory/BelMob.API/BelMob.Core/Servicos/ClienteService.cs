@@ -43,10 +43,19 @@ namespace BelMob.Core.Servicos
             return list.Select(c => c.Converter()).ToList();
         }
 
-        public Cliente AlterarDados(int Id, CadastroClienteRequest clienteRequest)
+        public Cliente AlterarDados(int Id, int IdEndereco, CadastroClienteRequest clienteRequest)
         {
             var result = _clienteRepository.BuscarPorId(Id);
-            result = clienteRequest.Converter();
+            result.Nome = clienteRequest.Nome;
+            result.Email = clienteRequest.Email;
+            result.Senha = clienteRequest.Senha;
+
+            var endereco = _clienteRepository.BuscarEndereco(IdEndereco);
+            endereco.Rua = clienteRequest.Rua;
+            endereco.Cep = clienteRequest.Cep;
+            endereco.Numero = clienteRequest.Numero;
+            endereco.Complemento = clienteRequest.Complemento;
+            endereco.Tipo = clienteRequest.Tipo;
             return _clienteRepository.AlterarDados(Id);
         }
 

@@ -38,7 +38,11 @@ namespace BelMob.Infrastructure.Repositories
             _context.SaveChanges();
             return cliente;
         }
-
+        public Endereco BuscarEndereco(int id)
+        {
+            var endereco = _context.Enderecos.FirstOrDefault(e => e.Id == id);
+            return endereco;
+        }
         public List<Cliente> Listar()
         {
             return _context.Clientes.Include(c => c.Enderecos).ToList();

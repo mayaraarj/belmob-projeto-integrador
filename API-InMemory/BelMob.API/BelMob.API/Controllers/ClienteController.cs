@@ -37,9 +37,9 @@ namespace BelMob.API.Controllers
             return Ok(_clienteService.BuscarPorId(Id));
         }
         [HttpPut("{Id}")]
-        public ActionResult<Cliente> Alterar(int Id, CadastroClienteRequest cliente)
+        public ActionResult<Cliente> Alterar(int Id, int IdEndereco, CadastroClienteRequest cliente)
         {
-            return Ok(_clienteService.AlterarDados(Id, cliente));
+            return Ok(_clienteService.AlterarDados(Id, IdEndereco, cliente));
 
         }
         [HttpDelete("{Id}")]

@@ -13,7 +13,7 @@ namespace BelMob.Core.Interfaces.Servicos
     {
         Cliente Cadastrar(CadastroClienteRequest cliente);
         Cliente BuscarPorId(int Id);
-        Cliente AlterarDados(int Id, CadastroClienteRequest cliente);
+        Cliente AlterarDados(int Id, int IdEndereco, CadastroClienteRequest cliente);
         List<ClienteResponse> Listar();
         Cliente Deletar(int id);
     }
