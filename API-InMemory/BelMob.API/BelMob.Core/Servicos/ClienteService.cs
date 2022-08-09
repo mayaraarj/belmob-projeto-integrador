@@ -14,6 +14,7 @@ namespace BelMob.Core.Servicos
 {
     public class ClienteService : IClienteService
     {
+        
         private IClienteRepository _clienteRepository;
 
         public ClienteService(IClienteRepository clienteRepository)
@@ -21,33 +22,37 @@ namespace BelMob.Core.Servicos
             _clienteRepository = clienteRepository;
         }
 
-        Cliente IClienteService.AlterarDados(int Id, CadastroClienteRequest cliente)
+        public Cliente Cadastrar(CadastroClienteRequest clienteRequest)
         {
-            return _clienteRepository.AlterarDados(cliente, Id);
+            var cliente = clienteRequest.Converter();
+
+            _clienteRepository.Criar(cliente);
+            return cliente;
         }
 
-        Cliente IClienteService.BuscarPorId(int Id)
+        public Cliente BuscarPorId(int Id)
         {
-           return _clienteRepository.BuscarPorId(Id);
+            return _clienteRepository.BuscarPorId(Id);
+
         }
 
-        bool IClienteService.Cadastrar(CadastroClienteRequest clienteRequest)
-        {
-            var user = ClienteMapper.Converter(clienteRequest);
-
-            return _clienteRepository.Criar(user);
-        }
-
-        Cliente IClienteService.Deletar(int id)
-        {
-            return _clienteRepository.Deletar(id);
-        }
-
-        List<ClienteResponse> IClienteService.Listar()
+        public List<ClienteResponse> Listar()
         {
             var list = _clienteRepository.Listar();
 
-            return list.Select(c => ClienteMapper.Converter(c)).ToList();
+            return list.Select(c => c.Converter()).ToList();
+        }
+
+        public Cliente AlterarDados(int Id, CadastroClienteRequest clienteRequest)
+        {
+            var result = _clienteRepository.BuscarPorId(Id);
+            result = clienteRequest.Converter();
+            return _clienteRepository.AlterarDados(Id);
+        }
+
+        public Cliente Deletar(int id)
+        {
+            return _clienteRepository.Deletar(id);
         }
     }
 }

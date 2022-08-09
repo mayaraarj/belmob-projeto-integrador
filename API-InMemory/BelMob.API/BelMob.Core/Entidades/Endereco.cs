@@ -11,6 +11,7 @@ namespace BelMob.Core.Entidades
     public class Endereco
     {
         public Endereco() { }
+
         public Endereco(string rua, string cep, string numero, string complemento, TipoEndereco tipo)
         {
             Rua = rua;
@@ -18,7 +19,6 @@ namespace BelMob.Core.Entidades
             Numero = numero;
             Complemento = complemento;
             Tipo = tipo;
-          
         }
 
         [Key]

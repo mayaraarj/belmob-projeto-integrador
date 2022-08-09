@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BelMob.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ClienteController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace BelMob.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] CadastroClienteRequest cliente)
+        public ActionResult<Cliente> Cadastrar(CadastroClienteRequest cliente)
         {
             _clienteService.Cadastrar(cliente);
             return Ok(cliente);

@@ -10,10 +10,10 @@ namespace BelMob.Core.Interfaces.Repositorios
 {
     public interface IClienteRepository
     {
-        bool Criar(Cliente cliente);
+        Cliente Criar(Cliente cliente);
         Cliente BuscarPorId(int id);
         List<Cliente> Listar();
-        Cliente AlterarDados(CadastroClienteRequest clienteRequest, int id);
+        Cliente AlterarDados(int id);
         Cliente Deletar(int id);
     }
 }

@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace BelMob.Core.Mapper
 {
-    public class ProfissionalMapper
+    public static class ProfissionalMapper
     {
-        public static Profissional Converter(CadastroProfissionalRequest request)
+        public static Profissional Converter(this CadastroProfissionalRequest request)
         {
             var dto = new Profissional();
             dto.Nome = request.Nome;

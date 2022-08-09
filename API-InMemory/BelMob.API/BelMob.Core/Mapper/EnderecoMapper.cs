@@ -10,7 +10,7 @@ namespace BelMob.Core.Mapper
 {
     public static class EnderecoMapper
     {
-        public static EnderecoResponse Map(Endereco endereco)
+        public static EnderecoResponse Converter(Endereco endereco)
         {
             var dto = new EnderecoResponse();
             dto.Id = endereco.Id;

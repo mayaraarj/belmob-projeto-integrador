@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BelMob.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class ProfissionalController : ControllerBase
     {
@@ -21,14 +21,14 @@ namespace BelMob.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] CadastroProfissionalRequest profissional)
+        public ActionResult<Profissional> CadastrarProfissional (CadastroProfissionalRequest profissional)
         {
             _profissionalService.Cadastrar(profissional);
-            return Ok();
+            return Ok(profissional);
         }
 
         [HttpGet]
-        public ActionResult<List<ProfissionalResponse>> GetAll()
+        public ActionResult<List<ProfissionalResponse>> GetAll()                                                                                                                                                                                                        
         {
             return Ok(_profissionalService.Listar());
         }
