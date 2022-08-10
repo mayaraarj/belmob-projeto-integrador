@@ -20,11 +20,14 @@ namespace BelMob.Core.Mapper
 
         public static ProfissionalResponse Converter(this Profissional profissional)
         {
-            var response = new ProfissionalResponse();
-            response.Id = profissional.Id;
-            response.Nome = profissional.Nome;     
-           
-            return response;
+            if (profissional != null)
+            {
+                var response = new ProfissionalResponse();
+                response.Id = profissional.Id;
+                response.Nome = profissional.Nome;
+                return response;
+            }
+            return null;
         }
  
     }

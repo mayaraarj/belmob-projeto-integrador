@@ -62,15 +62,23 @@ namespace BelMob.Core.Servicos
             var result = _agendamentoRepository.AlterarDados(Id);
             return AgendamentoMapper.Converter(result);
         }
-        public AgendamentoResponse AceitarAgendamento(AceitarAgendamentoRequest aceitarAgendamento)
+        public AgendamentoResponse AceitarAgendamento(int id, int IdProfissional)
         {
-            var result = _agendamentoRepository.AceitarAgendamento(aceitarAgendamento);
-            return AgendamentoMapper.Converter(result);
+            return _agendamentoRepository.AceitarAgendamento(id, IdProfissional).Converter();
         }
         public AgendamentoResponse Deletar(int id)
         {
             var agendamento = _agendamentoRepository.Deletar(id);
             return AgendamentoMapper.Converter(agendamento);
+        }
+        public AgendamentoResponse Reagendar(CadastroAgendamentoRequest reagendamento, int id)
+        {
+            var agendamentoAnterior = _agendamentoRepository.BuscarPorId(id);
+            var agendamento = reagendamento.Converter();
+            agendamento.AdicionarCliente(agendamentoAnterior.Cliente);
+            agendamento.AdicionarProfissional(agendamentoAnterior.Profissional);
+            var result = _agendamentoRepository.Criar(agendamento);
+            return AgendamentoMapper.Converter(result);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace BelMob.Core.Servicos
             _profissionalRepository = profissionalRepository;
         }
 
-        public Profissional Cadastrar(CadastroProfissionalRequest profissionalRequest)
+        public ProfissionalResponse Cadastrar(CadastroProfissionalRequest profissionalRequest)
         {
             var profissionais = _profissionalRepository.Listar();
             foreach (var verificar in profissionais)
@@ -35,10 +35,8 @@ namespace BelMob.Core.Servicos
                     throw new Exception("Email já existe no banco de dados");
                 }
             }
-            var profissional = ProfissionalMapper.Converter(profissionalRequest);
-
-            _profissionalRepository.Criar(profissional);
-            return profissional;
+            var profissional = profissionalRequest.Converter();
+            return _profissionalRepository.Criar(profissional).Converter();
         }
         public List<ProfissionalResponse> Listar()
         {

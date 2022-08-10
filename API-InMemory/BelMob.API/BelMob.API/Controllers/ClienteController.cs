@@ -19,10 +19,9 @@ namespace BelMob.API.Controllers
         }
 
         [HttpPost("Cadastrar")]
-        public ActionResult<Cliente> Cadastrar(CadastroClienteRequest cliente)
+        public ActionResult<ClienteResponse> Cadastrar(CadastroClienteRequest cliente)
         {
-            _clienteService.Cadastrar(cliente);
-            return Ok(cliente);
+            return Ok(_clienteService.Cadastrar(cliente));
         }
 
         [HttpGet("Listar")]
@@ -45,9 +44,9 @@ namespace BelMob.API.Controllers
         [HttpDelete("Deletar")]
         public ActionResult<ClienteResponse> Deletar(int Id)
         {
-
             return Ok(_clienteService.Deletar(Id));
         }
+
     }
 }
 

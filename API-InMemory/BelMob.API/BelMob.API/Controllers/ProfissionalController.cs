@@ -21,10 +21,9 @@ namespace BelMob.API.Controllers
         }
 
         [HttpPost("Cadastrar")]
-        public ActionResult<Profissional> CadastrarProfissional (CadastroProfissionalRequest profissional)
+        public ActionResult<ProfissionalResponse> CadastrarProfissional(CadastroProfissionalRequest profissional)
         {
-            _profissionalService.Cadastrar(profissional);
-            return Ok(profissional);
+            return Ok(_profissionalService.Cadastrar(profissional));
         }
       
         [HttpGet("Listar")]
@@ -60,9 +59,10 @@ namespace BelMob.API.Controllers
         [HttpPut("AceitarAgendamento")]
         public ActionResult<AgendamentoResponse> AceitarAgendamento(int IdProfissional, int IdAgendamento)
         {
-            var aceitarAgendamento = new AceitarAgendamentoRequest(IdAgendamento, IdProfissional);
-            return Ok(_agendamentoService.AceitarAgendamento(aceitarAgendamento));
+           
+            return Ok(_agendamentoService.AceitarAgendamento(IdAgendamento, IdProfissional));
         }
+        
     }
 }
 

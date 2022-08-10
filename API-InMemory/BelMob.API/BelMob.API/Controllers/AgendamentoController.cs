@@ -19,11 +19,16 @@ namespace BelMob.API.Controllers
             _agendamentoService = agendamentoService;
         }
 
-        [HttpPost("Cadastrar")]
-        public ActionResult<AgendamentoResponse> Create(CadastroAgendamentoRequest agendamento, int IdCliente)
+        [HttpPost("Agendar")]
+        public ActionResult<AgendamentoResponse> Criar(CadastroAgendamentoRequest agendamento, int IdCliente)
+        {  
+            return Ok(_agendamentoService.Cadastrar(agendamento, IdCliente));
+        }
+        [HttpPost("Reagendar")]
+        public ActionResult<AgendamentoResponse> Reagendar(CadastroAgendamentoRequest reagendamento, int id)
         {
-            _agendamentoService.Cadastrar(agendamento, IdCliente);
-            return Ok(agendamento);
+            return Ok(_agendamentoService.Cadastrar(reagendamento, id));
+
         }
 
         [HttpGet("Listar")]

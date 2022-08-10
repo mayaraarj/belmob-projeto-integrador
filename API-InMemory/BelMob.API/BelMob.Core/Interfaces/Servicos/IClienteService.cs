@@ -11,7 +11,7 @@ namespace BelMob.Core.Interfaces.Servicos
 {
     public interface IClienteService
     {
-        Cliente Cadastrar(CadastroClienteRequest cliente);
+        ClienteResponse Cadastrar(CadastroClienteRequest cliente);
         ClienteResponse BuscarPorId(int Id);
         ClienteResponse AlterarDados(int Id, int IdEndereco, CadastroClienteRequest cliente);
         List<ClienteResponse> Listar();

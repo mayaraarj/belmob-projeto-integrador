@@ -18,11 +18,9 @@ namespace BelMob.Core.Mapper
             dto.Data = agendamento.Data;
             dto.TipoServico = agendamento.TipoServico;
             dto.ClienteResponse = ClienteMapper.Converter(agendamento.Cliente);
-            if (agendamento.Profissional != null)
-            {
-                dto.ProfissionalResponse = ProfissionalMapper.Converter(agendamento.Profissional);
-            }
+            dto.ProfissionalResponse = ProfissionalMapper.Converter(agendamento.Profissional);
             return dto;
+        
         }
         public static Agendamento Converter(this CadastroAgendamentoRequest agendamentoRequest)
         {

@@ -42,13 +42,12 @@ namespace BelMob.Infrastructure.Repositories
             return _context.Agendamentos.Include(i => i.Cliente).Include(i => i.Cliente.Enderecos).Include(i => i.Profissional).Where(a => a.Profissional == null).ToList();
         }
 
-        public Agendamento AceitarAgendamento(AceitarAgendamentoRequest aceitarAgendamento)
+        public Agendamento AceitarAgendamento(int id, int IdProfissional)
         {
-            var agendamento = BuscarPorId(aceitarAgendamento.IdAgendamento);
-
-            var profissional = _context.Profissionais.Find(aceitarAgendamento.IdProfissional);
-            
+            var agendamento = _context.Agendamentos.Include(a => a.Cliente).Include(a => a.Cliente.Enderecos).Include(a => a.Profissional).FirstOrDefault(a => a.Id == id);
+            var profissional = _context.Profissionais.FirstOrDefault(p => p.Id == IdProfissional);
             agendamento.AdicionarProfissional(profissional);
+            _context.Agendamentos.Include(a => a.Cliente).Include(a => a.Cliente.Enderecos).Include(a => a.Profissional);
             _context.SaveChanges();
             return agendamento;
         }
@@ -65,5 +64,6 @@ namespace BelMob.Infrastructure.Repositories
             _context.SaveChanges();
             return agendamento;
         }
+       
     }
 }

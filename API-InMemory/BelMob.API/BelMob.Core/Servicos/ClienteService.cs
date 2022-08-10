@@ -22,7 +22,7 @@ namespace BelMob.Core.Servicos
             _clienteRepository = clienteRepository;
         }
 
-        public Cliente Cadastrar(CadastroClienteRequest clienteRequest)
+        public ClienteResponse Cadastrar(CadastroClienteRequest clienteRequest)
         {
             var clientes = _clienteRepository.Listar();
             foreach (var verificar in clientes)
@@ -37,9 +37,7 @@ namespace BelMob.Core.Servicos
                 }
             }
             var cliente = clienteRequest.Converter();
-
-            _clienteRepository.Criar(cliente);
-            return cliente;
+            return _clienteRepository.Criar(cliente).Converter();
         }
 
         public ClienteResponse BuscarPorId(int Id)
