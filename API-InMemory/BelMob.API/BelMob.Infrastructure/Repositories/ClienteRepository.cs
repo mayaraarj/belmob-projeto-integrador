@@ -20,19 +20,21 @@ namespace BelMob.Infrastructure.Repositories
         {
             _context = ctx;
         }
-        public Usuario AlterarDados(int id)
+        public Cliente AlterarDados(int id)
         {
             var result = _context.Clientes.Include(c => c.Enderecos).FirstOrDefault(c => c.Id == id);
             _context.SaveChanges();
             return result;
         }
 
-        public Usuario BuscarPorId(int id)
+        public Cliente BuscarPorId(int id)
         {
-            return _context.Clientes.Include(c => c.Enderecos).FirstOrDefault(c => c.Id == id);
+            var cliente = _context.Clientes.Include(c => c.Enderecos).FirstOrDefault(c => c.Id == id);
+            _context.SaveChanges();
+            return cliente;
         }
 
-        public Usuario Criar(Usuario cliente)
+        public Cliente Criar(Cliente cliente)
         {
             _context.Clientes.Add(cliente);
             _context.SaveChanges();
@@ -43,18 +45,17 @@ namespace BelMob.Infrastructure.Repositories
             var endereco = _context.Enderecos.FirstOrDefault(e => e.Id == id);
             return endereco;
         }
-        public List<Usuario> Listar()
+        public List<Cliente> Listar()
         {
             return _context.Clientes.Include(c => c.Enderecos).ToList();
         }
 
-        public Usuario Deletar(int id)
+        public Cliente Deletar(int id)
         {
             var cliente = _context.Clientes.Include(c => c.Enderecos).FirstOrDefault(c => c.Id == id);
             _context.Remove(cliente);
             _context.SaveChanges();
             return cliente;
-
         }
 
     }    

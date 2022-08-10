@@ -21,16 +21,24 @@ namespace BelMob.Core.Servicos
             _profissionalRepository = profissionalRepository;
         }
 
-        public void Cadastrar(CadastroProfissionalRequest profissional)
+        public Profissional Cadastrar(CadastroProfissionalRequest profissionalRequest)
         {
-            var user = ProfissionalMapper.Converter(profissional);
+            var profissionais = _profissionalRepository.Listar();
+            foreach (var verificar in profissionais)
+            {
+                if (verificar.CPF == profissionalRequest.CPF)
+                {
+                    throw new Exception("CPF já existe no banco de dados");
+                }
+                if (verificar.Email == profissionalRequest.Email)
+                {
+                    throw new Exception("Email já existe no banco de dados");
+                }
+            }
+            var profissional = ProfissionalMapper.Converter(profissionalRequest);
 
-            _profissionalRepository.Criar(user);
-        }
-        public Usuario BuscarPorId(int Id)
-        {
-            return _profissionalRepository.BuscarPorId(Id);
-
+            _profissionalRepository.Criar(profissional);
+            return profissional;
         }
         public List<ProfissionalResponse> Listar()
         {
@@ -38,7 +46,7 @@ namespace BelMob.Core.Servicos
 
             return list.Select(c => ProfissionalMapper.Converter(c)).ToList();
         }
-        public Usuario AlterarDados(int Id, CadastroProfissionalRequest profissionalRequest)
+        public ProfissionalResponse AlterarDados(int Id, CadastroProfissionalRequest profissionalRequest)
         {
             var result = _profissionalRepository.AlterarDados(Id); 
             result.Nome = profissionalRequest.Nome;
@@ -52,12 +60,20 @@ namespace BelMob.Core.Servicos
             result.Conta = profissionalRequest.Conta;
             result.TipoConta = profissionalRequest.TipoConta;
             result.Agencia = profissionalRequest.Agencia;
-            return _profissionalRepository.AlterarDados(Id);
+
+            return _profissionalRepository.AlterarDados(Id).Converter();
         }
 
-        public Usuario Deletar(int id)
+        public ProfissionalResponse Deletar(int id)
         {
-            return _profissionalRepository.Deletar(id);
+            var result = _profissionalRepository.Deletar(id);
+            return ProfissionalMapper.Converter(result);
+        }
+
+        public ProfissionalResponse BuscarPorId(int Id)
+        {
+            var profissional = _profissionalRepository.BuscarPorId(Id).Converter();
+            return profissional;
         }
     }
 }

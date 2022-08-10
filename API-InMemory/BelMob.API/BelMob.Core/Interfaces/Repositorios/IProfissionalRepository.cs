@@ -10,12 +10,10 @@ namespace BelMob.Core.Interfaces.Repositorios
 {
     public interface IProfissionalRepository
     {
-        void Criar(Usuario usuario);
-
-        Usuario BuscarPorId(int id);
-
-        List<Usuario> Listar();
-        Usuario AlterarDados(int id);
-        Usuario Deletar(int id);
+        Profissional Criar(Profissional profissional);
+        Profissional BuscarPorId(int id);
+        List<Profissional> Listar();
+        Profissional AlterarDados(int id);
+        Profissional Deletar(int id);
     }
 }

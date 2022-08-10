@@ -11,10 +11,10 @@ namespace BelMob.Core.Interfaces.Servicos
 {
     public interface IProfissionalService
     {
-        void Cadastrar(CadastroProfissionalRequest profissional);
-        Usuario BuscarPorId(int Id);
+        Profissional Cadastrar(CadastroProfissionalRequest profissional);
+        ProfissionalResponse BuscarPorId(int Id);
         List<ProfissionalResponse> Listar();
-        Usuario AlterarDados(int Id, CadastroProfissionalRequest profissional);
-        Usuario Deletar(int id);
+        ProfissionalResponse AlterarDados(int Id, CadastroProfissionalRequest profissional);
+        ProfissionalResponse Deletar(int id);
     }
 }

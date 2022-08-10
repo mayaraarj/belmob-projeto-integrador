@@ -1,4 +1,5 @@
-﻿using BelMob.Core.DTOs.Response;
+﻿using BelMob.Core.DTOs.Request;
+using BelMob.Core.DTOs.Response;
 using BelMob.Core.Entidades;
 using System;
 using System.Collections.Generic;
@@ -8,26 +9,24 @@ using System.Threading.Tasks;
 
 namespace BelMob.Core.Mapper
 {
-    public class AgendamentoMapper
+    public static class AgendamentoMapper
     {
-        public static AgendamentoResponse Map(this Agendamento agendamento)
+        public static AgendamentoResponse Converter(this Agendamento agendamento)
         {
             var dto = new AgendamentoResponse();
             dto.Id = agendamento.Id;
             dto.Data = agendamento.Data;
             dto.TipoServico = agendamento.TipoServico;
-
-            if (agendamento.Usuarios != null)
-                dto.ClienteResponse = ClienteMapper.Converter (agendamento.Usuarios);
-
+            dto.ClienteResponse = ClienteMapper.Converter(agendamento.Cliente);
+            if (agendamento.Profissional != null)
+            {
+                dto.ProfissionalResponse = ProfissionalMapper.Converter(agendamento.Profissional);
+            }
             return dto;
         }
-        public static Agendamento Map(this CadastroAgendamentoRequest agendamentoRequest)
+        public static Agendamento Converter(this CadastroAgendamentoRequest agendamentoRequest)
         {
-
-
-
-            return new Agendamento(agendamentoRequest.Data, agendamentoRequest.TipoDeServico);
+            return new Agendamento(agendamentoRequest.Data, agendamentoRequest.TipoServico, agendamentoRequest.TipoPagamento, agendamentoRequest.AdicionarCupom);
         }
     }
 }

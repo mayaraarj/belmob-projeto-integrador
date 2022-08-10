@@ -9,7 +9,7 @@ namespace BelMob.Core.DTOs.Request
 {
     public class CadastroProfissionalRequest
     {
-        public TipoUsuario TipoUsuario { get; set; }
+        //public TipoUsuario TipoUsuario { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
         public string Nome { get; set; }

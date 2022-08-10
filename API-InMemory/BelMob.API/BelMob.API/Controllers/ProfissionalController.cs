@@ -12,58 +12,57 @@ namespace BelMob.API.Controllers
     public class ProfissionalController : ControllerBase
     {
         public IProfissionalService _profissionalService;
-        //public IAgendamentoService _agendamentoService;
+        public IAgendamentoService _agendamentoService;
 
-        public ProfissionalController(IProfissionalService profissionalService/*, IAgendamentoService agendamentoService*/)
+        public ProfissionalController(IProfissionalService profissionalService, IAgendamentoService agendamentoService)
         {
             _profissionalService = profissionalService;
-            //_agendamentoService = agendamentoService;
+            _agendamentoService = agendamentoService;
         }
 
-        [HttpPost]
-        public ActionResult<Usuario> CadastrarProfissional (CadastroProfissionalRequest profissional)
+        [HttpPost("Cadastrar")]
+        public ActionResult<Profissional> CadastrarProfissional (CadastroProfissionalRequest profissional)
         {
             _profissionalService.Cadastrar(profissional);
             return Ok(profissional);
         }
-
-        [HttpGet]
+      
+        [HttpGet("Listar")]
         public ActionResult<List<ProfissionalResponse>> GetAll()                                                                                                                                                                                                        
         {
             return Ok(_profissionalService.Listar());
         }
-
-        [HttpGet("{Id}")]
+       
+        [HttpGet("BuscarPeloId")]
         public ActionResult<ProfissionalResponse> BuscarPelaId(int Id)
         {
             return Ok(_profissionalService.BuscarPorId(Id));
         }
 
-        //[HttpGet("AgendamentosDisponiveis")]
-        //public ActionResult<AgendamentoResponse> Disponiveis()
-        //{
-        //    return Ok(_agendamentoService.ListarDisponiveis());
-        //}
+        [HttpGet("AgendamentosDisponiveis")]
+        public ActionResult<AgendamentoResponse> Disponiveis()
+        {
+            return Ok(_agendamentoService.ListarDisponiveis());
+        }
 
-        [HttpPut("{Id}")]
-        public ActionResult<Usuario> Alterar(int Id, CadastroProfissionalRequest profissional)
+        [HttpPut("AlterarDados")]
+        public ActionResult<ProfissionalResponse> Alterar(int Id, CadastroProfissionalRequest profissional)
         {
             return Ok(_profissionalService.AlterarDados(Id, profissional));
         }
 
-        [HttpDelete("{Id}")]
-        public ActionResult<Usuario> Deletar(int Id)
+        [HttpDelete("Deletar")]
+        public ActionResult<ProfissionalResponse> Deletar(int Id)
         {
 
             return Ok(_profissionalService.Deletar(Id));
         }
-        //[HttpPut("{IdProfissional}/agendamentos/{IdAgendamento}")]
-        //public ActionResult<AgendamentoResponse> AceitarAgendamento(int IdProfissional, int IdAgendamento)
-        //{
-        //    var aceitarAgendamento = new AceitarAgendamentoRequest(IdAgendamento, IdProfissional);
-        //    return Ok(_agendamentoService.AceitarAgendamento(aceitarAgendamento));
-
-        //}
+        [HttpPut("AceitarAgendamento")]
+        public ActionResult<AgendamentoResponse> AceitarAgendamento(int IdProfissional, int IdAgendamento)
+        {
+            var aceitarAgendamento = new AceitarAgendamentoRequest(IdAgendamento, IdProfissional);
+            return Ok(_agendamentoService.AceitarAgendamento(aceitarAgendamento));
+        }
     }
 }
 

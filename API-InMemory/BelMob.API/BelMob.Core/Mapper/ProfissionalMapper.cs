@@ -11,14 +11,14 @@ namespace BelMob.Core.Mapper
 {
     public static class ProfissionalMapper
     {
-        public static Usuario Converter(this CadastroProfissionalRequest request)
+        public static Profissional Converter(this CadastroProfissionalRequest request)
         {
-            var dto = new Usuario(request.TipoUsuario, request.Nome, request.Email, request.Senha, request.Sobrenome, request.Sexo, request.CPF, request.Telefone, request.Celular, request.Nascimento, request.Banco, request.Agencia, request.Conta, request.TipoConta);
-
+            var dto = new Profissional(request.Nome, request.Email, request.Senha, request.Sobrenome, request.Sexo, request.CPF, request.Telefone, request.Celular, request.Nascimento, request.Banco, request.Agencia, request.Conta, request.TipoConta);
+            dto.DataCadastro = DateTime.Now;
             return dto;
         }
 
-        public static ProfissionalResponse Converter(Usuario profissional)
+        public static ProfissionalResponse Converter(this Profissional profissional)
         {
             var response = new ProfissionalResponse();
             response.Id = profissional.Id;
@@ -26,5 +26,6 @@ namespace BelMob.Core.Mapper
            
             return response;
         }
+ 
     }
 }

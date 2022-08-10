@@ -18,32 +18,32 @@ namespace BelMob.API.Controllers
             _clienteService = clienteService;
         }
 
-        [HttpPost]
-        public ActionResult<Usuario> Cadastrar(CadastroClienteRequest cliente)
+        [HttpPost("Cadastrar")]
+        public ActionResult<Cliente> Cadastrar(CadastroClienteRequest cliente)
         {
             _clienteService.Cadastrar(cliente);
             return Ok(cliente);
         }
 
-        [HttpGet]
+        [HttpGet("Listar")]
         public ActionResult<List<ClienteResponse>> GetAll()
         {
             return Ok(_clienteService.Listar());
         }
 
-        [HttpGet("{Id}")]
+        [HttpGet("BuscarPeloId")]
         public ActionResult<ClienteResponse> BuscarPelaId(int Id)
         {
             return Ok(_clienteService.BuscarPorId(Id));
         }
-        [HttpPut("{Id}")]
-        public ActionResult<Usuario> Alterar(int Id, int IdEndereco, CadastroClienteRequest cliente)
+        [HttpPut("AlterarDados")]
+        public ActionResult<ClienteResponse> Alterar(int Id, int IdEndereco, CadastroClienteRequest cliente)
         {
             return Ok(_clienteService.AlterarDados(Id, IdEndereco, cliente));
 
         }
-        [HttpDelete("{Id}")]
-        public ActionResult<Usuario> Deletar(int Id)
+        [HttpDelete("Deletar")]
+        public ActionResult<ClienteResponse> Deletar(int Id)
         {
 
             return Ok(_clienteService.Deletar(Id));

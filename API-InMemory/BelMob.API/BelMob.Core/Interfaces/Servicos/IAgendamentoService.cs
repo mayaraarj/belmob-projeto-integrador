@@ -1,4 +1,5 @@
-﻿using BelMob.Core.DTOs.Response;
+﻿using BelMob.Core.DTOs.Request;
+using BelMob.Core.DTOs.Response;
 using BelMob.Core.Entidades;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,12 @@ namespace BelMob.Core.Interfaces.Servicos
 {
     public interface IAgendamentoService
     {
-        Agendamento Cadastrar(CadastroAgendamentoRequest agendamento);
-        public Agendamento BuscarPorId(int Id);
-
+        AgendamentoResponse Cadastrar(CadastroAgendamentoRequest agendamentoRequest, int IdCliente);
+        AgendamentoResponse BuscarPorId(int Id);
         List<AgendamentoResponse> Listar();
         List<AgendamentoResponse> ListarDisponiveis();
-
-        //Agendamento AceitarAgendamento(AceitarAgendamentoRequest aceitarAgendamento);
+        AgendamentoResponse AceitarAgendamento(AceitarAgendamentoRequest aceitarAgendamento);
+        AgendamentoResponse AlterarDados(int Id, CadastroAgendamentoRequest agendamentoRequest);
+        AgendamentoResponse Deletar(int id);
     }
 }

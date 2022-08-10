@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace BelMob.Core.DTOs.Request
 {
-    public class AgendamentoRequest
+    public class CadastroAgendamentoRequest
     {
         public DateTime Data { get; set; }
         public TipoServico TipoServico { get; set; }
         public TipoPagamento TipoPagamento { get; set; }
         public string AdicionarCupom { get; set; }
-        public List<Usuario> Usuarios { get; set; }
     }
 }

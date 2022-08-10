@@ -14,7 +14,7 @@ namespace BelMob.Core.Servicos
 {
     public class ClienteService : IClienteService
     {
-        
+
         private IClienteRepository _clienteRepository;
 
         public ClienteService(IClienteRepository clienteRepository)
@@ -22,18 +22,30 @@ namespace BelMob.Core.Servicos
             _clienteRepository = clienteRepository;
         }
 
-        public Usuario Cadastrar(CadastroClienteRequest clienteRequest)
+        public Cliente Cadastrar(CadastroClienteRequest clienteRequest)
         {
+            var clientes = _clienteRepository.Listar();
+            foreach (var verificar in clientes)
+            {
+                if (verificar.CPF == clienteRequest.CPF)
+                {
+                    throw new Exception("CPF já existe no banco de dados");
+                }
+                if (verificar.Email == clienteRequest.Email)
+                {
+                    throw new Exception("Email já existe no banco de dados");
+                }
+            }
             var cliente = clienteRequest.Converter();
 
             _clienteRepository.Criar(cliente);
             return cliente;
         }
 
-        public Usuario BuscarPorId(int Id)
+        public ClienteResponse BuscarPorId(int Id)
         {
-            return _clienteRepository.BuscarPorId(Id);
-
+            var cliente = _clienteRepository.BuscarPorId(Id).Converter();
+            return cliente;
         }
 
         public List<ClienteResponse> Listar()
@@ -43,7 +55,7 @@ namespace BelMob.Core.Servicos
             return list.Select(c => c.Converter()).ToList();
         }
 
-        public Usuario AlterarDados(int Id, int IdEndereco, CadastroClienteRequest clienteRequest)
+        public ClienteResponse AlterarDados(int Id, int IdEndereco, CadastroClienteRequest clienteRequest)
         {
             var result = _clienteRepository.BuscarPorId(Id);
             result.Sobrenome = clienteRequest.Sobrenome;
@@ -63,12 +75,14 @@ namespace BelMob.Core.Servicos
             endereco.Bairro = clienteRequest.Bairro;
             endereco.Cidade = clienteRequest.Cidade;
             endereco.TipoEndereco = clienteRequest.TipoEndereco;
-            return _clienteRepository.AlterarDados(Id);
-    }
 
-        public Usuario Deletar(int id)
+            return _clienteRepository.AlterarDados(Id).Converter();
+        }
+
+        public ClienteResponse Deletar(int id)
         {
-            return _clienteRepository.Deletar(id);
+            var result = _clienteRepository.Deletar(id);
+            return ClienteMapper.Converter(result);
         }
     }
 }
