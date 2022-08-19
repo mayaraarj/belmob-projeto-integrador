@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/bg-unhas.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: 'Jacques Francois';
+    color: #562551;
+}
+
+.header {
+    display: flex;
+    border-bottom: 1px solid #562551;
+    background-color: #BB92B7;
+    background-position: 100%;
+    align-items: center;
+    align-content: center;
+}
+
+.header__logo {
+    font-family: 'Hurricane';
+    font-size: 55px;
+    margin: 0 25px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.header__linha {
+    font-size: 50px;
+    margin-left: 25px;
+}
+
+.header__saudacao {
+    flex-grow: 2;
+    font-size: 20px;
+    margin: 0 25px;
+}
+
+.header__novoAgendamento {
+    flex-grow: 3;
+    font-size: 30px;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit; 
+}
+
+a:hover{
+    color: white;
+    text-decoration:underline;
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 10px 0 0 25px;
+    padding: 0;
+    font-size: 15px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 .25rem;
+    content: "»";
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 0;
+    margin: 25px 25px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    margin: 0 0 25px 0;
+    width: 600px;
+    border: 1px solid #562551;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card__data {
+    font-size: 20px;
+    padding: 10px 0 0 20px;
+}
+
+img {
+    float: left;
+    max-width: 100%;
+    max-height: 100%;    
+}
+
+.card__foto {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border: 1px solid #562551;
+    border-radius: 5px;
+}
+
+.card__foto .card-foto{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__body {
+    display: flex;
+    padding: 20px;
+}
+
+.card__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.card__botaoAgendarNovamente{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    border: 1px solid #562551;
+    background-color: #BB92B7;    
+    border-radius: 3px;
+    text-align: center;
+    height: 40px;
+    width: 200px;
+    transition-duration: 0.4s;
+    margin-top: 10px;
+}
+
+#botao___agendarNovamente{
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 20px;
+}
+
+.card__botaoAgendarNovamente:hover{
+    color: white;
+}
+
+@media(max-width:480px){
+
+    .header{
+    
+        display:flex;
+        flex-direction: column;      
+    
+    }
+}
