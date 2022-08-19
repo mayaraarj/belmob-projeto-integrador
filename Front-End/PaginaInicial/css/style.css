@@ -1,0 +1,91 @@
+@import url(https://fonts.google.com/specimen/Source+Sans+Pro);
+@import url(https://fonts.google.com/specimen/Hurricane);
+@import url(https://fonts.google.com/specimen/Jacques+Francois);
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px solid #562551;
+  background-color: #BB92B7;
+  background-position: 100%;
+  align-items: center;
+  align-content: center;
+}
+
+.header__logo {
+  font-family: 'Hurricane';
+  font-size: 50px;
+  color: #562551;
+  margin: 0 25px;
+}
+
+.header__linha {
+  font-size: 50px;
+  margin-left: 25px;
+  color: #562551;
+}
+
+.breadcrumb ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 10px 0 0 25px;
+  padding: 0;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  display: inline-block;
+  margin: 0 .25rem;
+  content: "»";
+}
+
+body {
+    background-image:url(/images/unhas.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height: 100vh;
+}
+
+h1{
+  font-family: 'Jacques Francois','Times New Roman', Times, serif;
+  font-size: 60px;
+  color: #562551;
+  align-self: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.cliente{
+  opacity: 0.7;
+}
+
+.funcionario {
+  opacity: 0.7;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content:space-evenly;
+  column-gap: 50px;
+}
+
+p{
+  font-family: 'Jacques Francois','Times New Roman', Times, serif;
+  font-size: 25px;
+  color: #562551;
+  align-self: center;
+}
