@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css"> 
+    <link href='https://fonts.googleapis.com/css?family=Hurricane' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Jacques Francois' rel='stylesheet'>
 </head>
 <style>
     *{box-sizing:content-box}
@@ -16,43 +18,49 @@
     max-width: 100%;
     max-height: 100%;
 }
-.cabecalho{
-    display:flex;
-    height: 20%;
-    background: #BB92B7;
-    border: 1px solid rgba(86, 37, 81, 0.53);
+.header {
+    display: flex;
+    border-bottom: 1px solid #562551;
+    background-color: #BB92B7;
+    background-position: 100%;
+    align-items: center;
+    align-content: center;
 }
-.belmob{
+.header__logo {
     font-family: 'Hurricane';
-    font-style: normal;
-    font-size: 50px;
-    color: #562551;
+    font-size: 55px;
+    margin: 0 25px;
+    color:  #562551;;
 }
-.como{
-    margin-left: 20px;
-    font-family: 'Source Sans Pro';
-    font-size: 20px;
-    line-height: 75px;
-    color: #562551;
-    text-align:center;
+h1 {
+    margin: 0;
 }
-.service{
-    margin-left: 20px;
-    font-family: 'Source Sans Pro';
-    font-size: 20px;
-    line-height: 75px;
-    color: #562551;
-    text-align:center;
+.header__linha {
+    font-size: 10px;
+    margin-left: 25px;
 }
-.contact{
-    margin-left: 20px;
-    font-family: 'Source Sans Pro';
-    font-size: 20px;
-    line-height: 75px;
-    color: #562551;
-    text-align:center;
+a{
+    color: white;
+    text-decoration: inherit; 
 }
-
+a:hover{
+    color: white;
+    text-decoration:underline;
+}
+.breadcrumb ul {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 10px 0 0 25px;
+    padding: 0;
+    font-size: 15px;
+}
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 .25rem;
+    content: "»";
+}
 .formularios{
     display: flex;
 }
@@ -77,37 +85,28 @@
     margin-bottom: 0px;
 }
 .formCliente{
-    margin-top: 100%;
-    font-family: 'Hurricane';
+    margin-top: 96%;
+    font-family: 'Jacques Francois';
     font-size: 20px;
     color: white;
     text-align:end;
 }
 .formProfissional{
     margin-top: 100%;
-    font-family: 'Hurricane';
+    font-family: 'Jacques Francois';
     font-size: 20px;
     color: #562551;
     text-align:end;
 }
 .btn-primary{
     background-color: #562551;
-    font-family: 'Hurricane';
+    font-family: 'Jacques Francois';
     font-size: 20px;
     border: 1px solid #FFFFFF;
     color: white;
 }
 
 @media(max-width:480px){
-.cabecalho{
-    display:flex;
-    flex-direction: column;
-    height: 20%;
-    background: #BB92B7;
-    border: 1px solid rgba(86, 37, 81, 0.53);
-}
-
-
 .formularios{
     flex-direction: column;
 }
@@ -125,16 +124,19 @@
 }
 </style>
 <body class="body">
-    <div class="cabecalho">
-            <div class="belmob">BelMob |</div>
-            <div class="como">Como Funciona</div>
-            <div class="service">Serviços</div>
-            <div class="contact">Contato</div>
-        </div>        
+    <div class="header">
+        <div class="header__logo">
+            <span>BelMob |</span>
+        </div>     
     </div>
-
     <div class="formularios">
         <div class="formularioCliente">
+            <nav aria-label="breadcrumb" class="breadcrumb">
+                <ul>
+                    <li><a href='#'>Início</a></li>
+                    <li><span aria-current="page">Login</span></li>
+                </ul>
+            </nav>
             <form class="formCliente">
                 <h1 class="titulo">Área Do Cliente</h1>
                 <div class="form-group">
@@ -147,7 +149,6 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
-                <button type="submit" class="btn btn-primary">Cadastro</button>
             </form>
         </div>
         
@@ -164,7 +165,6 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
-                <button type="submit" class="btn btn-primary">Cadastro</button>
             </form>
         </div>
     </div>

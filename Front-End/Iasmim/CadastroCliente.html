@@ -4,58 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>CadastroCliente</title>
+    <link rel="stylesheet" href="./style.css"> 
+    <link href='https://fonts.googleapis.com/css?family=Hurricane' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Jacques Francois' rel='stylesheet'>
 </head>
 <style>
 .body{
     background-image: url(./imagens/MicrosoftTeams-image.png);
     background-repeat: no-repeat;
-    background-size: 1400px 680px;
-    font-family: 'Times New Roman', Times, serif;
+    background-size: cover;
+    background-position: center;
     margin:0;
     padding:0;
 }
-.cabecalho{
-    display:flex;
+.header {
+    display: flex;
+    border-bottom: 1px solid #562551;
     background-color: #BB92B7;
-    border: 1px solid rgba(86, 37, 81, 0.53);
+    background-position: 100%;
+    align-items: center;
+    align-content: center;
 }
-.bellmob{
-    margin-top: 5px;
+.header__logo {
     font-family: 'Hurricane';
-    font-style: normal;
-    font-size: 50px;
-    color: #562551;
+    font-size: 55px;
+    margin: 0 25px;
+    color:  #562551;;
 }
-.bell{
-    margin-left: 10px;
-    font-family: 'Hurricane';
-    font-style: normal;
-    font-size: 50px;
+h1 {
+    margin: 0;
+}
+.header__linha {
+    font-size: 10px;
+    margin-left: 25px;
+}
+a{
     color: #562551;
+    text-decoration: inherit; 
+}
+a:hover{
+    color: white;
+    text-decoration:underline;
+}
+.breadcrumb ul {
+    color: #562551;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 10px 0 0 25px;
+    padding: 0;
+    font-size: 15px;
+}
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 .25rem;
+    content: "»";
 }
 
-.form{
+.formularios{
     background: rgba(241, 241, 241, 0.43);
     margin-top: 30px;
     width: 90%;
     margin-left: 50px;
     border: 2px solid rgba(86, 37, 81, 0.53);
-    font-family: 'Hurricane';
+    font-family: 'Jacques Francois';
     font-style: normal;
     font-size: 15px;
     color: #22031f;
 }
-.form1{
-    display: flex;
-}
-.form2{
+.form{
     display: flex;
 }
 
 .sub_titulo{
     text-align: center;
-    font-family: 'Hurricane';
+    font-family: 'Jacques Francois';
     font-style: normal;
     font-size: 25px;
     color: #562551;
@@ -66,21 +90,24 @@
     flex-direction: column;
     margin-left: 10px;
 }
-.formulario1{
+.dadosCadastrais, .endereco{
     margin-left: 10px;
     width: 50%;
     display: flex;
+    margin-right: 10px;
     flex-direction: column;
 }
-.formulario3{
+.email{
     width: 50%;
     display: flex;
+    margin-right: 10px;
     flex-direction: column;
     margin-left: 10px;
 }
-.formulario4{
+.senha{
     margin-left: 10px;
     width: 50%;
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
 }
@@ -88,7 +115,7 @@
     margin: 15px;
     background: #22031f;
     text-align: center;
-    font-family: 'Hurricane';
+    font-family: 'Jacques Francois';
     font-style: normal;
     font-size: 25px;
     color: white;
@@ -96,17 +123,52 @@
 .estado{
     margin-top: 10px;
 }
+@media(max-width:480px){
+.formularios{
+    background: rgba(241, 241, 241, 0.43);
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 10px;
+    border: 2px solid rgba(86, 37, 81, 0.53);
+    font-family: 'Jacques Francois';
+    font-style: normal;
+    font-size: 15px;
+    color: #22031f;
+}
+.form{
+    flex-direction: column;
+}
+.sub_titulo{
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.formulario, .dadosCadastrais, .endereco, .email, .senha{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+}
 
 </style>
 <body class="body">
-    <div class="cabecalho">
-        <div class="bellmob">BelMob</div>
-        <div class="bell">|</div>
-    </div>        
-    <div class="form">
+    <div class="header">
+        <div class="header__logo">
+            <span>BelMob |</span>
+        </div>     
+    </div>      
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ul>
+            <li><a href='#'>Início</a></li>
+            <li><span aria-current="page">Login</span></li>
+        </ul>
+    </nav>
+    <div class="formularios">
         <div class="sub_titulo">Dados Cadastrais</div>
-        <div class="form1">
-            <div class="formulario">
+        <div class="form">
+            <div class="dadosCadastrais">
                 <label for="nome">Nome:* </label>
                 <input type="nome" class="form-control" id="nome"></input>
                 <label for="sobrenome">Sobrenome:* </label>
@@ -128,7 +190,7 @@
                         <input type="date" class="form-control" id="Nascimento">  
                     </div>
                    
-                    <div class="formulario1">
+                    <div class="endereco">
                         <label for="cep">CEP:* </label>
                         <input type="number" class="form-control" id="cep"></input>
                         <label for="logradouro">Logradouro:* </label>
@@ -153,14 +215,14 @@
                     </div>
             </div>
             <div class="sub_titulo">Email e senha:*</div>
-            <div class="form2">
-                <div class="formulario3">
+            <div class="form">
+                <div class="email">
                     <label for="email">Email:* </label>
                     <input type="email" class="form-control" id="email"></input>
                     <label for="emailreply">Digite novamente seu Email:* </label>
                     <input type="name" class="form-control" id="emailreply"></input>
                 </div>
-                <div class="formulario4">
+                <div class="senha">
                     <label for="senha">Senha:* </label>
                     <input type="password" class="form-control" id="senha"></input>
                     <label for="emailreply">Digite novamente sua senha:* </label>
