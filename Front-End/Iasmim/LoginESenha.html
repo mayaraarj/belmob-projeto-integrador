@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+    *{box-sizing:content-box}
+.body{
+    margin:0;
+    padding:0;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+.cabecalho{
+    display:flex;
+    height: 20%;
+    background: #BB92B7;
+    border: 1px solid rgba(86, 37, 81, 0.53);
+}
+.belmob{
+    font-family: 'Hurricane';
+    font-style: normal;
+    font-size: 50px;
+    color: #562551;
+}
+.como{
+    margin-left: 20px;
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
+    line-height: 75px;
+    color: #562551;
+    text-align:center;
+}
+.service{
+    margin-left: 20px;
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
+    line-height: 75px;
+    color: #562551;
+    text-align:center;
+}
+.contact{
+    margin-left: 20px;
+    font-family: 'Source Sans Pro';
+    font-size: 20px;
+    line-height: 75px;
+    color: #562551;
+    text-align:center;
+}
+
+.formularios{
+    display: flex;
+}
+
+.formularioCliente{
+    width: 50%;
+    background-image: url(./imagens/beauty\ 2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border: 1px solid rgba(86, 37, 81, 0.53);
+}
+.formularioProfissional{
+    width: 50%;
+    background-image: url(./imagens/manicure.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border: 1px solid rgba(86, 37, 81, 0.53);
+}
+.titulo{
+    margin-bottom: 0px;
+}
+.formCliente{
+    margin-top: 100%;
+    font-family: 'Hurricane';
+    font-size: 20px;
+    color: white;
+    text-align:end;
+}
+.formProfissional{
+    margin-top: 100%;
+    font-family: 'Hurricane';
+    font-size: 20px;
+    color: #562551;
+    text-align:end;
+}
+.btn-primary{
+    background-color: #562551;
+    font-family: 'Hurricane';
+    font-size: 20px;
+    border: 1px solid #FFFFFF;
+    color: white;
+}
+
+@media(max-width:480px){
+.cabecalho{
+    display:flex;
+    flex-direction: column;
+    height: 20%;
+    background: #BB92B7;
+    border: 1px solid rgba(86, 37, 81, 0.53);
+}
+
+
+.formularios{
+    flex-direction: column;
+}
+
+.formularioCliente{
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+.formularioProfissional{
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+}
+</style>
+<body class="body">
+    <div class="cabecalho">
+            <div class="belmob">BelMob |</div>
+            <div class="como">Como Funciona</div>
+            <div class="service">Serviços</div>
+            <div class="contact">Contato</div>
+        </div>        
+    </div>
+
+    <div class="formularios">
+        <div class="formularioCliente">
+            <form class="formCliente">
+                <h1 class="titulo">Área Do Cliente</h1>
+                <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Cadastro</button>
+            </form>
+        </div>
+        
+        <div class="formularioProfissional">
+            <form class="formProfissional">
+                <h1 class="titulo">Área Do Profissional</h1>
+                <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Cadastro</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

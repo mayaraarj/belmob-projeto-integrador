@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<style>
+.body{
+    background-image: url(./imagens/MicrosoftTeams-image.png);
+    background-repeat: no-repeat;
+    background-size: 1400px 680px;
+    font-family: 'Times New Roman', Times, serif;
+    margin:0;
+    padding:0;
+}
+.cabecalho{
+    display:flex;
+    background-color: #BB92B7;
+    border: 1px solid rgba(86, 37, 81, 0.53);
+}
+.bellmob{
+    margin-top: 5px;
+    font-family: 'Hurricane';
+    font-style: normal;
+    font-size: 50px;
+    color: #562551;
+}
+.bell{
+    margin-left: 10px;
+    font-family: 'Hurricane';
+    font-style: normal;
+    font-size: 50px;
+    color: #562551;
+}
+
+.form{
+    background: rgba(241, 241, 241, 0.43);
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 50px;
+    border: 2px solid rgba(86, 37, 81, 0.53);
+    font-family: 'Hurricane';
+    font-style: normal;
+    font-size: 15px;
+    color: #22031f;
+}
+.form1{
+    display: flex;
+}
+.form2{
+    display: flex;
+}
+.form3{
+    display: flex;
+}
+
+.sub_titulo{
+    text-align: center;
+    font-family: 'Hurricane';
+    font-style: normal;
+    font-size: 20px;
+    color: #562551;
+}
+.formulario{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.formulario1{
+    margin-left: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.formulario3{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.formulario4{
+    margin-left: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.formulario5{
+    margin-left: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.formulario6{
+    margin-left: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.btn-lg{
+    margin: 15px;
+    background: #22031f;
+    text-align: center;
+    font-family: 'Hurricane';
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    margin-right: auto;
+}
+.estado{
+    margin-top: 10px;
+}
+.dados{
+    display: flex;
+}
+
+</style>
+<body class="body">
+    <div class="cabecalho">
+        <div class="bellmob">BelMob</div>
+        <div class="bell">|</div>
+    </div>        
+    <div class="form">
+        <div class="sub_titulo">Dados Cadastrais</div>
+        <div class="form1">
+            <div class="formulario">
+                <label for="nome">Nome:* </label>
+                <input type="nome" class="form-control" id="nome"></input>
+                <label for="sobrenome">Sobrenome:* </label>
+                <input type="name" class="form-control" id="sobrenome"></input>
+                <label for="sobrenome">Sexo:* </label>
+                    <select class="custom-select">
+                        <option selected>Escolha uma opção</option>
+                        <option value="1">Feminino</option>
+                        <option value="2">Masculino</option>
+                        <option value="3">Prefiro não informar</option>
+                    </select>
+                        <label for="cpf">CPF:* </label>
+                        <input type="number" class="form-control" id="cpf"> </input> 
+                        <label for="telefone">Telefone:</label>
+                        <input type="number" class="form-control" id="telefone">
+                        <label for="celular">Celular:* </label>
+                        <input type="number" class="form-control" id="celular">
+                        <label for="nascimento">Nascimento </label>
+                        <input type="date" class="form-control" id="Nascimento">  
+                    </div>
+                   
+                    <div class="formulario1">
+                        <label for="cep">CEP:* </label>
+                        <input type="number" class="form-control" id="cep"></input>
+                        <label for="logradouro">Logradouro:* </label>
+                        <input type="name" class="form-control" id="logradouro"></input>
+                        <label for="numero">Numero:* </label>
+                        <input type="number" class="form-control" id="numero"> </input> 
+                        <label for="complemento">Complemento:</label>
+                        <input type="name" class="form-control" id="complemento">
+                        <label for="referencia">Referencia: </label>
+                        <input type="name" class="form-control" id="referencia">
+                        <label for="bairro">Bairro:* </label>
+                        <input type="name" class="form-control" id="bairro"> 
+                        <div class="estado">
+                            <label for="bairro">Cidade:* </label>
+                            <input type="name" class="form-control" id="cidade">  
+                            <label for="Estado">Estado:* </label>
+                            <select class="custom-select">
+                                <option value="1">SP</option>
+                                <option value="2">RJ</option>
+                            </select>
+                        </div> 
+                    </div>
+            </div>
+            <div class="sub_titulo">Email e senha:*</div>
+            <div class="form2">
+                <div class="formulario3">
+                    <label for="email">Email:* </label>
+                    <input type="email" class="form-control" id="email"></input>
+                    <label for="emailreply">Digite novamente seu Email:* </label>
+                    <input type="name" class="form-control" id="emailreply"></input>
+                </div>
+                <div class="formulario4">
+                    <label for="senha">Senha:* </label>
+                    <input type="password" class="form-control" id="senha"></input>
+                    <label for="emailreply">Digite novamente sua senha:* </label>
+                    <input type="password" class="form-control" id="senhareply"></input>
+                </div>
+            </div>
+            <div class="sub_titulo">Dados bancários:*</div>
+            <div class="form3">
+                <div class="formulario5">
+                        <label for="email">Banco:* </label>
+                        <input type="email" class="form-control" id="email"></input>
+                        <label for="email">Agencia:* </label>
+                        <input type="email" class="form-control" id="email"></input>
+                </div>
+                <div class="formulario6">
+                    <label for="emailreply">Conta:* </label>
+                        <input type="name" class="form-control" id="emailreply"></input>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                            Corrente
+                            </label>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Poupança
+                            </label>
+                            <button type="button" class="btn btn-primary btn-lg">Finalizar</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
