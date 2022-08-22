@@ -116,3 +116,19 @@ h1 {
 button {
   margin-left: 134px;
 }
+
+@media(max-width:480px){
+  
+  form{
+      flex-direction: column;
+      background: rgba(241, 241, 241, 0.43);
+      margin-top: 5px;
+      width: 90%;
+      margin-left: 10px;
+      border: 2px solid rgba(86, 37, 81, 0.53);
+      font-family: 'Jacques Francois';
+      font-style: normal;
+      font-size: 15px;
+      color: #22031f;
+  }
+  }
