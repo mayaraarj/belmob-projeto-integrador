@@ -1,6 +1,6 @@
 @import url(https://fonts.google.com/specimen/Source+Sans+Pro);
 @import url(https://fonts.google.com/specimen/Hurricane);
-@import url(https://fonts.google.com/specimen/Jacques+Francois);
+@import url(https://fonts.google.com/specimen/Jacques+Francois); 
 
 
 * {
@@ -17,33 +17,54 @@
   align-items: center;
   align-content: center;
 }
-
 .header__logo {
   font-family: 'Hurricane';
   font-size: 50px;
-  color: #562551;
   margin: 0 25px;
+  color:  #562551;;
+}
+.linha{
+  font-family: 'Jacques Francois';
+  font-size: 30px;
+  margin-left: 5px;
 }
 
-.header__linha {
-  font-size: 50px;
-  margin-left: 25px;
-  color: #562551;
+.header__logo:hover{
+
+  color: rgb(235, 197, 222);
+  
+  text-decoration:underline;
+  }
+
+.a:hover{
+
+  color: rgb(235, 197, 222);
+  
+  text-decoration:underline;
+  
+  }
+
+.entrar{
+  font-family: 'Jacques Francois';
+  font-size: 15px;
+  margin-right: 20px;
 }
 
-.breadcrumb ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 10px 0 0 25px;
-  padding: 0;
-}
+.entrar:hover{
 
-.breadcrumb li:not(:last-child)::after {
-  display: inline-block;
-  margin: 0 .25rem;
-  content: "»";
-}
+  color: rgb(235, 197, 222);
+  
+  text-decoration:underline;
+  
+  }
+  
+  a:hover{
+  
+  color: rgb(235, 197, 222);
+  
+  text-decoration:underline;
+  
+  }
 
 body {
     background-image:url(/images/unhas.jpg);
