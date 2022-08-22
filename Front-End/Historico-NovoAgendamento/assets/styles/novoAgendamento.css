@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/bg-unhas.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Jacques Francois';
+    color: #562551;
+}
+
+.header {
+    display: flex;
+    border-bottom: 1px solid #562551;
+    background-color: #BB92B7;
+    background-position: 100%;
+    align-items: center;
+    align-content: center;
+}
+
+.header__logo {
+    font-family: 'Hurricane';
+    font-size: 55px;
+    margin: 0 25px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.header__linha {
+    font-size: 50px;
+    margin-left: 25px;
+}
+
+.header__saudacao {
+    flex-grow: 2;
+    font-size: 20px;
+    margin: 0 25px;
+}
+
+.header__novoAgendamento {
+    flex-grow: 3;
+    font-size: 30px;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit; 
+}
+
+a:hover{
+    color: white;
+    text-decoration:underline;
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 10px 0 0 25px;
+    padding: 0;
+    font-size: 15px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 .25rem;
+    content: "»";
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
+    padding: 0;
+    margin: 25px 25px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.container__servicos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30%;
+    border: 1px solid #562551;
+    border: none;
+}
+
+.card__servicos__titulo {
+    flex-basis: content;
+    font-size: 30px;
+    text-align: center;
+}
+
+.card__servicos__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    border: 1px solid #562551;
+    border-radius: 3px;
+    padding: 15px;
+    background-color: white;
+    height: 520px;
+}
+
+.card__servicos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: 100%;
+    border: 1px solid #562551;
+    border-radius: 3px;
+    width: 100%;
+    height: 150px;
+}
+
+.card__servicos.bg__maos::before {
+    content: "";
+    background-image: url("../images/bg-maos.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.card__servicos.bg__pes::before {
+    content: "";
+    background-image: url("../images/bg-pes.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.card__servicos.bg__maosPes::before {
+    content: "";
+    background-image: url("../images/bg-maosPes.png");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.texto__servicos {
+    background: none;
+    border: none;
+    position: relative;
+    color: #562551;
+    font-size: 35px;
+    line-height: 0.9;
+    text-align: center;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;    
+}
+
+.texto__servicos:focus{
+    color: #BB92B7;
+}
+
+.container__novoAgendamento {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 30%;
+    border: 1px solid #562551;
+    border: none;
+}
+
+.card__novoAgendamento__titulo {
+    flex-basis: content;
+    font-size: 30px;
+    text-align: center;
+}
+
+.card__novoAgendamento__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 400px;
+    border: 1px solid #562551;
+    border-radius: 3px;
+    padding: 15px;
+    background-color: white;
+    height: 520px;
+}
+
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    width: 100%;
+}
+
+.icon {
+    padding: 10px;
+    color: #BB92B7;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+}
+
+input::placeholder {
+    font-size: 15px;
+    color: #BB92B7;
+}
+
+.container__pagamento {
+    display: flex;
+    position: relative;
+    margin: 10px;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.card__novoAgendamento__pagamento {
+    border: 1px solid #562551;
+}
+
+.texto__comoPagar {
+    border-style: none;
+    border-bottom: 1px solid #562551;
+}
+
+.icon__pagamento {
+    color: #BB92B7;
+    min-width: 50px;
+    left: 40px;
+    top: 3px;
+}
+
+.texto__pix,
+.texto__cartao {
+    margin-left: 30px;
+}
+
+.container__pagamento input {
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #562551;
+}
+
+.container__pagamento:hover input~.checkmark {
+    background-color: #BB92B7;
+}
+
+.container__pagamento input:checked~.checkmark {
+    background-color: #BB92B7;
+}
+
+.checkmark:after {
+    content: "";
+    position: relative;
+    display: none;
+}
+
+.container__pagamento input:checked~.checkmark:after {
+    display: block;
+}
+
+.container__pagamento .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.card__novoAgendamento__resumoTotal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #562551;
+    border-radius: 3px;
+    height: 150px;
+    margin-top: 0;
+    font-size: 15px;
+}
+
+.novoAgendamento__info__resumo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.novoAgendamento__info__total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+
+.card__novoAgendamento__botaoAgendar {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+    border: 1px solid #562551;
+    background-color: #BB92B7;    
+    border-radius: 3px;
+    text-align: center;
+    height: 40px;
+    width: 50%;
+    transition-duration: 0.4s;    
+}
+
+#botao___agendar {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    font-size: 20px;
+}
+
+.card__novoAgendamento__botaoAgendar:hover{
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+

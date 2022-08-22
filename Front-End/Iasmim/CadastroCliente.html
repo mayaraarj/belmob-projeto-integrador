@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CadastroCliente</title>
+    <link rel="stylesheet" href="./style.css"> 
+    <link href='https://fonts.googleapis.com/css?family=Hurricane' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Jacques Francois' rel='stylesheet'>
+</head>
+<style>
+.body{
+    background-image: url(./imagens/MicrosoftTeams-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin:0;
+    padding:0;
+}
+.header {
+    display: flex;
+    border-bottom: 1px solid #562551;
+    background-color: #BB92B7;
+    background-position: 100%;
+    align-items: center;
+    align-content: center;
+}
+.header__logo {
+    font-family: 'Hurricane';
+    font-size: 55px;
+    margin: 0 25px;
+    color:  #562551;;
+}
+h1 {
+    margin: 0;
+}
+.header__linha {
+    font-size: 10px;
+    margin-left: 25px;
+}
+a{
+    color: #562551;
+    text-decoration: inherit; 
+}
+a:hover{
+    color: white;
+    text-decoration:underline;
+}
+.breadcrumb ul {
+    color: #562551;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 10px 0 0 25px;
+    padding: 0;
+    font-size: 15px;
+}
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 .25rem;
+    content: "»";
+}
+
+.formularios{
+    background: rgba(241, 241, 241, 0.43);
+    margin-top: 30px;
+    width: 90%;
+    margin-left: 50px;
+    border: 2px solid rgba(86, 37, 81, 0.53);
+    font-family: 'Jacques Francois';
+    font-style: normal;
+    font-size: 15px;
+    color: #22031f;
+}
+.form{
+    display: flex;
+}
+
+.sub_titulo{
+    text-align: center;
+    font-family: 'Jacques Francois';
+    font-style: normal;
+    font-size: 25px;
+    color: #562551;
+}
+.formulario{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.dadosCadastrais, .endereco{
+    margin-left: 10px;
+    width: 50%;
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+}
+.email{
+    width: 50%;
+    display: flex;
+    margin-right: 10px;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.senha{
+    margin-left: 10px;
+    width: 50%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.btn-lg{
+    margin: 15px;
+    background: #22031f;
+    text-align: center;
+    font-family: 'Jacques Francois';
+    font-style: normal;
+    font-size: 25px;
+    color: white;
+}
+.estado{
+    margin-top: 10px;
+}
+@media(max-width:480px){
+.formularios{
+    background: rgba(241, 241, 241, 0.43);
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 10px;
+    border: 2px solid rgba(86, 37, 81, 0.53);
+    font-family: 'Jacques Francois';
+    font-style: normal;
+    font-size: 15px;
+    color: #22031f;
+}
+.form{
+    flex-direction: column;
+}
+.sub_titulo{
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.formulario, .dadosCadastrais, .endereco, .email, .senha{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+}
+
+</style>
+<body class="body">
+    <div class="header">
+        <div class="header__logo">
+            <span>BelMob |</span>
+        </div>     
+    </div>      
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ul>
+            <li><a href='#'>Início</a></li>
+            <li><span aria-current="page">Login</span></li>
+        </ul>
+    </nav>
+    <div class="formularios">
+        <div class="sub_titulo">Dados Cadastrais</div>
+        <div class="form">
+            <div class="dadosCadastrais">
+                <label for="nome">Nome:* </label>
+                <input type="nome" class="form-control" id="nome"></input>
+                <label for="sobrenome">Sobrenome:* </label>
+                <input type="name" class="form-control" id="sobrenome"></input>
+                <label for="sobrenome">Sexo:* </label>
+                    <select class="custom-select">
+                        <option selected>Escolha uma opção</option>
+                        <option value="1">Feminino</option>
+                        <option value="2">Masculino</option>
+                        <option value="3">Prefiro não informar</option>
+                    </select>
+                        <label for="cpf">CPF:* </label>
+                        <input type="number" class="form-control" id="cpf"> </input> 
+                        <label for="telefone">Telefone:</label>
+                        <input type="number" class="form-control" id="telefone">
+                        <label for="celular">Celular:* </label>
+                        <input type="number" class="form-control" id="celular">
+                        <label for="nascimento">Nascimento </label>
+                        <input type="date" class="form-control" id="Nascimento">  
+                    </div>
+                   
+                    <div class="endereco">
+                        <label for="cep">CEP:* </label>
+                        <input type="number" class="form-control" id="cep"></input>
+                        <label for="logradouro">Logradouro:* </label>
+                        <input type="name" class="form-control" id="logradouro"></input>
+                        <label for="numero">Numero:* </label>
+                        <input type="number" class="form-control" id="numero"> </input> 
+                        <label for="complemento">Complemento:</label>
+                        <input type="name" class="form-control" id="complemento">
+                        <label for="referencia">Referencia: </label>
+                        <input type="name" class="form-control" id="referencia">
+                        <label for="bairro">Bairro:* </label>
+                        <input type="name" class="form-control" id="bairro"> 
+                        <div class="estado">
+                            <label for="bairro">Cidade:* </label>
+                            <input type="name" class="form-control" id="cidade">  
+                            <label for="Estado">Estado:* </label>
+                            <select class="custom-select">
+                                <option value="1">SP</option>
+                                <option value="2">RJ</option>
+                            </select>
+                        </div> 
+                    </div>
+            </div>
+            <div class="sub_titulo">Email e senha:*</div>
+            <div class="form">
+                <div class="email">
+                    <label for="email">Email:* </label>
+                    <input type="email" class="form-control" id="email"></input>
+                    <label for="emailreply">Digite novamente seu Email:* </label>
+                    <input type="name" class="form-control" id="emailreply"></input>
+                </div>
+                <div class="senha">
+                    <label for="senha">Senha:* </label>
+                    <input type="password" class="form-control" id="senha"></input>
+                    <label for="emailreply">Digite novamente sua senha:* </label>
+                    <input type="password" class="form-control" id="senhareply"></input>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg">Finalizar</button>
+        </div>
+    </div>
+</body>
+</html>
