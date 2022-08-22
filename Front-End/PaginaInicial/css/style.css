@@ -57,7 +57,8 @@ h1{
   font-family: 'Jacques Francois','Times New Roman', Times, serif;
   font-size: 60px;
   color: #562551;
-  align-self: center;
+  text-align: center;
+  padding: 30px;
 }
 
 .flex-container {
@@ -70,10 +71,12 @@ h1{
 
 .cliente{
   opacity: 0.7;
+  width: 80%;
 }
 
 .funcionario {
   opacity: 0.7;
+  width: 80%;
 }
 
 .grid-container{
@@ -81,7 +84,21 @@ h1{
   grid-template-columns: auto auto auto;
   justify-content:space-evenly;
   column-gap: 50px;
+  padding: 20px 20px 20px 20px;
 }
+
+.servicoMao{
+  width: 30%;
+}
+
+.servicoPe{
+  width: 30%;
+}
+
+.servicoMaosPes{
+  width: 30%;
+}
+
 
 p{
   font-family: 'Jacques Francois','Times New Roman', Times, serif;
@@ -89,3 +106,46 @@ p{
   color: #562551;
   align-self: center;
 }
+
+form {
+	margin: 30px 0;
+  background: rgba(241, 241, 241, 0.43);
+  width: 90%;
+  margin-left: 50px;
+  border: 2px solid rgba(86, 37, 81, 0.53);
+  font-family: 'Jacques Francois';
+    font-style: normal;
+    font-size: 15px;
+    color: #855a80;
+  padding: 5%;
+}
+
+form label, form legend {
+	display:block;
+	font-size: 20px;
+	margin: 0 0 10px;
+  
+}
+
+.input-padrao {
+	display: column;
+	margin: 0 0 20px;
+	padding: 10px 25px;
+	width: 50%;
+}
+
+@media(max-width:480px){
+  
+  form{
+      flex-direction: column;
+      background: rgba(241, 241, 241, 0.43);
+      margin-top: 5px;
+      width: 90%;
+      margin-left: 10px;
+      border: 2px solid rgba(86, 37, 81, 0.53);
+      font-family: 'Jacques Francois';
+      font-style: normal;
+      font-size: 15px;
+      color: #22031f;
+  }
+  }
