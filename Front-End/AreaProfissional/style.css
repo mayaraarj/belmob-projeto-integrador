@@ -10,19 +10,82 @@ body {
 }
 /* Menu */
 
-header {
-  /* position: absolute; */
-  width: 100%;
-  height: 83px;
-  /* left: 0px;
+/* header { */
+/* position: absolute; */
+/* width: 100%;
+  height: 83px; */
+/* left: 0px;
   top: 0px; */
-  background: #bb92b7;
+/* background: #bb92b7;
   border: 2px solid #562551;
   display: flex;
+  align-items: center; */
+/* } */
+
+.header {
+  display: flex;
+  border-bottom: 1px solid #562551;
+  background-color: #bb92b7;
+  background-position: 100%;
   align-items: center;
+  align-content: center;
+}
+.header__logo {
+  font-family: "Hurricane";
+  font-size: 50px;
+  margin: 0 25px;
+  color: #562551;
+}
+.linha {
+  font-family: "Jacques Francois";
+  font-size: 30px;
+  margin-left: 5px;
+}
+.comoFunciona {
+  font-family: "Jacques Francois";
+  font-size: 15px;
+  margin-right: 20px;
+}
+.contato {
+  font-family: "Jacques Francois";
+  font-size: 15px;
+  margin-right: 20px;
 }
 
-.caixa {
+.servicos {
+  font-family: "Jacques Francois";
+  font-size: 15px;
+  margin-right: 20px;
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+  }
+  .comoFunciona,
+  .contato,
+  .servicos {
+    margin-top: 10px;
+  }
+}
+
+
+a {
+  color: #562551;
+  text-decoration: inherit;
+}
+
+.header__logo:hover {
+  color: rgb(235, 197, 222);
+  text-decoration: underline;
+}
+
+.a:hover {
+  color: rgb(235, 197, 222);
+  text-decoration: underline;
+}
+
+/* .caixa {
   margin-left: 16px;
 }
 
@@ -31,8 +94,8 @@ header {
   width: 2px;
   background-color: #562551;
   margin-left: 28px;
-}
-
+} */
+/* 
 .ola {
   font-style: normal;
   font-weight: 400;
@@ -42,7 +105,7 @@ header {
   margin-left: 25px;
 
   color: #562551;
-}
+} */
 
 h1 {
   font-style: normal;
@@ -117,18 +180,17 @@ button {
   margin-left: 134px;
 }
 
-@media(max-width:480px){
-  
-  form{
-      flex-direction: column;
-      background: rgba(241, 241, 241, 0.43);
-      margin-top: 5px;
-      width: 90%;
-      margin-left: 10px;
-      border: 2px solid rgba(86, 37, 81, 0.53);
-      font-family: 'Jacques Francois';
-      font-style: normal;
-      font-size: 15px;
-      color: #22031f;
+@media (max-width: 480px) {
+  form {
+    flex-direction: column;
+    background: rgba(241, 241, 241, 0.43);
+    margin-top: 5px;
+    width: 90%;
+    margin-left: 10px;
+    border: 2px solid rgba(86, 37, 81, 0.53);
+    font-family: "Jacques Francois";
+    font-style: normal;
+    font-size: 15px;
+    color: #22031f;
   }
-  }
+}

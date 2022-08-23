@@ -3,6 +3,8 @@
 <script setup>
 import PaginaInicialVue from './pages/PaginaInicial.vue';
 import PaginaInicial from './pages/PaginaInicial.vue';
+import AreaProfissionalVue from './pages/AreaProfissional.vue';
+import AreaProfissional from './pages/AreaProfissional.vue';
 </script>
 
 <template>
@@ -16,6 +18,7 @@ import PaginaInicial from './pages/PaginaInicial.vue';
   </div>
     </header>
   <PaginaInicial></PaginaInicial>
+  <AreaProfissional></AreaProfissional>
 </template>
 
 <style scoped>
