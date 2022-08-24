@@ -90,9 +90,9 @@
                             Poupança
                             </label>
                         </div>
-                        <button type="button" class="btn btn-primary btn-lg">Finalizar</button>
                 </div>
             </div>
+                <button type="button" class="btn btn-primary btn-lg">Finalizar</button>
         </div>
 </body>
 </template>
@@ -150,6 +150,9 @@ a:hover{
 
 #exampleRadios2{
     margin-left: 10px;
+}
+.form-check{
+    margin-top: 30px;
 }
 .formularios{
     display: flex;
