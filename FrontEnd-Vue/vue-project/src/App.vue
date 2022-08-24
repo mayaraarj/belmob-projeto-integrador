@@ -5,6 +5,9 @@ import PaginaInicial from './pages/PaginaInicial.vue';
 import AreaProfissional from './pages/AreaProfissional.vue';
 import Historico from './pages/Historico.vue';
 import Agendamento from './pages/Agendamento.vue';
+import Login from './pages/Login.vue';
+import CadastroCliente from './pages/CadastroCliente.vue';
+import CadastroProfissional from './pages/CadastroProfissional.vue';
 </script>
 
 <template>
@@ -21,6 +24,9 @@ import Agendamento from './pages/Agendamento.vue';
   <AreaProfissional></AreaProfissional>
   <Historico></Historico>
   <Agendamento></Agendamento>
+  <Login></Login>
+  <CadastroCliente></CadastroCliente>
+  <CadastroProfissional></CadastroProfissional>
 </template>
 
 <style scoped>
