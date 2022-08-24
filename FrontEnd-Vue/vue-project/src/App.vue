@@ -1,10 +1,10 @@
 
 
 <script setup>
-import PaginaInicialVue from './pages/PaginaInicial.vue';
 import PaginaInicial from './pages/PaginaInicial.vue';
-import AreaProfissionalVue from './pages/AreaProfissional.vue';
 import AreaProfissional from './pages/AreaProfissional.vue';
+import Historico from './pages/Historico.vue';
+import Agendamento from './pages/Agendamento.vue';
 </script>
 
 <template>
@@ -19,6 +19,8 @@ import AreaProfissional from './pages/AreaProfissional.vue';
     </header>
   <PaginaInicial></PaginaInicial>
   <AreaProfissional></AreaProfissional>
+  <Historico></Historico>
+  <Agendamento></Agendamento>
 </template>
 
 <style scoped>

@@ -132,7 +132,10 @@
 
 body {
   background-image: url("../assets/imagens/unhas.jpg");
-  background-size: cover;
+   background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 .header {
   display: flex;

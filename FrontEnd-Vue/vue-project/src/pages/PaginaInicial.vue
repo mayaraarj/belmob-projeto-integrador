@@ -72,10 +72,10 @@
 
 body {
     background-image:url(../assets/imagens/unhas.jpg);
-    background-position:center;
     background-repeat: no-repeat;
-    background-size:cover;
-    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 h1{
