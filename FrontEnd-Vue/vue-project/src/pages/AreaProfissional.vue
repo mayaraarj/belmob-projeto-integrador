@@ -2,11 +2,13 @@
 
 <template>
   <body>
+    <nav aria-label="breadcrumb" class="breadcrumb">
+        <ul>
+            <li><span aria-current="page">Area Profissional</span></li>
+        </ul>
+    </nav>
     <main>
       <h1 class="titulo-principal">Área do Profissional</h1>
-      <div class="area-prof">
-        <p>Início » <span>Área do Profissional</span></p>
-      </div>
     </main>
 
     <section class="principal">
@@ -136,6 +138,31 @@ body {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
+}
+a{
+    color: inherit;
+    text-decoration: inherit; 
+}
+
+a:hover{
+    color: rgb(235, 197, 222);
+    text-decoration:underline;
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-family: 'Jacques Francois';
+    margin: 10px 0 0 25px;
+    padding: 0;
+    font-size: 15px;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 .25rem;
+    content: "»";
 }
 .header {
   display: flex;

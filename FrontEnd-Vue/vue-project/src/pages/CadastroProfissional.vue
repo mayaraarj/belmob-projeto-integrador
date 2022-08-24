@@ -1,10 +1,8 @@
 <template>
 <body class="body">   
-    <nav aria-label="breadcrumb" class="breadcrumb">
+      <nav aria-label="breadcrumb" class="breadcrumb">
         <ul>
-            <li><a href='#'>Início</a></li>
-            <li><span class="a" aria-current="page">Entrar</span></li>
-            <li><span class="a" aria-current="page">Cadastro</span></li>
+            <li><span aria-current="page">Cadastro Profissional</span></li>
         </ul>
     </nav>
     <div class="formularios">

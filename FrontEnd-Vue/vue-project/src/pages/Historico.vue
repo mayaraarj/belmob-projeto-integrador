@@ -4,8 +4,7 @@
   <body>
     <nav aria-label="breadcrumb" class="breadcrumb">
       <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="../pages/novoAgendamento.html">Novo Agendamento</a></li>
+        <li><a href="../pages/Agendamento.vue">Novo Agendamento</a></li>
         <li><span aria-current="page">Histórico</span></li>
       </ul>
     </nav>

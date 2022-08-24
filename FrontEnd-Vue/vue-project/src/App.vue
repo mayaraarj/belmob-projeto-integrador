@@ -14,10 +14,11 @@ import CadastroProfissional from './pages/CadastroProfissional.vue';
    <header>
     <div class="header">
       <div class="header__logo">
-          <span><a href='#'></a>BelMob</span>
+          <span><a href='./pages/PaginaInicial.vue'>BelMob</a></span>
           <span class="linha">|</span>
       </div>   
-      <div class="entrar"><a href='#'></a>Entrar</div>
+      <div class="inicio"><a href='./pages/PaginaInicial.vue'>Início</a></div>
+      <div class="entrar"><a href='./pages/Login.vue'>Entrar</a></div>
   </div>
     </header>
   <PaginaInicial></PaginaInicial>
@@ -57,34 +58,30 @@ import CadastroProfissional from './pages/CadastroProfissional.vue';
   text-decoration:underline;
   }
 
-.a:hover{
-
-  color: rgb(235, 197, 222);
-  
-  text-decoration:underline;
-  
-  }
-
-.entrar{
+.entrar, .inicio{
   font-family: 'Jacques Francois';
   font-size: 15px;
   margin-right: 20px;
 }
 
 .entrar:hover{
+  color: rgb(235, 197, 222);
+  text-decoration:underline;
+  }
+  
+.inicio:hover{
+    color: rgb(235, 197, 222);
+    text-decoration:underline;
+}
 
+a{
+  color: inherit;
+  text-decoration: inherit; 
+}
+
+a:hover{
   color: rgb(235, 197, 222);
-  
-  text-decoration:underline;
-  
-  }
-  
-  a:hover{
-  
-  color: rgb(235, 197, 222);
-  
-  text-decoration:underline;
-  
-  }
+  text-decoration:underline; 
+}
 
 </style>
