@@ -1,5 +1,12 @@
 <template>
 <body class="body">
+     <nav aria-label="breadcrumb" class="breadcrumb">
+        <ul>
+            <li><a href='#'>Início</a></li>
+            <li><span class="a" aria-current="page">Entrar</span></li>
+            <li><span class="a" aria-current="page">Cadastro</span></li>
+        </ul>
+    </nav>
     <div class="formularios">
         <div class="sub_titulo">Dados Cadastrais</div>
         <div class="form">
@@ -74,6 +81,47 @@
     background-position: center;
     margin:0;
     padding:0;
+}
+h1 {
+    margin: 0;
+}
+.header__linha {
+    font-size: 10px;
+    margin-left: 25px;
+}
+a{
+    color: #562551;
+    text-decoration: inherit; 
+}
+.header__logo:hover{
+    color: rgb(235, 197, 222);
+    text-decoration:underline;
+}
+.a:hover{
+    color: rgb(235, 197, 222);
+    text-decoration:underline;
+}
+.entrar:hover{
+    color: rgb(235, 197, 222);
+    text-decoration:underline;
+}
+a:hover{
+    color: rgb(235, 197, 222);
+    text-decoration:underline;
+}
+.breadcrumb ul {
+    color: #562551;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 10px 0 0 25px;
+    padding: 0;
+    font-size: 15px;
+}
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 .25rem;
+    content: "»";
 }
 .form-control{
     width: 80%;

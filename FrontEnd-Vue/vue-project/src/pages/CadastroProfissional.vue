@@ -81,16 +81,16 @@
                     <label for="emailreply">Conta:* </label>
                         <input type="name" class="form-control" id="emailreply">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
-                            <label class="form-check-label" for="exampleRadios1">
+                            <input type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
+                            <label for="exampleRadios1">
                             Corrente
                             </label>
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
+                            <label for="exampleRadios2">
                             Poupança
                             </label>
-                            <button type="button" class="btn btn-primary btn-lg">Finalizar</button>
                         </div>
+                        <button type="button" class="btn btn-primary btn-lg">Finalizar</button>
                 </div>
             </div>
         </div>
@@ -148,7 +148,9 @@ a:hover{
     content: "»";
 }
 
-
+#exampleRadios2{
+    margin-left: 10px;
+}
 .formularios{
     display: flex;
     flex-direction: column;
