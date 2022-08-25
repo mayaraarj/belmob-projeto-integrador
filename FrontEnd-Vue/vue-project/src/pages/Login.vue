@@ -64,11 +64,15 @@
 }
 .formularioCliente{
     width: 50%;
-    background-image: url(../assets/imagens/beauty.png);
+    background-image: url(../assets/imagens/beautyCliente.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     border: 1px solid rgba(86, 37, 81, 0.53);
+}
+
+.formularioCliente img {
+    opacity: 1;
 }
 .formularioProfissional{
     width: 50%;

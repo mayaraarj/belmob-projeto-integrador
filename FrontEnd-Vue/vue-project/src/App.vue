@@ -1,33 +1,19 @@
-
-
 <script setup>
 import PaginaInicial from './pages/PaginaInicial.vue';
-import AreaProfissional from './pages/AreaProfissional.vue';
-import Historico from './pages/Historico.vue';
-import Agendamento from './pages/Agendamento.vue';
-import Login from './pages/Login.vue';
-import CadastroCliente from './pages/CadastroCliente.vue';
-import CadastroProfissional from './pages/CadastroProfissional.vue';
 </script>
 
 <template>
    <header>
     <div class="header">
       <div class="header__logo">
-          <span><a href='./pages/PaginaInicial.vue'>BelMob</a></span>
+          <span><RouterLink to="/">Belmob </RouterLink></span>
           <span class="linha">|</span>
       </div>   
-      <div class="inicio"><a href='./pages/PaginaInicial.vue'>Início</a></div>
-      <div class="entrar"><a href='./pages/Login.vue'>Entrar</a></div>
+      <div class="inicio"><RouterLink to="/">Início</RouterLink></div>
+      <div class="entrar"><RouterLink to="/login">Entrar</RouterLink></div>
   </div>
     </header>
-  <PaginaInicial></PaginaInicial>
-  <AreaProfissional></AreaProfissional>
-  <Historico></Historico>
-  <Agendamento></Agendamento>
-  <Login></Login>
-  <CadastroCliente></CadastroCliente>
-  <CadastroProfissional></CadastroProfissional>
+  <RouterView/>
 </template>
 
 <style scoped>
