@@ -4,7 +4,7 @@
   <body>
     <nav aria-label="breadcrumb" class="breadcrumb">
       <ul>
-        <li><a href="../pages/Agendamento.vue">Novo Agendamento</a></li>
+        <li><RouterLink class="a" to="/agendamento">Agendamento</RouterLink></li>
         <li><span aria-current="page">Histórico</span></li>
       </ul>
     </nav>

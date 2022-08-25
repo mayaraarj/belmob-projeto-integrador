@@ -5,7 +5,7 @@
 <body>
     <nav aria-label="breadcrumb" class="breadcrumb">
         <ul>
-            <li><a href='../pages/historico.vue'>Histórico</a></li>
+              <li><RouterLink class="a" to="/historico">Histórico</RouterLink></li>
             <li><span aria-current="page">Novo Agendamento</span></li>
         </ul>
     </nav>

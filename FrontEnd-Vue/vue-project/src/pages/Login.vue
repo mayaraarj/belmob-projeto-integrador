@@ -5,16 +5,16 @@
             <form class="formCliente">
                 <h1 class="titulo">Área Do Cliente</h1>
                 <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                <small id="emailHelp" class="form-text text-muted"></small>
+                <label for="email">Email</label>
+                <input v-model="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Seu email">
+                <small id="email" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
-                <label for="exampleInputPassword1">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                <label for="senha">Senha</label>
+                <input v-model="senha" type="password" class="form-control" id="senha" placeholder="Senha">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <button type="submit" class="btn btn-primary">Cadastro</button>
+                <button @click="Login()" type="submit" class="btn btn-primary"><RouterLink class="botao" to="/agendamento">Login</RouterLink></button>
+                <button type="button" class="btn btn-primary"><RouterLink class="botao" to="/cadastrocliente">Cadastro</RouterLink></button>
             </form>
         </div>
         
@@ -22,21 +22,41 @@
             <form class="formProfissional">
                 <h1 class="titulo">Área Do Profissional</h1>
                 <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
-                <small id="emailHelp" class="form-text text-muted"></small>
+                <label for="email">Email</label>
+                <input v-model="email" type="email" class="form-control" id="email" aria-describedby="email" placeholder="Seu email">
+                <small id="email" class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
-                <label for="exampleInputPassword1">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                <label for="senha">Senha</label>
+                <input v-model="senha" type="password" class="form-control" id="senha" placeholder="Senha">
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-                <button type="submit" class="btn btn-primary">Cadastro</button>
+                <button @click="Login()" type="submit" class="btn btn-primary"><RouterLink class="botao" to="/areaprofissional">Login</RouterLink></button>
+               <button type="button" class="btn btn-primary"><RouterLink class="botao" to="/cadastroprofissional">Cadastro</RouterLink></button>
             </form>
         </div>
     </div>
 </body>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            email: null,
+            senha: null
+        }
+    },
+    methods: {
+        Login: function(){
+            var LoginUsuario = {
+            email: this.email,
+            senha: this.senha
+            }
+            console.log(LoginUsuario);
+        }
+    }
+}
+</script>
 
 <style>
 *{box-sizing:content-box}
@@ -107,6 +127,11 @@
     color: white;
     margin-top: 5px;
 }
+.botao{
+     font-family: 'Jacques Francois';
+    font-size: 20px;
+     color: white;
+}
 @media(max-width:480px){
     .header{
         flex-direction: column;
@@ -130,8 +155,3 @@
 }
 }
 </style>
-<script>
-export default{
-    name: "Login",
-};
-</script>
