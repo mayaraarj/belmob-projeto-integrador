@@ -1,11 +1,7 @@
 <template>
 
     <body class="body">
-        <nav aria-label="breadcrumb" class="breadcrumb">
-            <ul>
-                <li><span aria-current="page">Cadastro Profissional</span></li>
-            </ul>
-        </nav>
+         <h1 class="titulo">Cadastro de profissionais</h1>
         <div class="formularios">
             <div class="sub_titulo">Dados Cadastrais</div>
             <div class="form">
@@ -161,6 +157,13 @@ export default {
     background-attachment: fixed;
     margin: 0;
     padding: 0;
+}
+.titulo{
+    text-align: center;
+    font-family: 'Jacques Francois';
+    font-size: 40px;
+    color: #562551;
+    padding: 2%;
 }
 
 h1 {

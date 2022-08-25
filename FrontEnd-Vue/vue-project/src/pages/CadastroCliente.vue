@@ -1,7 +1,7 @@
 <template>
 
     <body class="body">
-        <h1 class="titulo">Cadastro de Clientes</h1>
+        <h1 class="titulo">Cadastro de clientes</h1>
         <div class="formularios">
             <div class="sub_titulo">Dados Cadastrais</div>
             <div class="form">
@@ -130,6 +130,7 @@ export default {
     font-family: 'Jacques Francois';
     font-size: 40px;
     color: #562551;
+    padding: 2%;
 }
 a {
     color: #562551;

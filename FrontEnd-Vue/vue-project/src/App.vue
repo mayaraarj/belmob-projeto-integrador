@@ -1,5 +1,4 @@
 <script setup>
-import PaginaInicial from './pages/PaginaInicial.vue';
 </script>
 
 <template>
