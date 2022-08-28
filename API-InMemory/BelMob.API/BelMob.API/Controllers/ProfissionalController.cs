@@ -25,13 +25,19 @@ namespace BelMob.API.Controllers
         {
             return Ok(_profissionalService.Cadastrar(profissional));
         }
-      
+
+        [HttpPost("Login")]
+        public ActionResult<int> LoginCliente(Credencial credencial)
+        {
+            return Ok(_profissionalService.LoginProfissional(credencial.Email, credencial.Senha));
+        }
+
         [HttpGet("Listar")]
-        public ActionResult<List<ProfissionalResponse>> GetAll()                                                                                                                                                                                                        
+        public ActionResult<List<ProfissionalResponse>> GetAll()
         {
             return Ok(_profissionalService.Listar());
         }
-       
+
         [HttpGet("BuscarPeloId")]
         public ActionResult<ProfissionalResponse> BuscarPelaId(int Id)
         {
@@ -57,12 +63,12 @@ namespace BelMob.API.Controllers
             return Ok(_profissionalService.Deletar(Id));
         }
         [HttpPut("AceitarAgendamento")]
-        public ActionResult<AgendamentoResponse> AceitarAgendamento(int IdProfissional, int IdAgendamento)
+        public ActionResult<AgendamentoResponse> AceitarAgendamento(AceitarAgendamentoRequest aceitar)
         {
-           
-            return Ok(_agendamentoService.AceitarAgendamento(IdAgendamento, IdProfissional));
+
+            return Ok(_agendamentoService.AceitarAgendamento(aceitar));
         }
-        
+
     }
 }
 

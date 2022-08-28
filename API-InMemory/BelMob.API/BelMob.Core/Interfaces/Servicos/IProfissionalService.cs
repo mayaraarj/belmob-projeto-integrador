@@ -16,5 +16,6 @@ namespace BelMob.Core.Interfaces.Servicos
         List<ProfissionalResponse> Listar();
         ProfissionalResponse AlterarDados(int Id, CadastroProfissionalRequest profissional);
         ProfissionalResponse Deletar(int id);
+        public int LoginProfissional(string email, string senha);
     }
 }

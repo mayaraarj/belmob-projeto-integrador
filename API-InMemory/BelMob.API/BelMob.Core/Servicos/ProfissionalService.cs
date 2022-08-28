@@ -12,7 +12,7 @@ using BelMob.Core.Mapper;
 
 namespace BelMob.Core.Servicos
 {
-    public class ProfissionalService : IProfissionalService 
+    public class ProfissionalService : IProfissionalService
     {
         private IProfissionalRepository _profissionalRepository;
 
@@ -46,10 +46,10 @@ namespace BelMob.Core.Servicos
         }
         public ProfissionalResponse AlterarDados(int Id, CadastroProfissionalRequest profissionalRequest)
         {
-            var result = _profissionalRepository.AlterarDados(Id); 
+            var result = _profissionalRepository.AlterarDados(Id);
             result.Nome = profissionalRequest.Nome;
             result.Sobrenome = profissionalRequest.Sobrenome;
-            result.Email = profissionalRequest.Email;            
+            result.Email = profissionalRequest.Email;
             result.Senha = profissionalRequest.Senha;
             result.Sexo = profissionalRequest.Sexo;
             result.Telefone = profissionalRequest.Telefone;
@@ -72,6 +72,18 @@ namespace BelMob.Core.Servicos
         {
             var profissional = _profissionalRepository.BuscarPorId(Id).Converter();
             return profissional;
+        }
+        public int LoginProfissional(string email, string senha)
+        {
+            var resultado = _profissionalRepository.LoginProfissional(email, senha);
+            if (resultado != null)
+            {
+                return resultado;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

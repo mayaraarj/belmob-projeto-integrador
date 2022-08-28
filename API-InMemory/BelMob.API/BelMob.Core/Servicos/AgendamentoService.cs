@@ -30,9 +30,9 @@ namespace BelMob.Core.Servicos
 
         }
 
-        public AgendamentoResponse Cadastrar(CadastroAgendamentoRequest agendamentoRequest, int IdCliente)
+        public AgendamentoResponse Cadastrar(CadastroAgendamentoRequest agendamentoRequest)
         {
-            var cliente = _clienteRepository.BuscarPorId(IdCliente);
+            var cliente = _clienteRepository.BuscarPorId(agendamentoRequest.IdCliente);
             var agendamento = agendamentoRequest.Converter();
             agendamento.AdicionarCliente(cliente);
             var result = _agendamentoRepository.Criar(agendamento);
@@ -62,9 +62,9 @@ namespace BelMob.Core.Servicos
             var result = _agendamentoRepository.AlterarDados(Id);
             return AgendamentoMapper.Converter(result);
         }
-        public AgendamentoResponse AceitarAgendamento(int id, int IdProfissional)
+        public AgendamentoResponse AceitarAgendamento(AceitarAgendamentoRequest aceitar)
         {
-            return _agendamentoRepository.AceitarAgendamento(id, IdProfissional).Converter();
+            return _agendamentoRepository.AceitarAgendamento(aceitar).Converter();
         }
         public AgendamentoResponse Deletar(int id)
         {

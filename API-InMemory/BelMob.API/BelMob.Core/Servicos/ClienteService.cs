@@ -36,6 +36,7 @@ namespace BelMob.Core.Servicos
                     throw new Exception("Email já existe no banco de dados");
                 }
             }
+
             var cliente = clienteRequest.Converter();
             return _clienteRepository.Criar(cliente).Converter();
         }
@@ -81,6 +82,19 @@ namespace BelMob.Core.Servicos
         {
             var result = _clienteRepository.Deletar(id);
             return ClienteMapper.Converter(result);
+        }
+
+        public int LoginCliente(string email, string senha)
+        {
+            var resultado = _clienteRepository.LoginCliente(email, senha);
+            if (resultado != null)
+            {
+                return resultado;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

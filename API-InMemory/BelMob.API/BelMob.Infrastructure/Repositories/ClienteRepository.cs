@@ -58,6 +58,16 @@ namespace BelMob.Infrastructure.Repositories
             return cliente;
         }
 
-    }    
-}
+        public int LoginCliente(string email, string senha)
+        {
+            var cliente = _context.Clientes.FirstOrDefault(c => c.Email == email && c.Senha == senha);
+            if (cliente == null)
+            {
+                return 0;
+            }
+            int id = cliente.Id;
+            return id;
 
+        }
+    }
+}

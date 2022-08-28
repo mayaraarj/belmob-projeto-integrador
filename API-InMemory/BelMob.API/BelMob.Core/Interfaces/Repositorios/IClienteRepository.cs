@@ -16,5 +16,7 @@ namespace BelMob.Core.Interfaces.Repositorios
         List<Cliente> Listar();
         Cliente AlterarDados(int id);
         Cliente Deletar(int id);
+        public int LoginCliente(string email, string senha);
     }
 }
+

@@ -21,7 +21,15 @@ namespace BelMob.API.Controllers
         [HttpPost("Cadastrar")]
         public ActionResult<ClienteResponse> Cadastrar(CadastroClienteRequest cliente)
         {
-            return Ok(_clienteService.Cadastrar(cliente));
+            try
+            {
+                var result = _clienteService.Cadastrar(cliente);
+                return Ok(result);
+            }
+            catch
+            {
+                return BadRequest("Teste");
+            }
         }
 
         [HttpGet("Listar")]
@@ -35,6 +43,12 @@ namespace BelMob.API.Controllers
         {
             return Ok(_clienteService.BuscarPorId(Id));
         }
+        [HttpPost("Login")]
+        public ActionResult<int> LoginCliente(Credencial credencial)
+        {
+            return Ok(_clienteService.LoginCliente(credencial.Email, credencial.Senha));
+        }
+
         [HttpPut("AlterarDados")]
         public ActionResult<ClienteResponse> Alterar(int Id, int IdEndereco, CadastroClienteRequest cliente)
         {

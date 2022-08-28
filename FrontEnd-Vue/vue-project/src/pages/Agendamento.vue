@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
 <body>
     <nav aria-label="breadcrumb" class="breadcrumb">
@@ -21,15 +18,15 @@
 
                 <div class="card-info">                    
                     <div class="card-maos">
-                        <button class="botao-servico">Mãos R$ 40,00</button>
+                        <button @click="tipoServico == maos" class="botao-servico">Mãos R$ 40,00</button>
                     </div>
 
                     <div class="card-pes">
-                        <button class="botao-servico">Pés R$ 40,00</button>
+                        <button @click="tipoServico == pes" class="botao-servico">Pés R$ 40,00</button>
                     </div>
 
                     <div class="card-maosPes">
-                        <button class="botao-servico">Mãos e Pés R$ 60,00</button>
+                        <button @click="tipoServico == maospes" class="botao-servico">Mãos e Pés R$ 60,00</button>
                     </div>
                 </div>
             </div>
@@ -48,7 +45,7 @@
                     <form class="card-dataHora">
                         <div class="input-icons">
                             <i class="fas fa-calendar-alt icon"></i>
-                            <input class="input-field" placeholder="Escolha a data e a hora do atendimento" 
+                            <input v-model="data" class="input-field" placeholder="Escolha a data e a hora do atendimento" 
                                 type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" />
                         </div>
                     </form>
@@ -91,7 +88,7 @@
                     </div>      
                     
                     <div class="card-botaoAgendar">
-                        <button class="botao-agendar">Agendar</button>
+                        <button @click="cad()" class="botao-agendar">Agendar</button>
                     </div>
                 </div>                
             </div>
@@ -100,8 +97,38 @@
 </body>
 </template>
 
-<style scoped>
+<script>
+// import { ClienteService } from '../services/ClienteService';
 
+// export default {
+//     data() {
+//         return {
+//            data: null,
+//            tipoServico: null,
+//            tipoPagamento: null,
+//            adicionarCupon: null
+//         }
+//     },
+//     methods: {
+//         cad: function(){
+//             var cadastroUsuario = {
+//             idCliente: 1,
+//             data: "2022-08-27T23:46:52.438Z",
+//             tipoServico: 0,
+//             tipoPagamento: 0
+//             }
+//             console.log(cadastroUsuario);
+//             const ok = ClienteService.Agendar(cadastroUsuario).then(i=> i);
+//             if(ok){
+//                 alert("Cadastro efetuado com sucesso!");
+//             }
+//         }
+//     }
+//}
+
+</script>
+
+<style scoped>
 * {
     margin: 0;
     padding: 0;

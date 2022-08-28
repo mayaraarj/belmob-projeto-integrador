@@ -20,14 +20,14 @@ namespace BelMob.API.Controllers
         }
 
         [HttpPost("Agendar")]
-        public ActionResult<AgendamentoResponse> Criar(CadastroAgendamentoRequest agendamento, int IdCliente)
-        {  
-            return Ok(_agendamentoService.Cadastrar(agendamento, IdCliente));
+        public ActionResult<AgendamentoResponse> Criar(CadastroAgendamentoRequest agendamento)
+        {
+            return Ok(_agendamentoService.Cadastrar(agendamento));
         }
         [HttpPost("Reagendar")]
         public ActionResult<AgendamentoResponse> Reagendar(CadastroAgendamentoRequest reagendamento, int id)
         {
-            return Ok(_agendamentoService.Cadastrar(reagendamento, id));
+            return Ok(_agendamentoService.Cadastrar(reagendamento));
 
         }
 
@@ -45,7 +45,7 @@ namespace BelMob.API.Controllers
         [HttpPut("AlterarDados")]
         public ActionResult<AgendamentoResponse> AlterarDados(int Id, CadastroAgendamentoRequest agendamentoRequest)
         {
-            return Ok(_agendamentoService.AlterarDados(Id,agendamentoRequest));
+            return Ok(_agendamentoService.AlterarDados(Id, agendamentoRequest));
         }
         [HttpDelete("Deletar")]
         public ActionResult<Agendamento> Deletar(int Id)
@@ -53,6 +53,6 @@ namespace BelMob.API.Controllers
             return Ok(_agendamentoService.Deletar(Id));
         }
     }
-}  
+}
 
 

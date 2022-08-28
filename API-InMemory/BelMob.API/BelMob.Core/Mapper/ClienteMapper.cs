@@ -25,7 +25,6 @@ namespace BelMob.Core.Mapper
 
             dto.Enderecos = new List<Endereco>();
             dto.Enderecos.Add(new Endereco(request.Logradouro, request.CEP, request.Numero, request.Complemento, request.Referencia, request.Bairro, request.Cidade, Enums.TipoEndereco.Residencial));
-            dto.DataCadastro = DateTime.Now;
 
             return dto;
         }

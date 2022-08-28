@@ -10,6 +10,7 @@ namespace BelMob.Core.DTOs.Request
 {
     public class CadastroAgendamentoRequest
     {
+        public int IdCliente { get; set; }
         public DateTime Data { get; set; }
         public TipoServico TipoServico { get; set; }
         public TipoPagamento TipoPagamento { get; set; }

@@ -11,11 +11,11 @@
                     <label for="sobrenome">Sobrenome:* </label>
                     <input v-model="sobrenome" type="name" class="form-control" id="sobrenome">
                     <label for="sobrenome">Sexo:* </label>
-                    <select v-model="genero" class="custom-select">
+                    <select v-model="sexo" class="custom-select">
                         <option selected>Escolha uma opção</option>
-                        <option value="1">Feminino</option>
-                        <option value="2">Masculino</option>
-                        <option value="3">Prefiro não informar</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="NaoInformado">Prefiro não informar</option>
                     </select>
                     <label for="cpf">CPF:* </label>
                     <input v-model="cpf" type="text" class="form-control" id="cpf">
@@ -40,12 +40,14 @@
                     <input v-model="referencia" type="text" class="form-control" id="referencia">
                     <label for="bairro">Bairro:* </label>
                     <input v-model="bairro" type="text" class="form-control" id="bairro">
+                     <label for="cidade">Cidade:* </label>
+                    <input v-model="cidade" type="text" class="form-control" id="cidade">
                     <label for="estado">Estado:* </label>
-                    <select v-model="estado" class="custom-select">
+                    <select v-model="tipoEndereco" class="custom-select">
                         <option selected>Escolha uma opção</option>
-                        <option value="1">SP</option>
-                        <option value="2">RJ</option>
-                        <option value="3">MG</option>
+                        <option value="0">SP</option>
+                        <option value="1">RJ</option>
+                        <option value="2">MG</option>
                     </select>
                 </div>
             </div>
@@ -66,15 +68,18 @@
             </div>
             <button @click="cadastrar()" type="button" class="btn btn-primary btn-lg">Finalizar</button>
         </div>
+
     </body>
 </template>
 <script>
+import { ClienteService } from '../services/ClienteService';
+
 export default {
     data() {
         return {
             nome: null,
             sobrenome: null,
-            genero: null,
+            sexo: null,
             cpf: null,
             telefone: null,
             celular: null,
@@ -85,7 +90,8 @@ export default {
             complemento: null,
             referencia: null,
             bairro: null,
-            estado: null,
+            cidade: null,
+            tipoEndereco: null,
             email: null,
             senha: null
         }
@@ -95,7 +101,7 @@ export default {
             var cadastroUsuario = {
             nome: this.nome,
             sobrenome: this.sobrenome,
-            genero: this.genero,
+            sexo: this.sexo,
             cpf: this.cpf,
             telefone: this.telefone,
             celular: this.celular,
@@ -106,14 +112,21 @@ export default {
             complemento: this.complemento,
             referencia: this.referencia,
             bairro: this.bairro,
-            estado: this.estado,
+            cidade: this.cidade,
+            tipoEndereco: parseInt(this.tipoEndereco),
             email: this.email,
             senha: this.senha
             }
             console.log(cadastroUsuario);
+            const ok = ClienteService.Register(cadastroUsuario).then(i=> i);
+            if(ok){
+                alert("Cadastro efetuado com sucesso!");
+            }
         }
     }
+
 }
+
 </script>
 <style>
 .body {

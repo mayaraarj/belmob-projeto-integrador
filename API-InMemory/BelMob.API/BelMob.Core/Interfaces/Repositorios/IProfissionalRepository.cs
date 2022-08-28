@@ -1,5 +1,4 @@
-﻿using BelMob.Core.DTOs.Request;
-using BelMob.Core.Entidades;
+﻿using BelMob.Core.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +14,6 @@ namespace BelMob.Core.Interfaces.Repositorios
         List<Profissional> Listar();
         Profissional AlterarDados(int id);
         Profissional Deletar(int id);
+        public int LoginProfissional(string email, string senha);
     }
 }

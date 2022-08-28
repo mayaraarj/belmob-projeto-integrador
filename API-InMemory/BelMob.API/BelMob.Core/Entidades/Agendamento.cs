@@ -28,9 +28,9 @@ namespace BelMob.Core.Entidades
 
         public int Id { get; set; }
         public DateTime Data { get; set; }
-        public TipoServico TipoServico { get; set; }        
+        public TipoServico TipoServico { get; set; }
         public TipoPagamento TipoPagamento { get; set; }
-        public string AdicionarCupom { get; set; }
+        public string? AdicionarCupom { get; set; }
         public Cliente Cliente { get; set; }
         public Profissional? Profissional { get; set; }
 

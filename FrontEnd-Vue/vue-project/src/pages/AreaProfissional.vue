@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <body>
     <nav aria-label="breadcrumb" class="breadcrumb">
@@ -10,35 +8,16 @@
     <main>
       <h1 class="titulo-principal">Área do Profissional</h1>
     </main>
-
     <section class="principal">
       <div class="containers">
         <p>Atendimentos disponíveis</p>
         <div class="informacoes">
-          <div class="agendamento">
-            <p>Nome Cliente:</p>
-            <p>Endereço:</p>
-            <p>Data e Hora:</p>
-            <p>Serviço:</p>
-            <p>Código do pedido:</p>
-            <button>Agendar</button>
-          </div>
-          <div class="agendamento">
-            <br />
-            <p>Nome Cliente:</p>
-            <p>Endereço:</p>
-            <p>Data e Hora:</p>
-            <p>Serviço:</p>
-            <p>Código do pedido:</p>
-            <button>Agendar</button>
-          </div>
-          <div class="agendamento">
-            <br />
-            <p>Nome Cliente:</p>
-            <p>Endereço:</p>
-            <p>Data e Hora:</p>
-            <p>Serviço:</p>
-            <p>Código do pedido:</p>
+          <div v-for="(iten, index) in agendamentos" class="agendamento">
+            <p>Nome Cliente: {{iten.clienteResponse.nome}}</p>
+            <p>Endereço: {{iten.clienteResponse.enderecos[0].logradouro}}, {{iten.clienteResponse.enderecos[0].bairro}}</p>
+            <p>Data e Hora: {{iten.data}}</p>
+            <p>Serviço: {{iten.tipoServico}}</p>
+            <p>Código do pedido: {{index}}</p>
             <button>Agendar</button>
           </div>
         </div>
@@ -123,7 +102,21 @@
     </section>
   </body>
 </template>
+<script>
+import { ProfissionalService } from '../services/ProfissionalService';
 
+export default {
+    data() {
+        return {
+            agendamentos: []
+        }
+    },
+    mounted() {
+        ProfissionalService.Disponiveis()
+        .then(response => this.agendamentos = response);
+    }
+}
+</script>
 <style scoped>
 * {
   margin: 0;
@@ -300,6 +293,9 @@ button {
 }
 
 @media (max-width: 480px) {
+    .principal{
+    flex-direction: column;
+  }
   form {
     flex-direction: column;
     background: rgba(241, 241, 241, 0.43);

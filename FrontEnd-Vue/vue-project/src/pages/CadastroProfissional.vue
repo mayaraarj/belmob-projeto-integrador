@@ -10,12 +10,12 @@
                     <input v-model="nome" type="nome" class="form-control" id="nome">
                     <label for="sobrenome">Sobrenome:* </label>
                     <input v-model="sobrenome" type="name" class="form-control" id="sobrenome">
-                    <label for="sobrenome">Sexo:* </label>
-                    <select v-model="genero" class="custom-select">
+                    <label for="sexo">Sexo:* </label>
+                    <select v-model="sexo" class="custom-select">
                         <option selected>Escolha uma opção</option>
-                        <option value="1">Feminino</option>
-                        <option value="2">Masculino</option>
-                        <option value="3">Prefiro não informar</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="NaoInformado">Prefiro não informar</option>
                     </select>
                     <label for="cpf">CPF:* </label>
                     <input v-model="cpf" type="text" class="form-control" id="cpf">
@@ -27,7 +27,7 @@
                     <input v-model="nascimento" type="date" class="form-control" id="Nascimento">
                 </div>
 
-                <div class="endereco">
+                 <div class="endereco">
                     <label for="cep">CEP:* </label>
                     <input v-model="cep" type="text" class="form-control" id="cep">
                     <label for="logradouro">Logradouro:* </label>
@@ -40,12 +40,14 @@
                     <input v-model="referencia" type="text" class="form-control" id="referencia">
                     <label for="bairro">Bairro:* </label>
                     <input v-model="bairro" type="text" class="form-control" id="bairro">
-                    <label for="estado">Estado:* </label>
-                    <select v-model="estado" class="custom-select">
+                     <label for="cidade">Cidade:* </label>
+                    <input v-model="cidade" type="text" class="form-control" id="cidade">
+                    <label for="estado">Tipo de Endereço:* </label>
+                    <select v-model="tipoEndereco" class="custom-select">
                         <option selected>Escolha uma opção</option>
-                        <option value="1">SP</option>
-                        <option value="2">RJ</option>
-                        <option value="3">MG</option>
+                        <option value="0">Casa</option>
+                        <option value="1">Trabalho</option>
+                        <option value="2">Outros</option>
                     </select>
                 </div>
             </div>
@@ -76,11 +78,11 @@
                     <label for="conta">Conta:* </label>
                     <input v-model="conta" type="text" class="form-control" id="tipoConta">
                     <div class="form-check">
-                        <input v-model="radio" type="radio" name="corrente" id="corrente" value="corrente" checked>
+                        <input v-model="tipoConta" type="radio" name="corrente" id="corrente" value="0" checked>
                         <label for="corrente">
                             Corrente
                         </label>
-                        <input v-model="radio" type="radio" name="poupanca" id="poupanca" value="poupanca">
+                        <input v-model="tipoConta" type="radio" name="poupanca" id="poupanca" value="1">
                         <label for="poupanca">
                             Poupança
                         </label>
@@ -93,12 +95,14 @@
 </template>
 
 <script>
+import { ProfissionalService } from '../services/ProfissionalService';
+
 export default {
     data() {
         return {
             nome: null,
             sobrenome: null,
-            genero: null,
+            sexo: null,
             cpf: null,
             telefone: null,
             celular: null,
@@ -109,13 +113,14 @@ export default {
             complemento: null,
             referencia: null,
             bairro: null,
-            estado: null,
+            cidade: null,
+            tipoEndereco: null,
             email: null,
             senha: null,
-            banco: null,
             agencia: null,
             conta: null,
-            radio:null
+            banco: null,
+            tipoConta: null
         }
     },
     methods: {
@@ -123,7 +128,7 @@ export default {
             var cadastroUsuario = {
             nome: this.nome,
             sobrenome: this.sobrenome,
-            genero: this.genero,
+            sexo: this.sexo,
             cpf: this.cpf,
             telefone: this.telefone,
             celular: this.celular,
@@ -134,17 +139,20 @@ export default {
             complemento: this.complemento,
             referencia: this.referencia,
             bairro: this.bairro,
-            estado: this.estado,
+            cidade: this.cidade,
+            tipoEndereco: parseInt(this.tipoEndereco),
             email: this.email,
             senha: this.senha,
-            banco: this.banco,
             agencia: this.agencia,
             conta: this.conta,
-            radio: this.radio
+            banco: this.banco,
+            tipoConta: parseInt(this.tipoConta)
             }
             console.log(cadastroUsuario);
+            ProfissionalService.Registrar(cadastroUsuario);
         }
     }
+
 }
 </script>
 
@@ -287,9 +295,7 @@ a:hover {
         flex-direction: column;
     }
 
-    .comoFunciona,
-    .contato,
-    .servicos {
+    .entrar {
         margin-top: 10px;
     }
 
@@ -315,12 +321,13 @@ a:hover {
         margin-bottom: 20px;
     }
 
+    .formulario,
     .dadosCadastrais,
     .endereco,
     .email,
     .senha,
     .dadosBancarios,
-    .tipoDeConta {
+    .tipoDeConta  {
         width: 90%;
         display: flex;
         flex-direction: column;

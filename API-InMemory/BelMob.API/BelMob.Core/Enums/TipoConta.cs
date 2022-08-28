@@ -8,7 +8,7 @@ namespace BelMob.Core.Enums
 {
     public enum TipoConta
     {
-        Corrente,
-        Poupanca
+        Corrente = 0,
+        Poupanca = 1
     }
 }

@@ -11,11 +11,11 @@ namespace BelMob.Core.Interfaces.Servicos
 {
     public interface IAgendamentoService
     {
-        AgendamentoResponse Cadastrar(CadastroAgendamentoRequest agendamentoRequest, int IdCliente);
+        AgendamentoResponse Cadastrar(CadastroAgendamentoRequest agendamentoRequest);
         AgendamentoResponse BuscarPorId(int Id);
         List<AgendamentoResponse> Listar();
         List<AgendamentoResponse> ListarDisponiveis();
-        AgendamentoResponse AceitarAgendamento(int id, int IdProfissional);
+        AgendamentoResponse AceitarAgendamento(AceitarAgendamentoRequest aceitar);
         AgendamentoResponse AlterarDados(int Id, CadastroAgendamentoRequest agendamentoRequest);
         AgendamentoResponse Deletar(int id);
         AgendamentoResponse Reagendar(CadastroAgendamentoRequest reagendamento, int id);

@@ -26,7 +26,7 @@ namespace BelMob.Infrastructure.Repositories
             _context.SaveChanges();
             return profissional;
         }
- 
+
         public Profissional BuscarPorId(int id)
         {
             var profissional = _context.Profissionais.FirstOrDefault(c => c.Id == id);
@@ -51,5 +51,17 @@ namespace BelMob.Infrastructure.Repositories
             _context.SaveChanges();
             return profissional;
         }
+        public int LoginProfissional(string email, string senha)
+        {
+            var profissional = _context.Profissionais.FirstOrDefault(c => c.Email == email && c.Senha == senha);
+            if (profissional == null)
+            {
+                return 0;
+            }
+            int id = profissional.Id;
+            return id;
+
+        }
     }
 }
+

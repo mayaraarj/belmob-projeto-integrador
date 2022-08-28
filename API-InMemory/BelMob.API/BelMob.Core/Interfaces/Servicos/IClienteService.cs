@@ -16,5 +16,7 @@ namespace BelMob.Core.Interfaces.Servicos
         ClienteResponse AlterarDados(int Id, int IdEndereco, CadastroClienteRequest cliente);
         List<ClienteResponse> Listar();
         ClienteResponse Deletar(int id);
+        public int LoginCliente(string email, string senha);
     }
 }
+
