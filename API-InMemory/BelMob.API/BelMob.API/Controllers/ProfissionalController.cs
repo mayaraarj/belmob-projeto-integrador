@@ -68,6 +68,16 @@ namespace BelMob.API.Controllers
 
             return Ok(_agendamentoService.AceitarAgendamento(aceitar));
         }
+        [HttpGet("AgendamentosProximos")]
+        public ActionResult<AgendamentoResponse> ListarProximos(int Id)
+        {
+            return Ok(_agendamentoService.ListarProximos(Id));
+        }
+        [HttpGet("AgendamentosPassados")]
+        public ActionResult<AgendamentoResponse> ListarPassados(int Id)
+        {
+            return Ok(_agendamentoService.ListarPassados(Id));
+        }
 
     }
 }

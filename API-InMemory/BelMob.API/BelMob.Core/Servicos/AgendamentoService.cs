@@ -42,7 +42,6 @@ namespace BelMob.Core.Servicos
         public List<AgendamentoResponse> Listar()
         {
             var list = _agendamentoRepository.Listar();
-
             return list.Select(c => AgendamentoMapper.Converter(c)).ToList();
         }
 
@@ -79,6 +78,16 @@ namespace BelMob.Core.Servicos
             agendamento.AdicionarProfissional(agendamentoAnterior.Profissional);
             var result = _agendamentoRepository.Criar(agendamento);
             return AgendamentoMapper.Converter(result);
+        }
+        public List<AgendamentoResponse> ListarProximos(int IdProfissional)
+        {
+            var list = _agendamentoRepository.ListarProximos(IdProfissional);
+            return list.Select(c => AgendamentoMapper.Converter(c)).ToList();
+        }
+        public List<AgendamentoResponse> ListarPassados(int IdProfissional)
+        {
+            var list = _agendamentoRepository.ListarProximos(IdProfissional);
+            return list.Select(c => AgendamentoMapper.Converter(c)).ToList();
         }
     }
 }

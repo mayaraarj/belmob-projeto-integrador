@@ -64,6 +64,15 @@ namespace BelMob.Infrastructure.Repositories
             _context.SaveChanges();
             return agendamento;
         }
+        public List<Agendamento> ListarProximos(int IdProfissional)
+        {
+            return _context.Agendamentos.Include(i => i.Cliente).Include(i => i.Cliente.Enderecos).Include(i => i.Profissional).Where(a => a.Profissional.Id == IdProfissional && a.Data > DateTime.Now).ToList();
+        }
+        public List<Agendamento> ListarPassados(int IdProfissional)
+        {
+            return _context.Agendamentos.Include(i => i.Cliente).Include(i => i.Cliente.Enderecos).Include(i => i.Profissional).Where(a => a.Profissional.Id == IdProfissional && a.Data < DateTime.Now).ToList();
+        }
+
 
     }
 }

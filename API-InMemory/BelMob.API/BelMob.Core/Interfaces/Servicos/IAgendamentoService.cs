@@ -19,5 +19,7 @@ namespace BelMob.Core.Interfaces.Servicos
         AgendamentoResponse AlterarDados(int Id, CadastroAgendamentoRequest agendamentoRequest);
         AgendamentoResponse Deletar(int id);
         AgendamentoResponse Reagendar(CadastroAgendamentoRequest reagendamento, int id);
+        List<AgendamentoResponse> ListarProximos(int IdProfissional);
+        List<AgendamentoResponse> ListarPassados(int IdProfissional);
     }
 }
