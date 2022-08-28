@@ -15,5 +15,6 @@ namespace BelMob.Core.DTOs.Request
         public TipoServico TipoServico { get; set; }
         public TipoPagamento TipoPagamento { get; set; }
         public string AdicionarCupom { get; set; }
+        public string Endereco { get; set; }
     }
 }

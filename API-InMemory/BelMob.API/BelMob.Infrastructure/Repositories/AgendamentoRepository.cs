@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BelMob.Infrastructure.Repositories
 {
+
     public class AgendamentoRepository : IAgendamentoRepository
     {
         private readonly SistemaContext _context;
@@ -18,6 +19,10 @@ namespace BelMob.Infrastructure.Repositories
         public AgendamentoRepository(SistemaContext ctx)
         {
             _context = ctx;
+        }
+
+        public AgendamentoRepository()
+        {
         }
 
         public Agendamento Criar(Agendamento agendamento)
@@ -73,6 +78,9 @@ namespace BelMob.Infrastructure.Repositories
             return _context.Agendamentos.Include(i => i.Cliente).Include(i => i.Cliente.Enderecos).Include(i => i.Profissional).Where(a => a.Profissional.Id == IdProfissional && a.Data < DateTime.Now).ToList();
         }
 
-
+        public List<Agendamento> ListarHistoricoCliente(int idCliente)
+        {
+            return _context.Agendamentos.Include(i=> i.Cliente).Where(a => a.Cliente.Id == idCliente && a.Data < DateTime.Now).ToList();
+        }
     }
 }

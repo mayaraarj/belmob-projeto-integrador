@@ -11,12 +11,13 @@ namespace BelMob.Core.Entidades
     {
         public Agendamento() { }
 
-        public Agendamento(DateTime data, TipoServico tipoServico, TipoPagamento tipoPagamento, string adicionarCupom)
+        public Agendamento(DateTime data, TipoServico tipoServico, TipoPagamento tipoPagamento, string adicionarCupom, string endereco)
         {
             Data = data;
             TipoServico = tipoServico;
             TipoPagamento = tipoPagamento;
             AdicionarCupom = adicionarCupom;
+            Endereco = endereco;
             Cliente = new Cliente();
         }
 
@@ -33,7 +34,7 @@ namespace BelMob.Core.Entidades
         public string? AdicionarCupom { get; set; }
         public Cliente Cliente { get; set; }
         public Profissional? Profissional { get; set; }
-
+        public string Endereco { get; set; }
         public void AdicionarCliente(Cliente cliente)
         {
             Cliente = cliente;

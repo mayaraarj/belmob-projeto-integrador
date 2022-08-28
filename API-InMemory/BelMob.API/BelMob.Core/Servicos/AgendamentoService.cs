@@ -89,5 +89,11 @@ namespace BelMob.Core.Servicos
             var list = _agendamentoRepository.ListarProximos(IdProfissional);
             return list.Select(c => AgendamentoMapper.Converter(c)).ToList();
         }
+
+        public List<AgendamentoResponse> ListarHistoricoCliente(int idCliente)
+        {
+            var list = _agendamentoRepository.ListarHistoricoCliente(idCliente);
+            return list.Select(c => AgendamentoMapper.Converter(c)).ToList();
+        }
     }
 }

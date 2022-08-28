@@ -19,12 +19,13 @@ namespace BelMob.Core.Mapper
             dto.TipoServico = agendamento.TipoServico;
             dto.ClienteResponse = ClienteMapper.Converter(agendamento.Cliente);
             dto.ProfissionalResponse = ProfissionalMapper.Converter(agendamento.Profissional);
+            dto.Endereco = agendamento.Endereco;
             return dto;
         
         }
         public static Agendamento Converter(this CadastroAgendamentoRequest agendamentoRequest)
         {
-            return new Agendamento(agendamentoRequest.Data, agendamentoRequest.TipoServico, agendamentoRequest.TipoPagamento, agendamentoRequest.AdicionarCupom);
+            return new Agendamento(agendamentoRequest.Data, agendamentoRequest.TipoServico, agendamentoRequest.TipoPagamento, agendamentoRequest.AdicionarCupom, agendamentoRequest.Endereco);
         }
     }
 }

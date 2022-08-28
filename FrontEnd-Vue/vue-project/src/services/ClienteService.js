@@ -43,9 +43,17 @@ export let ClienteService = {
                 'accept': 'text/plain'
             },
         }
+        console.log(JSON.stringify(dados))
         const response = await fetch('https://localhost:7261/Agendamento/Agendar', configRegister);
         const Agendamento = await response.json();
         console.log(Agendamento);
         return Agendamento;
-    }
+    },
+    async ListarHistorico(id){
+        const response = await fetch('https://localhost:7261/Agendamento/ListarHistoricoCliente?id=' + id);
+        const historico = await response.json();
+        console.log(historico);
+        return historico;
+    } 
+
 }

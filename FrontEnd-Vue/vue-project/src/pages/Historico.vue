@@ -1,10 +1,15 @@
-<script setup></script>
+<script setup>
+import moment from 'moment';
+
+</script>
 
 <template>
   <body>
     <nav aria-label="breadcrumb" class="breadcrumb">
       <ul>
-        <li><RouterLink class="a" to="/agendamento">Agendamento</RouterLink></li>
+        <li>
+          <RouterLink class="a" to="/agendamento">Agendamento</RouterLink>
+        </li>
         <li><span aria-current="page">Histórico</span></li>
       </ul>
     </nav>
@@ -13,7 +18,52 @@
         <h1>Histórico</h1>
       </div>
 
-      <div class="card">
+      <div v-for="(iten, index) in historico" class="card">
+        <div class="card-data">
+          <span>Data: {{ moment(iten.data).format('DD/MM/YYYY') }}</span>
+        </div>
+
+        <div class="card-body">
+          <div class="card-foto">
+            <img src="../assets/imagens/Photo.svg" class="img-foto" />
+          </div>
+
+          <div class="card-info">
+            <span>Nome: {{ iten.clienteResponse.nome }}</span>
+            <span>Endereço: {{ iten.endereco }}</span>
+            <span>Serviço: {{ this.tipoServico(tipoServico) }}</span>
+
+            <div class="card-avaliacao">
+              <ul class="rate-area">
+                <input type="radio" id="5-star" name="crating" value="5" />
+                <label for="5-star" title="Amazing">5 stars</label>
+                <input type="radio" id="4-star" name="crating" value="4" />
+                <label for="4-star" title="Good">4 stars</label>
+                <input type="radio" id="3-star" name="crating" value="3" />
+                <label for="3-star" title="Average">3 stars</label>
+                <input type="radio" id="2-star" name="crating" value="2" />
+                <label for="2-star" title="Not Good">2 stars</label>
+                <input
+                  type="radio"
+                  id="1-star"
+                  required=""
+                  name="crating"
+                  value="1"
+                  aria-required="true"
+                />
+                <label for="1-star" title="Bad">1 star</label>
+                <span class="texto-avaliacao">Avaliação:</span>
+              </ul>
+            </div>
+
+            <div class="card-botao">
+              <button id="botao-agendarNovamente">Agendar Novamente</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="card">
         <div class="card-data">
           <span>Sab, 09 julho 2022 » Horário 10:00h</span>
         </div>
@@ -24,8 +74,8 @@
           </div>
 
           <div class="card-info">
-            <span>Nome: { nome }</span>
-            <span>Endereço: { endereco }</span>
+            <span>Nome: {{iten.clienteResponse.nome}}</span>
+            <span>Endereço: {{iten.endereco}}</span>
             <span>Serviço: { servico }</span>
 
             <div class="card-avaliacao">
@@ -56,55 +106,40 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card-data">
-          <span>Sab, 09 julho 2022 » Horário 10:00h</span>
-        </div>
-
-        <div class="card-body">
-          <div class="card-foto">
-            <img src="../assets/imagens/Photo.svg" class="img-foto" />
-          </div>
-
-          <div class="card-info">
-            <span>Nome: { nome }</span>
-            <span>Endereço: { endereco }</span>
-            <span>Serviço: { servico }</span>
-
-            <div class="card-avaliacao">
-              <ul class="rate-area">
-                <input type="radio" id="5-star" name="crating" value="5" />
-                <label for="5-star" title="Amazing">5 stars</label>
-                <input type="radio" id="4-star" name="crating" value="4" />
-                <label for="4-star" title="Good">4 stars</label>
-                <input type="radio" id="3-star" name="crating" value="3" />
-                <label for="3-star" title="Average">3 stars</label>
-                <input type="radio" id="2-star" name="crating" value="2" />
-                <label for="2-star" title="Not Good">2 stars</label>
-                <input
-                  type="radio"
-                  id="1-star"
-                  required=""
-                  name="crating"
-                  value="1"
-                  aria-required="true"
-                />
-                <label for="1-star" title="Bad">1 star</label>
-                <span class="texto-avaliacao">Avaliação: { avaliacao }</span>
-              </ul>
-            </div>
-
-            <div class="card-botao">
-              <button id="botao-agendarNovamente">Agendar Novamente</button>
-            </div>
-          </div>
-        </div>
-      </div>
+      </div> -->
     </main>
   </body>
 </template>
+
+<script>
+import { ClienteService } from "../services/ClienteService";
+
+
+
+export default {
+  data() {
+    return {
+      historico: [],
+    };
+  },
+  mounted() {
+    ClienteService.ListarHistorico(1).then(
+      (response) => (this.historico = response)
+    );
+  },
+  methods: {
+    tipoServico: function (tipo) {
+      if (tipo == 0) {
+        return "Mãos";
+      } else if (tipo == 1) {
+        return "Pés";
+      } else {
+        return "Mãos e Pés";
+      }
+    },
+  },
+};
+</script>
 
 <style scoped>
 * {

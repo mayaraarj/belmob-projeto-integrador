@@ -52,6 +52,12 @@ namespace BelMob.API.Controllers
         {
             return Ok(_agendamentoService.Deletar(Id));
         }
+
+        [HttpGet("ListarHistoricoCliente")]
+        public ActionResult<List<AgendamentoResponse>> ListarHistoricoCliente(int id)
+        {
+            return Ok(_agendamentoService.ListarHistoricoCliente(id));
+        }
     }
 }
 

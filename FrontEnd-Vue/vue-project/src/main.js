@@ -5,11 +5,14 @@ import PaginaInicial from './pages/PaginaInicial.vue'
 import Agendamento from './pages/Agendamento.vue'
 import AreaProfissional from './pages/AreaProfissional.vue'
 import CadastroCliente from './pages/CadastroCliente.vue'
-import ExibirCliente from './pages/ExibirCliente.vue'
 import CadastroProfissional from './pages/CadastroProfissional.vue'
 import Historico from './pages/Historico.vue'
 import Login from './pages/Login.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
+import moment from 'moment';
+
+
+moment.locale('pt-br');
 
 const router = createRouter({
     history: createWebHashHistory(),
@@ -44,6 +47,7 @@ const router = createRouter({
     }
 ]
 })
+
 
 const app = createApp(App)
 

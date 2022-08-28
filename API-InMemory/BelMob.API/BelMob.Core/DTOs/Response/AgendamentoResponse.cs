@@ -15,5 +15,7 @@ namespace BelMob.Core.DTOs.Response
         public TipoServico TipoServico { get; set; }
         public ClienteResponse ClienteResponse{ get; set; }
         public ProfissionalResponse ?ProfissionalResponse { get; set; }
+
+        public string Endereco { get; set; }
     }
 }

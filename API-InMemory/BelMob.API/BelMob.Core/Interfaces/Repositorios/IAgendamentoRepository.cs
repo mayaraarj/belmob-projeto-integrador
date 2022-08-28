@@ -19,5 +19,6 @@ namespace BelMob.Core.Interfaces.Repositorios
         Agendamento Deletar(int id);
         List<Agendamento> ListarProximos(int IdProfissional);
         List<Agendamento> ListarPassados(int IdProfissional);
+        List<Agendamento> ListarHistoricoCliente(int idCliente);
     }
 }

@@ -16,7 +16,7 @@ namespace BelMob.Core.Mapper
             var dto = new ClienteResponse();
             dto.Id = cliente.Id;
             dto.Nome = cliente.Nome;
-            dto.Enderecos = cliente.Enderecos.Select(c => EnderecoMapper.Converter(c)).ToList();
+            dto.Enderecos = cliente.Enderecos?.Select(c => EnderecoMapper.Converter(c)).ToList();
             return dto;
         }
         public static Cliente Converter(this CadastroClienteRequest request)
