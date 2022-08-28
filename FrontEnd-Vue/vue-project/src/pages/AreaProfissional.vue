@@ -1,9 +1,12 @@
+<script setup>
+  import moment from 'moment'; 
+  </script>
 <template>
   <body>
     <nav aria-label="breadcrumb" class="breadcrumb">
-        <ul>
-            <li><span aria-current="page">Area Profissional</span></li>
-        </ul>
+      <ul>
+        <li><span aria-current="page">Area Profissional</span></li>
+      </ul>
     </nav>
     <main>
       <h1 class="titulo-principal">Área do Profissional</h1>
@@ -12,12 +15,15 @@
       <div class="containers">
         <p>Atendimentos disponíveis</p>
         <div class="informacoes">
-          <div v-for="(iten, index) in agendamentos" class="agendamento">
-            <p>Nome Cliente: {{iten.clienteResponse.nome}}</p>
-            <p>Endereço: {{iten.clienteResponse.enderecos[0].logradouro}}, {{iten.clienteResponse.enderecos[0].bairro}}</p>
-            <p>Data e Hora: {{iten.data}}</p>
-            <p>Serviço: {{iten.tipoServico}}</p>
-            <p>Código do pedido: {{index}}</p>
+          <div v-for="iten in agendamentos" class="agendamento">
+            <p>Nome Cliente: {{ iten.clienteResponse.nome }}</p>
+            <p>
+              Endereço: {{ iten.clienteResponse.enderecos[0].logradouro }},
+              {{ iten.clienteResponse.enderecos[0].bairro }}
+            </p>
+            <p>Data e Hora: {{ moment(iten.data).format('DD/MM/YYYY hh:mm') }}</p>
+            <p>Serviço: {{ this.tipoServico(iten.tipoServico) }}</p>
+            <p>Código do Agendamento: {{ iten.id }}</p>
             <button v-on:click="this.Agendar(iten.id)">Agendar</button>
           </div>
         </div>
@@ -25,75 +31,33 @@
       <div class="containers">
         <p>Próximos agendamentos</p>
         <div class="informacoes">
-          <div class="agendamento">
-            <p>Nome Cliente:</p>
-            <p>Endereço:</p>
-            <p>Data e Hora:</p>
-            <p>Serviço:</p>
-            <p>Valor:</p>
-            <button>Iniciar atendimento</button>
-          </div>
-          <div class="agendamento">
-            <br />
-            <p>Nome Cliente:</p>
-            <p>Endereço:</p>
-            <p>Data e Hora:</p>
-            <p>Serviço:</p>
-            <p>Valor:</p>
-            <button>Iniciar Atendimento</button>
-          </div>
-          <div class="agendamento">
-            <br />
-            <p>Nome Cliente:</p>
-            <p>Endereço:</p>
-            <p>Data e Hora:</p>
-            <p>Serviço:</p>
-            <p>Valor:</p>
-            <button>Iniciar Atendimento</button>
+          <div v-for="(iten,index) in proximosAgendamentos" class="agendamento">
+            <p>Nome Cliente:{{ iten.clienteResponse.nome }}</p>
+            <p>Endereço: {{ iten.endereco }}</p>
+            <p>Data e Hora: {{ moment(iten.data).format('DD/MM/YYYY hh:mm') }}</p>
+            <p>Serviço: {{ this.tipoServico(iten.tipoServico) }}</p>
+            <button
+              v-on:click="this.IniciarAgendamento(index)"
+              :id="'btnAgendamento' + index"
+            >
+              Iniciar atendimento
+            </button>
           </div>
         </div>
       </div>
       <div class="containers">
         <p>Histórico</p>
         <div class="informacoes">
-          <div class="historico">
+          <div v-for="iten in historico" class="historico">
             <img src="../assets/imagens/Photo.svg" alt="" />
             <div>
-              <p>Nome Cliente:</p>
-              <p>Endereço:</p>
-              <p>Data e Hora:</p>
-              <p>Serviço:</p>
+              <p>Nome Cliente:{{ iten.clienteResponse.nome }}</p>
+              <p>Endereço: {{ iten.endereco }}</p>
+              <p>Data e Hora: {{ moment(iten.data).format('DD/MM/YYYY hh:mm') }}</p>
+              <p>Serviço: {{ this.tipoServico(iten.tipoServico) }}</p>
               <p>
                 Avaliação:
                 <img src="../assets/imagens/Stars avaliação.svg" alt="" />
-              </p>
-            </div>
-          </div>
-          <div class="historico">
-            <img src="../assets/imagens/Photo.svg" alt="" />
-            <div>
-              <p>Nome Cliente:</p>
-              <p>Endereço:</p>
-              <p>Data e Hora:</p>
-              <p>Serviço:</p>
-              <p>
-                Avaliação:
-                <img src="../assets/imagens/Stars avaliação.svg" alt="" />
-              </p>
-            </div>
-          </div>
-          <div class="historico">
-            <img src="../assets/imagens/Photo.svg" alt="" />
-            <div>
-              <p>Nome Cliente:</p>
-              <p>Endereço:</p>
-              <p>Data e Hora:</p>
-              <p>Serviço:</p>
-              <p>
-                Avaliação:<img
-                  src="../assets/imagens/Stars avaliação.svg"
-                  alt=""
-                />
               </p>
             </div>
           </div>
@@ -103,24 +67,60 @@
   </body>
 </template>
 <script>
-import { ProfissionalService } from '../services/ProfissionalService';
+import { ProfissionalService } from "../services/ProfissionalService";
 
 export default {
-    data() {
-        return {
-            agendamentos: []
-        }
+  data() {
+    return {
+      agendamentos: [],
+      proximosAgendamentos: [],
+      statusAgendamento: false,
+      historico: []
+    };
+  },
+  mounted() {
+    ProfissionalService.Disponiveis().then(
+      (response) => (this.agendamentos = response)
+    );
+
+    ProfissionalService.ProximosAgendamentos(1).then(
+      (response) => (this.proximosAgendamentos = response)
+    );
+
+    ProfissionalService.Historico(1).then(
+      (response) => (this.historico = response)
+    );
+  },
+  methods: {
+    Agendar: function (id) {
+      var agendar = { idProfissional: 1, idAgendamento: id };
+      ProfissionalService.Agendar(agendar);
+      alert("Agendado");
+      this.$router.go()
     },
-    mounted() {
-        ProfissionalService.Disponiveis()
-        .then(response => this.agendamentos = response);
+    IniciarAgendamento: function (index) {
+      this.statusAgendamento = !this.statusAgendamento;
+      var element = document.getElementById("btnAgendamento" + index);
+      element.innerText = this
+        .statusAgendamento
+        ? "Finalizar"
+        : "Iniciar atendimento";
+
+        element.className = this.statusAgendamento ? "greenButton" : ""
+
+      
     },
-    methods:{
-      Agendar: function(id){
-   
+    tipoServico: function (tipo) {
+      if (tipo == 0) {
+        return "Mãos";
+      } else if (tipo == 1) {
+        return "Pés";
+      } else {
+        return "Mãos e Pés";
       }
     }
-}
+  },
+};
 </script>
 <style scoped>
 * {
@@ -132,35 +132,41 @@ export default {
 
 body {
   background-image: url("../assets/imagens/unhas.jpg");
-   background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100%;
 }
-a{
-    color: inherit;
-    text-decoration: inherit; 
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-a:hover{
-    color: rgb(235, 197, 222);
-    text-decoration:underline;
+a:hover {
+  color: rgb(235, 197, 222);
+  text-decoration: underline;
+}
+
+.greenButton {
+  color: white;
+  background-color: green;
 }
 
 .breadcrumb ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    font-family: 'Jacques Francois';
-    margin: 10px 0 0 25px;
-    padding: 0;
-    font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-family: "Jacques Francois";
+  margin: 10px 0 0 25px;
+  padding: 0;
+  font-size: 15px;
 }
 
 .breadcrumb li:not(:last-child)::after {
-    display: inline-block;
-    margin: 0 .25rem;
-    content: "»";
+  display: inline-block;
+  margin: 0 0.25rem;
+  content: "»";
 }
 .header {
   display: flex;
@@ -256,6 +262,11 @@ h1 {
 
 .historico {
   display: flex;
+  height: 120px;
+}
+
+.agendamento{
+  height: 120px;
 }
 
 .containers p:not(.informacoes p) {
@@ -298,7 +309,7 @@ button {
 }
 
 @media (max-width: 480px) {
-    .principal{
+  .principal {
     flex-direction: column;
   }
   form {

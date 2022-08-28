@@ -150,6 +150,10 @@ export default {
             }
             console.log(cadastroUsuario);
             ProfissionalService.Registrar(cadastroUsuario);
+
+            alert("Cadastrado com sucesso")
+            document.location.href = "/#/areaprofissional";
+            
         }
     }
 

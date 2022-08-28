@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj": {}
+    "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj": {
+    "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj",
+        "projectUniqueName": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj",
         "projectName": "BelMob.API",
-        "projectPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj",
-        "packagesPath": "C:\\Users\\iasmimv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\obj\\",
+        "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\BelMob.API.csproj",
+        "packagesPath": "C:\\Users\\renatak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.API\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\iasmimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\renatak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
-                "projectPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj"
+              "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
+                "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj"
               },
-              "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj"
+              "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj"
               }
             }
           }
@@ -78,21 +74,17 @@
         }
       }
     },
-    "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
+    "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
+        "projectUniqueName": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
         "projectName": "BelMob.Core",
-        "projectPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
-        "packagesPath": "C:\\Users\\iasmimv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\obj\\",
+        "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
+        "packagesPath": "C:\\Users\\renatak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\iasmimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\renatak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -136,21 +128,17 @@
         }
       }
     },
-    "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj": {
+    "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj",
         "projectName": "BelMob.Infrastructure",
-        "projectPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\iasmimv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\BelMob.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\renatak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\iasmimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\renatak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -164,8 +152,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
-                "projectPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj"
+              "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
+                "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj"
               }
             }
           }

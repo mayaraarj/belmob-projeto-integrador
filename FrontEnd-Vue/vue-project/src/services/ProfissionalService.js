@@ -40,6 +40,18 @@ export let ProfissionalService = {
         console.log(agendamentos);
         return agendamentos;
     },
+    async ProximosAgendamentos (id){
+        const response = await fetch('https://localhost:7261/Profissional/AgendamentosProximos?Id=' + id);
+        const agendamentos = await response.json();
+        console.log(agendamentos);
+        return agendamentos;
+    },
+    async Historico (id){
+        const response = await fetch('https://localhost:7261/Profissional/AgendamentosPassados?Id=' + id);
+        const agendamentos = await response.json();
+        console.log(agendamentos);
+        return agendamentos;
+    },
     async Agendar (agendar) {
         const configRegister = {
             method: 'PUT',

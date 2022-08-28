@@ -12,7 +12,10 @@
       <div class="entrar"><RouterLink to="/login">Entrar</RouterLink></div>
   </div>
     </header>
-  <RouterView/>
+
+  <section class="body-container">
+    <RouterView/>
+  </section>
 </template>
 
 <style scoped>
@@ -67,6 +70,10 @@ a{
 a:hover{
   color: rgb(235, 197, 222);
   text-decoration:underline; 
+}
+
+.body-container {
+  height: calc(100vh - 76px);
 }
 
 </style>

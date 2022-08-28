@@ -121,6 +121,7 @@ export default {
             const ok = ClienteService.Register(cadastroUsuario).then(i=> i);
             if(ok){
                 alert("Cadastro efetuado com sucesso!");
+                document.location.href = "/#/agendamento";
             }
         }
     }

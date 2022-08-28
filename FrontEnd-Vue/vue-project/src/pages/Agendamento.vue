@@ -163,6 +163,7 @@ export default {
         const ok = ClienteService.Agendar(agendamento).then((i) => i);
         if (ok) {
           alert("Cadastro efetuado com sucesso!");
+          document.location.href = "/#/historico";
         }
       }
     },
@@ -217,6 +218,7 @@ body {
   background-attachment: fixed;
   font-family: "Jacques Francois";
   color: #562551;
+  min-height: 100%;
 }
 
 .header {
