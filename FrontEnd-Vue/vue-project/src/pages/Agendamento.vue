@@ -139,8 +139,8 @@ export default {
   data() {
     return {
       data: null,
-      tipoServico: null,
-      tipoPagamento: null,
+      tipoServico: 0,
+      tipoPagamento: 0,
       adicionarCupon: null,
       valor: 0,
       descricaoTipoServico: "",

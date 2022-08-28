@@ -39,5 +39,19 @@ export let ProfissionalService = {
         const agendamentos = await response.json();
         console.log(agendamentos);
         return agendamentos;
+    },
+    async Agendar (agendar) {
+        const configRegister = {
+            method: 'PUT',
+            body: JSON.stringify(agendar),
+            headers: {
+                'Content-type': 'application/json',
+                'accept': 'text/plain'
+            },
+        }
+        const response = await fetch('https://localhost:7261/Profissional/AceitarAgendamento', configRegister);
+        const novoProfissional = await response.json();
+        console.log(novoProfissional);
+        return novoProfissional;
     }    
 } 

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {}
+    "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
+    "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
+        "projectUniqueName": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
         "projectName": "BelMob.Core",
-        "projectPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
-        "packagesPath": "C:\\Users\\renatak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renatak\\Documents\\Digital House\\ProjetoIntegrador\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\obj\\",
+        "projectPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\BelMob.Core.csproj",
+        "packagesPath": "C:\\Users\\iasmimv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iasmimv\\Documents\\Belmob-Git\\Iasmim\\belmob-projeto-integrador\\API-InMemory\\BelMob.API\\BelMob.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\renatak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iasmimv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

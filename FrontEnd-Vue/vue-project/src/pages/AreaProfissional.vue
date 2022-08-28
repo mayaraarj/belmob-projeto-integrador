@@ -18,7 +18,7 @@
             <p>Data e Hora: {{iten.data}}</p>
             <p>Serviço: {{iten.tipoServico}}</p>
             <p>Código do pedido: {{index}}</p>
-            <button>Agendar</button>
+            <button v-on:click="this.Agendar(iten.id)">Agendar</button>
           </div>
         </div>
       </div>
@@ -114,6 +114,11 @@ export default {
     mounted() {
         ProfissionalService.Disponiveis()
         .then(response => this.agendamentos = response);
+    },
+    methods:{
+      Agendar: function(id){
+   
+      }
     }
 }
 </script>

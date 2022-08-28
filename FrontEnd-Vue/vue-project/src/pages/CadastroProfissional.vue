@@ -114,13 +114,13 @@ export default {
             referencia: null,
             bairro: null,
             cidade: null,
-            tipoEndereco: null,
+            tipoEndereco: 0,
             email: null,
             senha: null,
             agencia: null,
             conta: null,
             banco: null,
-            tipoConta: null
+            tipoConta: 0
         }
     },
     methods: {
