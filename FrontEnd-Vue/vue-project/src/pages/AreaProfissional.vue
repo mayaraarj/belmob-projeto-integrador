@@ -57,7 +57,7 @@
               <p>Serviço: {{ this.tipoServico(iten.tipoServico) }}</p>
               <p>
                 Avaliação:
-                <img src="../assets/imagens/Stars avaliação.svg" alt="" />
+                <img src="../assets/imagens/startsAvaliacao.svg" alt="" />
               </p>
             </div>
           </div>
